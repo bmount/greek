@@ -1,5 +1,5 @@
 // Ἑλληνικά service worker — bump VER whenever any cached file changes.
-const VER = 'grk-v05';
+const VER = 'grk-v06';
 const CORE = [
   './',
   './index.html',
@@ -27,16 +27,29 @@ self.addEventListener('activate', e => {
   );
 });
 
-// Network-first for course data & pages (so updates show), cache fallback for offline.
+// IMPORTANT: only handle same-origin, non-range GETs. Audio lives on a different origin
+// (storage.googleapis.com) and uses HTTP range requests; intercepting those and returning a
+// non-range response makes iOS Safari bail out and open the media URL as a top-level page.
+// So we let ALL cross-origin requests — and any request with a Range header — pass straight
+// through to the network, untouched.
 self.addEventListener('fetch', e => {
-  if (e.request.method !== 'GET') return;
+  const req = e.request;
+  if (req.method !== 'GET') return;
+  const url = new URL(req.url);
+  if (url.origin !== self.location.origin) return;   // audio + any 3rd-party: don't touch
+  if (req.headers.has('range')) return;              // never intercept range requests
+
   e.respondWith(
-    fetch(e.request)
+    fetch(req)
       .then(res => {
         const copy = res.clone();
-        caches.open(VER).then(c => c.put(e.request, copy)).catch(() => {});
+        caches.open(VER).then(c => c.put(req, copy)).catch(() => {});
         return res;
       })
-      .catch(() => caches.match(e.request).then(m => m || caches.match('./index.html')))
+      .catch(() =>
+        caches.match(req).then(m =>
+          m || (req.mode === 'navigate' ? caches.match('./index.html') : Response.error())
+        )
+      )
   );
 });
