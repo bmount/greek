@@ -5,9 +5,17 @@
     {
       "id": "L01",
       "gym_id": "gym-L01",
-      "title": "Being, wanting, seeing — and five things to talk about",
-      "seconds": 400,
-      "words": 15
+      "title": "Fifty words that already make sentences",
+      "seconds": 694,
+      "words": 50,
+      "sentences": 20,
+      "teacher": "en",
+      "sample": {
+        "gym_id": "gym-L01-grvoice",
+        "seconds": 90,
+        "teacher": "charon",
+        "label": "A/B: Greek voice reads the English"
+      }
     }
   ]
 }

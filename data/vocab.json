@@ -1,141 +1,99 @@
 {
   "plan": {
-    "goal": "The first 1,000 words — the core lexical network, audio-first, recycled relentlessly.",
-    "tiers": [
-      { "id": "function", "label": "Core function words", "target": 400,
-        "note": "and, but, if, because · this/that/here/there · be/have/go/come · who/what/when/where · prepositions, pronouns, common verbs. A huge proportion of ordinary speech." },
-      { "id": "nouns", "label": "High-frequency concrete nouns", "target": 400,
-        "note": "house, water, child, hand, bread, sea, mountain, road, money, friend …" },
-      { "id": "abstract", "label": "Adjectives & abstract words", "target": 200,
-        "note": "good, difficult, possible, beautiful, true, important, early, already …" }
+    "goal": "The first 1,000 words in ~15 lessons — audio-first, recycled relentlessly, Modern pronunciation with vocabulary chosen for Koine/Classical continuity.",
+    "roadmap": [
+      { "lessons": "L01", "add": 50, "cum": 50, "focus": "25 core nouns + 25 core verbs, maximally continuous. Straight into declension & tense through short sentences." },
+      { "lessons": "L02–L03", "add": 130, "cum": 180, "focus": "The function-word skeleton: articles fully, pronouns, the commonest prepositions, and/but/if/because, question words, numbers 1–10. + more everyday nouns/verbs." },
+      { "lessons": "L04–L05", "add": 130, "cum": 310, "focus": "Family, body, food, house, time-of-day, weather; verbs of motion, speech, perception. First adjectives (good/big/small)." },
+      { "lessons": "L06–L08", "add": 210, "cum": 520, "focus": "City & travel, work & money, nature & animals; more tense (future, past habitual), the genitive, possessives in full." },
+      { "lessons": "L09–L11", "add": 210, "cum": 730, "focus": "Abstract high-frequency nouns (time, way, thing, reason, part), the 100 commonest adjectives, comparatives, adverbs." },
+      { "lessons": "L12–L15", "add": 270, "cum": 1000, "focus": "The long tail of the top-1000: connectives, discourse words, abstractions, and the rest of the frequency list. By here, micro-stories run entirely on known words." }
     ],
-    "method": "Morphology in context (never bare dictionary forms), deliberate recycling over breadth, Modern pronunciation with vocabulary chosen for Koine/Classical continuity."
+    "principles": [
+      "Frequency first, continuity-biased, and words chosen so they INTERACT — the sentence bank stays simple because the words naturally combine.",
+      "Every lesson recycles all prior words; a word met in L01 should be heard 25+ times by L05.",
+      "Grammar is delivered through sentences and an English teacher's explanation, not paradigm drills — the paradigms live in the Grammar tab for reference."
+    ]
   },
   "lessons": [
     {
       "id": "L01",
-      "title": "Being, wanting, seeing — and five things to talk about",
-      "blurb": "Fifteen of the highest-frequency words in Greek. Together they already make real sentences: 'The person is here.' 'Where is the water?' 'I want the book.' Almost every one is historically continuous — you are also learning Koine.",
+      "title": "Fifty words that already make sentences",
+      "blurb": "Twenty-five nouns and twenty-five verbs — almost all continuous from ancient to modern Greek. Then a long series of very short sentences where they interact naturally, with an English teacher explaining exactly enough grammar to make each one correct.",
       "words": [
-        { "id": "eimai", "gr": "είμαι", "en": "to be (I am)", "es": "ser / estar (soy, estoy)",
-          "pos": "verb", "cat": "function", "rank": 1, "koine": "εἰμί",
-          "continuity": "Directly from ancient εἰμί. The 3rd-person είναι 'is' descends from ἐστί; the imperfect ἦν opens John 1:1.",
-          "forms": [ "είμαι — I am", "είσαι — you are", "είναι — he/she/it is" ],
-          "phrases": [
-            { "gr": "Είμαι εδώ.", "en": "I am here.", "es": "Estoy aquí." },
-            { "gr": "Πού είσαι;", "en": "Where are you?", "es": "¿Dónde estás?" }
-          ] },
-        { "id": "echo", "gr": "έχω", "en": "to have (I have)", "es": "tener (tengo)",
-          "pos": "verb", "cat": "function", "rank": 8, "koine": "ἔχω",
-          "continuity": "Same verb as ancient ἔχω 'I have, hold'. Gives English -ech in 'cachexia', and 'hectic' (ἑκτικός).",
-          "forms": [ "έχω — I have", "έχεις — you have", "έχει — he/she/it has" ],
-          "phrases": [
-            { "gr": "Έχω νερό.", "en": "I have water.", "es": "Tengo agua." },
-            { "gr": "Έχεις ένα βιβλίο;", "en": "Do you have a book?", "es": "¿Tienes un libro?" }
-          ] },
-        { "id": "thelo", "gr": "θέλω", "en": "to want (I want)", "es": "querer (quiero)",
-          "pos": "verb", "cat": "function", "rank": 20, "koine": "θέλω / ἐθέλω",
-          "continuity": "Ancient θέλω / ἐθέλω 'I wish, want'. The root of 'monothelitism' (one-will).",
-          "forms": [ "θέλω — I want", "θέλεις — you want", "θέλει — he/she/it wants" ],
-          "phrases": [
-            { "gr": "Θέλω νερό.", "en": "I want water.", "es": "Quiero agua." },
-            { "gr": "Τι θέλεις;", "en": "What do you want?", "es": "¿Qué quieres?" }
-          ] },
-        { "id": "vlepo", "gr": "βλέπω", "en": "to see (I see)", "es": "ver (veo)",
-          "pos": "verb", "cat": "function", "rank": 35, "koine": "βλέπω",
-          "continuity": "Ancient βλέπω 'I look, see'. Common throughout the Gospels ('βλέπε' — look!).",
-          "forms": [ "βλέπω — I see", "βλέπεις — you see", "βλέπει — he/she/it sees" ],
-          "phrases": [
-            { "gr": "Βλέπω τη θάλασσα.", "en": "I see the sea.", "es": "Veo el mar." },
-            { "gr": "Τι βλέπεις;", "en": "What do you see?", "es": "¿Qué ves?" }
-          ] },
-        { "id": "erchomai", "gr": "έρχομαι", "en": "to come (I come)", "es": "venir (vengo)",
-          "pos": "verb", "cat": "function", "rank": 30, "koine": "ἔρχομαι",
-          "continuity": "Ancient ἔρχομαι 'I come, go' — a deponent (middle form, active sense), exactly as in Modern Greek.",
-          "forms": [ "έρχομαι — I come", "έρχεσαι — you come", "έρχεται — he/she/it comes" ],
-          "phrases": [
-            { "gr": "Ο φίλος έρχεται.", "en": "The friend is coming.", "es": "El amigo viene." },
-            { "gr": "Έρχομαι!", "en": "I'm coming!", "es": "¡Ya voy!" }
-          ] },
-        { "id": "kai", "gr": "και", "en": "and; also, even", "es": "y; también, incluso",
-          "pos": "conj", "cat": "function", "rank": 2, "koine": "καί",
-          "continuity": "Ancient καί, unchanged for three thousand years. The connective tissue of every Greek sentence.",
-          "forms": [ "και — and" ],
-          "phrases": [
-            { "gr": "ο άνθρωπος και το παιδί", "en": "the person and the child", "es": "la persona y el niño" }
-          ] },
-        { "id": "den", "gr": "δεν", "en": "not (negates verbs)", "es": "no (niega verbos)",
-          "pos": "adv", "cat": "function", "rank": 6, "koine": "οὐ / οὐδέν",
-          "continuity": "Modern δεν comes from ancient οὐδέν 'nothing'. In Koine the plain negator was οὐ (John 1:5: οὐ κατέλαβεν). A clear window on how the language shifted.",
-          "forms": [ "δεν — not" ],
-          "phrases": [
-            { "gr": "Δεν είμαι εδώ.", "en": "I am not here.", "es": "No estoy aquí." },
-            { "gr": "Δεν θέλω νερό.", "en": "I don't want water.", "es": "No quiero agua." }
-          ] },
-        { "id": "pou", "gr": "πού", "en": "where?", "es": "¿dónde?",
-          "pos": "adv", "cat": "function", "rank": 40, "koine": "ποῦ",
-          "continuity": "Ancient ποῦ 'where?'. Note the question is closed with a Greek semicolon ( ; ), not a question mark.",
-          "forms": [ "πού; — where?" ],
-          "phrases": [
-            { "gr": "Πού είναι το νερό;", "en": "Where is the water?", "es": "¿Dónde está el agua?" }
-          ] },
-        { "id": "edo", "gr": "εδώ", "en": "here", "es": "aquí",
-          "pos": "adv", "cat": "function", "rank": 45, "koine": "ἐνθάδε / ὧδε",
-          "continuity": "Modern εδώ replaced the ancient ἐνθάδε / ὧδε 'here'. One of the words that genuinely changed.",
-          "forms": [ "εδώ — here" ],
-          "phrases": [
-            { "gr": "Ο άνθρωπος είναι εδώ.", "en": "The person is here.", "es": "La persona está aquí." }
-          ] },
-        { "id": "anthropos", "gr": "άνθρωπος", "article": "ο", "en": "person; human being", "es": "persona; ser humano",
-          "pos": "noun", "gender": "m", "cat": "noun", "rank": 15, "koine": "ἄνθρωπος",
-          "continuity": "Identical in Koine and Classical (ὁ ἄνθρωπος). Gives English anthropo- (anthropology, misanthrope, philanthropy).",
-          "forms": [ "ο άνθρωπος — the person", "ένας άνθρωπος — a person", "τον άνθρωπο — the person (object)" ],
-          "phrases": [
-            { "gr": "ο άνθρωπος", "en": "the person", "es": "la persona" },
-            { "gr": "Ο άνθρωπος έρχεται.", "en": "The person is coming.", "es": "La persona viene." },
-            { "gr": "Πού είναι ο άνθρωπος;", "en": "Where is the person?", "es": "¿Dónde está la persona?" }
-          ] },
-        { "id": "nero", "gr": "νερό", "article": "το", "en": "water", "es": "agua",
-          "pos": "noun", "gender": "n", "cat": "noun", "rank": 60, "koine": "ὕδωρ (ancient) → νηρόν",
-          "continuity": "A word that CHANGED: Classical 'water' was ὕδωρ (→ hydro-, hydrant). Modern νερό comes from νηρόν (ὕδωρ) 'fresh water'. Learn νερό now, recognise ὕδωρ in the old texts.",
-          "forms": [ "το νερό — the water", "νερό — (some) water" ],
-          "phrases": [
-            { "gr": "το νερό", "en": "the water", "es": "el agua" },
-            { "gr": "Θέλω νερό.", "en": "I want water.", "es": "Quiero agua." }
-          ] },
-        { "id": "vivlio", "gr": "βιβλίο", "article": "το", "en": "book", "es": "libro",
-          "pos": "noun", "gender": "n", "cat": "noun", "rank": 90, "koine": "βιβλίον",
-          "continuity": "Ancient βιβλίον 'book, scroll' — the very word behind Bible and bibliography. The final -ν simply dropped in Modern Greek (βιβλίον → βιβλίο).",
-          "forms": [ "το βιβλίο — the book", "ένα βιβλίο — a book" ],
-          "phrases": [
-            { "gr": "το βιβλίο", "en": "the book", "es": "el libro" },
-            { "gr": "Θέλω το βιβλίο.", "en": "I want the book.", "es": "Quiero el libro." },
-            { "gr": "Το βιβλίο είναι εδώ.", "en": "The book is here.", "es": "El libro está aquí." }
-          ] },
-        { "id": "filos", "gr": "φίλος", "article": "ο", "en": "friend", "es": "amigo",
-          "pos": "noun", "gender": "m", "cat": "noun", "rank": 75, "koine": "φίλος",
-          "continuity": "Ancient φίλος 'dear one, friend'. The philo- of philosophy (love of wisdom), philanthropy, Philadelphia.",
-          "forms": [ "ο φίλος — the friend", "ένας φίλος — a friend", "τον φίλο — the friend (object)" ],
-          "phrases": [
-            { "gr": "ο φίλος", "en": "the friend", "es": "el amigo" },
-            { "gr": "Πού είναι ο φίλος;", "en": "Where is the friend?", "es": "¿Dónde está el amigo?" }
-          ] },
-        { "id": "paidi", "gr": "παιδί", "article": "το", "en": "child", "es": "niño / niña",
-          "pos": "noun", "gender": "n", "cat": "noun", "rank": 55, "koine": "παιδίον",
-          "continuity": "From ancient παιδίον 'little child' (diminutive of παῖς, παιδ-). Gives ped- (pediatric, pedagogy, encyclopedia = ἐγκύκλιος παιδεία).",
-          "forms": [ "το παιδί — the child", "ένα παιδί — a child" ],
-          "phrases": [
-            { "gr": "το παιδί", "en": "the child", "es": "el niño" },
-            { "gr": "Το παιδί είναι εδώ.", "en": "The child is here.", "es": "El niño está aquí." }
-          ] },
-        { "id": "thalassa", "gr": "θάλασσα", "article": "η", "en": "sea", "es": "mar",
-          "pos": "noun", "gender": "f", "cat": "noun", "rank": 80, "koine": "θάλασσα (Attic θάλαττα)",
-          "continuity": "The word Xenophon's ten thousand shouted on sight of the sea: θάλασσα! (Attic dialect θάλαττα). Unchanged into Modern Greek.",
-          "forms": [ "η θάλασσα — the sea", "τη θάλασσα — the sea (object)" ],
-          "phrases": [
-            { "gr": "η θάλασσα", "en": "the sea", "es": "el mar" },
-            { "gr": "Βλέπω τη θάλασσα.", "en": "I see the sea.", "es": "Veo el mar." }
-          ] }
+        { "id": "anthropos", "gr": "άνθρωπος", "article": "ο", "gender": "m", "pos": "noun", "cat": "noun", "en": "person; human being", "es": "persona", "koine": "ἄνθρωπος", "cont": "Unchanged from antiquity. Gives anthropo- (anthropology, philanthropy).", "forms": ["ο άνθρωπος — the person", "τον άνθρωπο — the person (object)", "οι άνθρωποι — the people"] },
+        { "id": "antras", "gr": "άντρας", "article": "ο", "gender": "m", "pos": "noun", "cat": "noun", "en": "man", "es": "hombre", "koine": "ἀνήρ (ἀνδρ-)", "cont": "Ancient ἀνήρ, stem ἀνδρ- → andro-, android, Andrew. Modern άντρας/άνδρας.", "forms": ["ο άντρας — the man", "τον άντρα — the man (object)"] },
+        { "id": "gynaika", "gr": "γυναίκα", "article": "η", "gender": "f", "pos": "noun", "cat": "noun", "en": "woman", "es": "mujer", "koine": "γυνή (γυναικ-)", "cont": "Ancient γυνή, stem γυναικ- → gyneco-, misogyny. Recognizable as γυναίκα.", "forms": ["η γυναίκα — the woman", "τη γυναίκα — the woman (object)"] },
+        { "id": "paidi", "gr": "παιδί", "article": "το", "gender": "n", "pos": "noun", "cat": "noun", "en": "child", "es": "niño / niña", "koine": "παιδίον (παῖς, παιδ-)", "cont": "From παιδίον; παῖς/παιδ- → ped-, pedagogy, encyclopedia.", "forms": ["το παιδί — the child", "τα παιδιά — the children"] },
+        { "id": "mitera", "gr": "μητέρα", "article": "η", "gender": "f", "pos": "noun", "cat": "noun", "en": "mother", "es": "madre", "koine": "μήτηρ", "cont": "μήτηρ → μητέρα; cf. Latin mater, English maternal, metropolis (mother-city).", "forms": ["η μητέρα — the mother", "τη μητέρα — the mother (object)"] },
+        { "id": "pateras", "gr": "πατέρας", "article": "ο", "gender": "m", "pos": "noun", "cat": "noun", "en": "father", "es": "padre", "koine": "πατήρ", "cont": "πατήρ → πατέρας; pater, paternal, patriarch.", "forms": ["ο πατέρας — the father", "τον πατέρα — the father (object)"] },
+        { "id": "filos", "gr": "φίλος", "article": "ο", "gender": "m", "pos": "noun", "cat": "noun", "en": "friend", "es": "amigo", "koine": "φίλος", "cont": "Unchanged; philo- (philosophy, Philadelphia).", "forms": ["ο φίλος — the friend", "τον φίλο — the friend (object)"] },
+        { "id": "theos", "gr": "θεός", "article": "ο", "gender": "m", "pos": "noun", "cat": "noun", "en": "god", "es": "dios", "koine": "θεός", "cont": "Unchanged; theo- (theology, atheist, enthusiasm).", "forms": ["ο θεός — the god / God", "τον θεό — (object)"] },
+        { "id": "psomi", "gr": "ψωμί", "article": "το", "gender": "n", "pos": "noun", "cat": "noun", "en": "bread", "es": "pan", "koine": "ἄρτος → ψωμί", "cont": "DRIFT: ancient bread = ἄρτος (still the liturgical word). Everyday modern ψωμί, from ψωμίον 'morsel'.", "forms": ["το ψωμί — the bread"] },
+        { "id": "nero", "gr": "νερό", "article": "το", "gender": "n", "pos": "noun", "cat": "noun", "en": "water", "es": "agua", "koine": "ὕδωρ → νερό", "cont": "DRIFT: Classical ὕδωρ (hydro-, hydrant). Modern νερό, from νηρόν 'fresh (water)'.", "forms": ["το νερό — the water"] },
+        { "id": "spiti", "gr": "σπίτι", "article": "το", "gender": "n", "pos": "noun", "cat": "noun", "en": "house; home", "es": "casa", "koine": "οἶκος → σπίτι", "cont": "DRIFT: ancient οἶκος (eco-, economy, ecology). Modern σπίτι, from Latin hospitium.", "forms": ["το σπίτι — the house", "στο σπίτι — at/to the house"] },
+        { "id": "vivlio", "gr": "βιβλίο", "article": "το", "gender": "n", "pos": "noun", "cat": "noun", "en": "book", "es": "libro", "koine": "βιβλίον", "cont": "βιβλίον → βιβλίο (final -ν dropped); Bible, bibliography.", "forms": ["το βιβλίο — the book", "ένα βιβλίο — a book"] },
+        { "id": "poli", "gr": "πόλη", "article": "η", "gender": "f", "pos": "noun", "cat": "noun", "en": "city", "es": "ciudad", "koine": "πόλις", "cont": "πόλις → πόλη; polis, metropolis, politics, police.", "forms": ["η πόλη — the city", "την πόλη — the city (object)"] },
+        { "id": "thalassa", "gr": "θάλασσα", "article": "η", "gender": "f", "pos": "noun", "cat": "noun", "en": "sea", "es": "mar", "koine": "θάλασσα (Attic θάλαττα)", "cont": "Unchanged — the cry of Xenophon's ten thousand: θάλασσα!", "forms": ["η θάλασσα — the sea", "τη θάλασσα — the sea (object)"] },
+        { "id": "ilios", "gr": "ήλιος", "article": "ο", "gender": "m", "pos": "noun", "cat": "noun", "en": "sun", "es": "sol", "koine": "ἥλιος", "cont": "Unchanged; helio-, heliocentric, perihelion.", "forms": ["ο ήλιος — the sun", "τον ήλιο — the sun (object)"] },
+        { "id": "imera", "gr": "ημέρα", "article": "η", "gender": "f", "pos": "noun", "cat": "noun", "en": "day", "es": "día", "koine": "ἡμέρα", "cont": "ἡμέρα → μέρα/ημέρα; ephemeral, ephemeris.", "forms": ["η ημέρα — the day", "καλημέρα — 'good day', hello"] },
+        { "id": "nychta", "gr": "νύχτα", "article": "η", "gender": "f", "pos": "noun", "cat": "noun", "en": "night", "es": "noche", "koine": "νύξ (νυκτ-)", "cont": "Ancient νύξ, stem νυκτ- → νύχτα; nyctalopia, cf. Latin nox.", "forms": ["η νύχτα — the night", "καληνύχτα — good night"] },
+        { "id": "dromos", "gr": "δρόμος", "article": "ο", "gender": "m", "pos": "noun", "cat": "noun", "en": "road; street", "es": "calle; camino", "koine": "ὁδός → δρόμος", "cont": "Modern δρόμος 'road, course' → -drome (hippodrome, aerodrome). Ancient street = ὁδός → method, -ode.", "forms": ["ο δρόμος — the street", "στον δρόμο — on the street"] },
+        { "id": "cheri", "gr": "χέρι", "article": "το", "gender": "n", "pos": "noun", "cat": "noun", "en": "hand; arm", "es": "mano", "koine": "χείρ (χειρ-)", "cont": "χείρ → χέρι; chiro- (chiropractor), surgery (χειρουργία 'hand-work').", "forms": ["το χέρι — the hand", "τα χέρια — the hands"] },
+        { "id": "mati", "gr": "μάτι", "article": "το", "gender": "n", "pos": "noun", "cat": "noun", "en": "eye", "es": "ojo", "koine": "ὀφθαλμός → μάτι", "cont": "DRIFT: ancient ὀφθαλμός (ophthalmology). Modern μάτι, from ὀμμάτιον 'little eye'.", "forms": ["το μάτι — the eye", "τα μάτια — the eyes"] },
+        { "id": "kardia", "gr": "καρδιά", "article": "η", "gender": "f", "pos": "noun", "cat": "noun", "en": "heart", "es": "corazón", "koine": "καρδία", "cont": "καρδία → καρδιά; cardio-, cardiac, cordial (Latin cognate).", "forms": ["η καρδιά — the heart", "την καρδιά — (object)"] },
+        { "id": "foni", "gr": "φωνή", "article": "η", "gender": "f", "pos": "noun", "cat": "noun", "en": "voice; sound", "es": "voz", "koine": "φωνή", "cont": "Unchanged; phone-, telephone, symphony, phonetics.", "forms": ["η φωνή — the voice", "τη φωνή — (object)"] },
+        { "id": "logos", "gr": "λόγος", "article": "ο", "gender": "m", "pos": "noun", "cat": "noun", "en": "word; reason; speech", "es": "palabra; razón", "koine": "λόγος", "cont": "Unchanged; logos, logic, -logy, dialogue. (John 1:1.)", "forms": ["ο λόγος — the word/reason", "τον λόγο — (object)"] },
+        { "id": "zoi", "gr": "ζωή", "article": "η", "gender": "f", "pos": "noun", "cat": "noun", "en": "life", "es": "vida", "koine": "ζωή", "cont": "Unchanged; zoo-, zodiac, protozoa.", "forms": ["η ζωή — the life", "τη ζωή — (object)"] },
+        { "id": "onoma", "gr": "όνομα", "article": "το", "gender": "n", "pos": "noun", "cat": "noun", "en": "name", "es": "nombre", "koine": "ὄνομα (ὀνοματ-)", "cont": "Unchanged; onomatopoeia, synonym, -onym, cf. Latin nomen.", "forms": ["το όνομα — the name", "το όνομά μου — my name"] },
+
+        { "id": "eimai", "gr": "είμαι", "pos": "verb", "cat": "verb", "en": "to be", "es": "ser / estar", "koine": "εἰμί", "cont": "From εἰμί; the 3rd-person είναι descends from ἐστί (John 1:1 ἦν is its imperfect).", "forms": ["είμαι — I am", "είσαι — you are", "είναι — he/she/it is"] },
+        { "id": "echo", "gr": "έχω", "pos": "verb", "cat": "verb", "en": "to have", "es": "tener", "koine": "ἔχω", "cont": "Unchanged ἔχω 'I have, hold'.", "forms": ["έχω — I have", "έχεις — you have", "έχει — he/she/it has"] },
+        { "id": "thelo", "gr": "θέλω", "pos": "verb", "cat": "verb", "en": "to want", "es": "querer", "koine": "θέλω / ἐθέλω", "cont": "Ancient θέλω/ἐθέλω 'I wish'; root of monothelitism.", "forms": ["θέλω — I want", "θέλεις — you want", "θέλει — he/she wants"] },
+        { "id": "vlepo", "gr": "βλέπω", "pos": "verb", "cat": "verb", "en": "to see", "es": "ver", "koine": "βλέπω", "cont": "βλέπω; irregular past είδε 'saw' (same root as 'idea', 'video').", "forms": ["βλέπω — I see", "βλέπει — he/she sees", "είδε — he/she saw (past)"] },
+        { "id": "akouo", "gr": "ακούω", "pos": "verb", "cat": "verb", "en": "to hear; listen", "es": "oír", "koine": "ἀκούω", "cont": "ἀκούω; acoustic, acoustics.", "forms": ["ακούω — I hear", "ακούς — you hear", "ακούει — he/she hears"] },
+        { "id": "leo", "gr": "λέω", "pos": "verb", "cat": "verb", "en": "to say; tell", "es": "decir", "koine": "λέγω", "cont": "λέγω → λέω; the -logos/-logy root, dialect, lexicon.", "forms": ["λέω — I say", "λες — you say", "λέει — he/she says"] },
+        { "id": "troo", "gr": "τρώω", "pos": "verb", "cat": "verb", "en": "to eat", "es": "comer", "koine": "τρώγω / ἐσθίω", "cont": "Modern τρώω from τρώγω; irregular past έφαγε 'ate' (root ἔφαγον → -phagous, esophagus).", "forms": ["τρώω — I eat", "τρώει — he/she eats", "έφαγε — he/she ate (past)"] },
+        { "id": "pino", "gr": "πίνω", "pos": "verb", "cat": "verb", "en": "to drink", "es": "beber", "koine": "πίνω", "cont": "πίνω; irregular past ήπιε 'drank'. Cf. Latin cognate → potion, potable.", "forms": ["πίνω — I drink", "πίνει — he/she drinks", "ήπιε — he/she drank (past)"] },
+        { "id": "grafo", "gr": "γράφω", "pos": "verb", "cat": "verb", "en": "to write", "es": "escribir", "koine": "γράφω", "cont": "γράφω; graph-, -graphy, grammar; past έγραψε.", "forms": ["γράφω — I write", "γράφει — he/she writes", "έγραψε — he/she wrote (past)"] },
+        { "id": "diavazo", "gr": "διαβάζω", "pos": "verb", "cat": "verb", "en": "to read", "es": "leer", "koine": "ἀναγιγνώσκω (anc.)", "cont": "Modern διαβάζω (ancient 'read aloud' was ἀναγιγνώσκω); past διάβασε.", "forms": ["διαβάζω — I read", "διαβάζει — he/she reads", "διάβασε — he/she read (past)"] },
+        { "id": "xero", "gr": "ξέρω", "pos": "verb", "cat": "verb", "en": "to know (facts)", "es": "saber", "koine": "γιγνώσκω / οἶδα (anc.)", "cont": "Modern ξέρω; ancient γιγνώσκω → gnostic, diagnosis; οἶδα.", "forms": ["ξέρω — I know", "ξέρεις — you know", "ξέρει — he/she knows"] },
+        { "id": "agapo", "gr": "αγαπώ", "pos": "verb", "cat": "verb", "en": "to love", "es": "amar", "koine": "ἀγαπάω", "cont": "ἀγαπάω → αγαπώ; the noun ἀγάπη, agape.", "forms": ["αγαπώ — I love", "αγαπάς — you love", "αγαπάει — he/she loves"] },
+        { "id": "dino", "gr": "δίνω", "pos": "verb", "cat": "verb", "en": "to give", "es": "dar", "koine": "δίδωμι → δίνω", "cont": "δίδωμι → δίνω; dose, antidote, anecdote.", "forms": ["δίνω — I give", "δίνεις — you give", "δίνει — he/she gives"] },
+        { "id": "ferno", "gr": "φέρνω", "pos": "verb", "cat": "verb", "en": "to bring", "es": "traer", "koine": "φέρω → φέρνω", "cont": "φέρω → φέρνω; -phore (metaphor, amphora), cf. Latin ferre.", "forms": ["φέρνω — I bring", "φέρνεις — you bring", "φέρνει — he/she brings"] },
+        { "id": "erchomai", "gr": "έρχομαι", "pos": "verb", "cat": "verb", "en": "to come", "es": "venir", "koine": "ἔρχομαι", "cont": "ἔρχομαι — a deponent (middle form, active sense), then and now.", "forms": ["έρχομαι — I come", "έρχεσαι — you come", "έρχεται — he/she comes"] },
+        { "id": "pigaino", "gr": "πηγαίνω", "pos": "verb", "cat": "verb", "en": "to go", "es": "ir", "koine": "βαίνω / πορεύομαι (anc.)", "cont": "Modern πηγαίνω/πάω; ancient 'go' = βαίνω → -basis, base, acrobat.", "forms": ["πηγαίνω / πάω — I go", "πηγαίνει / πάει — he/she goes"] },
+        { "id": "meno", "gr": "μένω", "pos": "verb", "cat": "verb", "en": "to stay; live (reside)", "es": "quedarse; vivir", "koine": "μένω", "cont": "μένω 'remain'; cf. Latin manere, English remain, permanent.", "forms": ["μένω — I stay/live", "μένεις — you stay", "μένει — he/she stays"] },
+        { "id": "zo", "gr": "ζω", "pos": "verb", "cat": "verb", "en": "to live; be alive", "es": "vivir", "koine": "ζάω / ζῶ", "cont": "ζάω/ζῶ → ζω; zoo-, biology, the noun ζωή.", "forms": ["ζω — I live", "ζεις — you live", "ζει — he/she lives"] },
+        { "id": "vrisko", "gr": "βρίσκω", "pos": "verb", "cat": "verb", "en": "to find", "es": "encontrar", "koine": "εὑρίσκω → βρίσκω", "cont": "εὑρίσκω → βρίσκω; Archimedes' εὕρηκα — 'I have found it!'", "forms": ["βρίσκω — I find", "βρίσκεις — you find", "βρίσκει — he/she finds"] },
+        { "id": "fovamai", "gr": "φοβάμαι", "pos": "verb", "cat": "verb", "en": "to fear; be afraid", "es": "temer", "koine": "φοβέομαι", "cont": "φοβέομαι → φοβάμαι (deponent); phobia, hydrophobia.", "forms": ["φοβάμαι — I fear", "φοβάσαι — you fear", "φοβάται — he/she fears"] },
+        { "id": "trecho", "gr": "τρέχω", "pos": "verb", "cat": "verb", "en": "to run", "es": "correr", "koine": "τρέχω", "cont": "τρέχω; trochee, trochanter (a 'runner').", "forms": ["τρέχω — I run", "τρέχει — he/she runs", "τρέχουν — they run"] },
+        { "id": "perpato", "gr": "περπατώ", "pos": "verb", "cat": "verb", "en": "to walk", "es": "caminar", "koine": "περιπατέω", "cont": "περιπατέω → περπατώ; peripatetic (Aristotle taught while walking).", "forms": ["περπατώ — I walk", "περπατάς — you walk", "περπατάει — he/she walks"] },
+        { "id": "koimamai", "gr": "κοιμάμαι", "pos": "verb", "cat": "verb", "en": "to sleep", "es": "dormir", "koine": "κοιμάομαι", "cont": "κοιμάομαι (deponent); cemetery = κοιμητήριον, 'sleeping-place'.", "forms": ["κοιμάμαι — I sleep", "κοιμάσαι — you sleep", "κοιμάται — he/she sleeps"] },
+        { "id": "anoigo", "gr": "ανοίγω", "pos": "verb", "cat": "verb", "en": "to open", "es": "abrir", "koine": "ἀνοίγω", "cont": "ἀνοίγω; unchanged.", "forms": ["ανοίγω — I open", "ανοίγεις — you open", "ανοίγει — he/she opens"] },
+        { "id": "fevgo", "gr": "φεύγω", "pos": "verb", "cat": "verb", "en": "to leave; go away", "es": "irse; salir", "koine": "φεύγω", "cont": "φεύγω; cf. Latin fugere → fugitive, refuge.", "forms": ["φεύγω — I leave", "φεύγεις — you leave", "φεύγει — he/she leaves"] }
+      ],
+      "sentences": [
+        { "gr": "Ο άνθρωπος είναι εδώ.", "en": "The person is here.", "voice": "charon", "explain": "Ο άνθρωπος — 'the person'. 'Ο' is the masculine word for 'the', and the subject of a sentence stands in the nominative — its plain, dictionary form. είναι — 'is'. εδώ — 'here'." },
+        { "gr": "Ο άντρας τρώει ψωμί.", "en": "The man eats bread.", "voice": "aoede", "explain": "Ο άντρας — 'the man', the subject, nominative. τρώει — 'eats', third person singular, present tense. ψωμί — 'bread', the object. Objects take the accusative — but for neuter nouns like ψωμί, the accusative looks identical to the nominative." },
+        { "gr": "Η γυναίκα πίνει νερό.", "en": "The woman drinks water.", "voice": "kore", "explain": "A feminine noun now: η γυναίκα. 'Η' is the feminine 'the'. πίνει — 'drinks'. νερό — 'water', neuter, the object." },
+        { "gr": "Το παιδί διαβάζει ένα βιβλίο.", "en": "The child reads a book.", "voice": "charon", "explain": "Το παιδί — 'the child'. 'Το' is the neuter 'the'. διαβάζει — 'reads'. ένα βιβλίο — 'a book'; 'ένα' is the neuter 'a' or 'one', used only when you mean one particular thing." },
+        { "gr": "Ο άνθρωπος βλέπει τη θάλασσα.", "en": "The person sees the sea.", "voice": "aoede", "explain": "βλέπει — 'sees'. τη θάλασσα — 'the sea'. Watch the article: as a subject the feminine 'the' is η, but as an OBJECT it becomes την — and before certain sounds the -ν drops, giving τη. Your first look at the article declining." },
+        { "gr": "Η μητέρα αγαπάει το παιδί.", "en": "The mother loves the child.", "voice": "kore", "explain": "η μητέρα — 'the mother'. αγαπάει — 'loves', from αγαπώ, the root of the Greek word agápe. το παιδί — 'the child', object; neuter, so unchanged." },
+        { "gr": "Ο φίλος μου έρχεται στο σπίτι.", "en": "My friend comes to the house.", "voice": "charon", "explain": "ο φίλος μου — 'my friend'; 'μου' placed after the noun means 'my'. έρχεται — 'comes', a deponent verb: middle in form, active in meaning, exactly as in ancient Greek. στο σπίτι — 'to the house'; the preposition σε plus το merges into στο." },
+        { "gr": "Χθες το παιδί διάβασε ένα βιβλίο.", "en": "Yesterday the child read a book.", "voice": "aoede", "explain": "Χθες — 'yesterday'. Now the past: διάβασε — 'read', the simple past (aorist) of διαβάζω. Notice the ending becomes -ε for he/she/it in the past." },
+        { "gr": "Η γυναίκα έφαγε ψωμί.", "en": "The woman ate bread.", "voice": "kore", "explain": "έφαγε — 'ate'. The past of τρώω is completely irregular, from the ancient root ἔφαγον — just like English 'eat / ate'. Greek's commonest verbs have irregular pasts; learn them as pairs: τρώει / έφαγε." },
+        { "gr": "Ο άντρας ήπιε νερό.", "en": "The man drank water.", "voice": "charon", "explain": "ήπιε — 'drank', the irregular past of πίνω. Present πίνει, past ήπιε." },
+        { "gr": "Το παιδί είδε τη θάλασσα.", "en": "The child saw the sea.", "voice": "aoede", "explain": "είδε — 'saw', the irregular past of βλέπω. Present βλέπει, past είδε — the same ancient root that gives us 'idea' and, through Latin, 'video'." },
+        { "gr": "Ο άνθρωπος δεν τρώει.", "en": "The person isn't eating.", "voice": "kore", "explain": "δεν — 'not'. To negate a verb, put δεν directly in front of it: δεν τρώει, 'does not eat'. This δεν descends from the ancient οὐδέν, 'nothing'." },
+        { "gr": "Βλέπω τον ήλιο.", "en": "I see the sun.", "voice": "charon", "explain": "βλέπω — 'I see', the first-person form. τον ήλιο — 'the sun'. ήλιος is masculine, and as the object it takes the accusative: ο ήλιος becomes τον ήλιο — both the article and the noun change." },
+        { "gr": "Ο φίλος μου έχει ένα σπίτι.", "en": "My friend has a house.", "voice": "aoede", "explain": "έχει — 'has', from έχω. ένα σπίτι — 'a house', neuter." },
+        { "gr": "Η ημέρα και η νύχτα.", "en": "The day and the night.", "voice": "kore", "explain": "και — 'and', unchanged for three thousand years. Two feminine nouns, both nominative: η ημέρα, η νύχτα." },
+        { "gr": "Τα παιδιά τρέχουν.", "en": "The children run.", "voice": "charon", "explain": "The plural. Το παιδί, 'the child', becomes τα παιδιά, 'the children' — the neuter plural 'the' is τα and the noun ends in -ά. τρέχουν — 'they run', with the plural ending -ουν." },
+        { "gr": "Ο άντρας και η γυναίκα περπατούν στον δρόμο.", "en": "The man and the woman walk in the street.", "voice": "aoede", "explain": "Two subjects joined by και take a plural verb: περπατούν, 'they walk'. στον δρόμο — 'in the street': σε plus τον, the masculine accusative." },
+        { "gr": "Πού είναι το βιβλίο;", "en": "Where is the book?", "voice": "kore", "explain": "Πού — 'where'. And the punctuation: a Greek question ends with what looks like a semicolon ( ; ), never a question mark." },
+        { "gr": "Το παιδί κοιμάται.", "en": "The child is sleeping.", "voice": "charon", "explain": "κοιμάται — 'sleeps, is sleeping', from κοιμάμαι, another deponent verb. Its root gives us 'cemetery' — literally a sleeping-place." },
+        { "gr": "Ο άνθρωπος ζει.", "en": "The person lives.", "voice": "aoede", "explain": "ζει — 'lives', from ζω — the zoo- of zoology, and the noun ζωή, 'life'. One of the shortest and oldest words in the language." }
       ]
     }
   ]

@@ -9,7 +9,7 @@
       "engine": "google"
     }
   },
-  "count": 101,
+  "count": 212,
   "clips": {
     "john-1-1": {
       "voice": "charon",
@@ -51,6 +51,706 @@
       "ref": "1:5",
       "source": "john"
     },
+    "v-anthropos--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "άνθρωπος",
+      "word": "anthropos"
+    },
+    "v-anthropos--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "άνθρωπος",
+      "word": "anthropos"
+    },
+    "v-anthropos--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "άνθρωπος",
+      "word": "anthropos"
+    },
+    "v-anthropos--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "person",
+      "word": "anthropos"
+    },
+    "v-antras--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "άντρας",
+      "word": "antras"
+    },
+    "v-antras--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "άντρας",
+      "word": "antras"
+    },
+    "v-antras--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "άντρας",
+      "word": "antras"
+    },
+    "v-antras--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "man",
+      "word": "antras"
+    },
+    "v-gynaika--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "γυναίκα",
+      "word": "gynaika"
+    },
+    "v-gynaika--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "γυναίκα",
+      "word": "gynaika"
+    },
+    "v-gynaika--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "γυναίκα",
+      "word": "gynaika"
+    },
+    "v-gynaika--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "woman",
+      "word": "gynaika"
+    },
+    "v-paidi--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "παιδί",
+      "word": "paidi"
+    },
+    "v-paidi--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "παιδί",
+      "word": "paidi"
+    },
+    "v-paidi--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "παιδί",
+      "word": "paidi"
+    },
+    "v-paidi--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "child",
+      "word": "paidi"
+    },
+    "v-mitera--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "μητέρα",
+      "word": "mitera"
+    },
+    "v-mitera--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "μητέρα",
+      "word": "mitera"
+    },
+    "v-mitera--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "μητέρα",
+      "word": "mitera"
+    },
+    "v-mitera--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "mother",
+      "word": "mitera"
+    },
+    "v-pateras--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "πατέρας",
+      "word": "pateras"
+    },
+    "v-pateras--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "πατέρας",
+      "word": "pateras"
+    },
+    "v-pateras--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "πατέρας",
+      "word": "pateras"
+    },
+    "v-pateras--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "father",
+      "word": "pateras"
+    },
+    "v-filos--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "φίλος",
+      "word": "filos"
+    },
+    "v-filos--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "φίλος",
+      "word": "filos"
+    },
+    "v-filos--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "φίλος",
+      "word": "filos"
+    },
+    "v-filos--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "friend",
+      "word": "filos"
+    },
+    "v-theos--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "θεός",
+      "word": "theos"
+    },
+    "v-theos--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "θεός",
+      "word": "theos"
+    },
+    "v-theos--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "θεός",
+      "word": "theos"
+    },
+    "v-theos--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "god",
+      "word": "theos"
+    },
+    "v-psomi--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "ψωμί",
+      "word": "psomi"
+    },
+    "v-psomi--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "ψωμί",
+      "word": "psomi"
+    },
+    "v-psomi--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "ψωμί",
+      "word": "psomi"
+    },
+    "v-psomi--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "bread",
+      "word": "psomi"
+    },
+    "v-nero--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "νερό",
+      "word": "nero"
+    },
+    "v-nero--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "νερό",
+      "word": "nero"
+    },
+    "v-nero--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "νερό",
+      "word": "nero"
+    },
+    "v-nero--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "water",
+      "word": "nero"
+    },
+    "v-spiti--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "σπίτι",
+      "word": "spiti"
+    },
+    "v-spiti--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "σπίτι",
+      "word": "spiti"
+    },
+    "v-spiti--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "σπίτι",
+      "word": "spiti"
+    },
+    "v-spiti--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "house",
+      "word": "spiti"
+    },
+    "v-vivlio--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "βιβλίο",
+      "word": "vivlio"
+    },
+    "v-vivlio--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "βιβλίο",
+      "word": "vivlio"
+    },
+    "v-vivlio--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "βιβλίο",
+      "word": "vivlio"
+    },
+    "v-vivlio--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "book",
+      "word": "vivlio"
+    },
+    "v-poli--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "πόλη",
+      "word": "poli"
+    },
+    "v-poli--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "πόλη",
+      "word": "poli"
+    },
+    "v-poli--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "πόλη",
+      "word": "poli"
+    },
+    "v-poli--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "city",
+      "word": "poli"
+    },
+    "v-thalassa--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "θάλασσα",
+      "word": "thalassa"
+    },
+    "v-thalassa--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "θάλασσα",
+      "word": "thalassa"
+    },
+    "v-thalassa--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "θάλασσα",
+      "word": "thalassa"
+    },
+    "v-thalassa--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "sea",
+      "word": "thalassa"
+    },
+    "v-ilios--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "ήλιος",
+      "word": "ilios"
+    },
+    "v-ilios--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "ήλιος",
+      "word": "ilios"
+    },
+    "v-ilios--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "ήλιος",
+      "word": "ilios"
+    },
+    "v-ilios--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "sun",
+      "word": "ilios"
+    },
+    "v-imera--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "ημέρα",
+      "word": "imera"
+    },
+    "v-imera--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "ημέρα",
+      "word": "imera"
+    },
+    "v-imera--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "ημέρα",
+      "word": "imera"
+    },
+    "v-imera--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "day",
+      "word": "imera"
+    },
+    "v-nychta--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "νύχτα",
+      "word": "nychta"
+    },
+    "v-nychta--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "νύχτα",
+      "word": "nychta"
+    },
+    "v-nychta--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "νύχτα",
+      "word": "nychta"
+    },
+    "v-nychta--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "night",
+      "word": "nychta"
+    },
+    "v-dromos--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "δρόμος",
+      "word": "dromos"
+    },
+    "v-dromos--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "δρόμος",
+      "word": "dromos"
+    },
+    "v-dromos--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "δρόμος",
+      "word": "dromos"
+    },
+    "v-dromos--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "road",
+      "word": "dromos"
+    },
+    "v-cheri--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "χέρι",
+      "word": "cheri"
+    },
+    "v-cheri--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "χέρι",
+      "word": "cheri"
+    },
+    "v-cheri--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "χέρι",
+      "word": "cheri"
+    },
+    "v-cheri--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "hand",
+      "word": "cheri"
+    },
+    "v-mati--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "μάτι",
+      "word": "mati"
+    },
+    "v-mati--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "μάτι",
+      "word": "mati"
+    },
+    "v-mati--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "μάτι",
+      "word": "mati"
+    },
+    "v-mati--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "eye",
+      "word": "mati"
+    },
+    "v-kardia--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "καρδιά",
+      "word": "kardia"
+    },
+    "v-kardia--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "καρδιά",
+      "word": "kardia"
+    },
+    "v-kardia--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "καρδιά",
+      "word": "kardia"
+    },
+    "v-kardia--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "heart",
+      "word": "kardia"
+    },
+    "v-foni--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "φωνή",
+      "word": "foni"
+    },
+    "v-foni--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "φωνή",
+      "word": "foni"
+    },
+    "v-foni--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "φωνή",
+      "word": "foni"
+    },
+    "v-foni--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "voice",
+      "word": "foni"
+    },
+    "v-logos--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "λόγος",
+      "word": "logos"
+    },
+    "v-logos--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "λόγος",
+      "word": "logos"
+    },
+    "v-logos--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "λόγος",
+      "word": "logos"
+    },
+    "v-logos--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "word",
+      "word": "logos"
+    },
+    "v-zoi--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "ζωή",
+      "word": "zoi"
+    },
+    "v-zoi--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "ζωή",
+      "word": "zoi"
+    },
+    "v-zoi--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "ζωή",
+      "word": "zoi"
+    },
+    "v-zoi--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "life",
+      "word": "zoi"
+    },
+    "v-onoma--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "όνομα",
+      "word": "onoma"
+    },
+    "v-onoma--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "όνομα",
+      "word": "onoma"
+    },
+    "v-onoma--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "όνομα",
+      "word": "onoma"
+    },
+    "v-onoma--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "name",
+      "word": "onoma"
+    },
     "v-eimai--charon": {
       "voice": "charon",
       "gender": "m",
@@ -77,20 +777,6 @@
       "gender": "m",
       "kind": "gloss",
       "text": "to be",
-      "word": "eimai"
-    },
-    "v-eimai-p1--aoede": {
-      "voice": "aoede",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "Είμαι εδώ.",
-      "word": "eimai"
-    },
-    "v-eimai-p2--kore": {
-      "voice": "kore",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "Πού είσαι;",
       "word": "eimai"
     },
     "v-echo--charon": {
@@ -121,20 +807,6 @@
       "text": "to have",
       "word": "echo"
     },
-    "v-echo-p1--aoede": {
-      "voice": "aoede",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "Έχω νερό.",
-      "word": "echo"
-    },
-    "v-echo-p2--kore": {
-      "voice": "kore",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "Έχεις ένα βιβλίο;",
-      "word": "echo"
-    },
     "v-thelo--charon": {
       "voice": "charon",
       "gender": "m",
@@ -161,20 +833,6 @@
       "gender": "m",
       "kind": "gloss",
       "text": "to want",
-      "word": "thelo"
-    },
-    "v-thelo-p1--aoede": {
-      "voice": "aoede",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "Θέλω νερό.",
-      "word": "thelo"
-    },
-    "v-thelo-p2--kore": {
-      "voice": "kore",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "Τι θέλεις;",
       "word": "thelo"
     },
     "v-vlepo--charon": {
@@ -205,19 +863,285 @@
       "text": "to see",
       "word": "vlepo"
     },
-    "v-vlepo-p1--aoede": {
+    "v-akouo--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "ακούω",
+      "word": "akouo"
+    },
+    "v-akouo--aoede": {
       "voice": "aoede",
       "gender": "f",
-      "kind": "phrase",
-      "text": "Βλέπω τη θάλασσα.",
-      "word": "vlepo"
+      "kind": "word",
+      "text": "ακούω",
+      "word": "akouo"
     },
-    "v-vlepo-p2--kore": {
+    "v-akouo--kore": {
       "voice": "kore",
       "gender": "f",
-      "kind": "phrase",
-      "text": "Τι βλέπεις;",
-      "word": "vlepo"
+      "kind": "word",
+      "text": "ακούω",
+      "word": "akouo"
+    },
+    "v-akouo--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "to hear",
+      "word": "akouo"
+    },
+    "v-leo--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "λέω",
+      "word": "leo"
+    },
+    "v-leo--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "λέω",
+      "word": "leo"
+    },
+    "v-leo--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "λέω",
+      "word": "leo"
+    },
+    "v-leo--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "to say",
+      "word": "leo"
+    },
+    "v-troo--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "τρώω",
+      "word": "troo"
+    },
+    "v-troo--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "τρώω",
+      "word": "troo"
+    },
+    "v-troo--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "τρώω",
+      "word": "troo"
+    },
+    "v-troo--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "to eat",
+      "word": "troo"
+    },
+    "v-pino--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "πίνω",
+      "word": "pino"
+    },
+    "v-pino--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "πίνω",
+      "word": "pino"
+    },
+    "v-pino--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "πίνω",
+      "word": "pino"
+    },
+    "v-pino--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "to drink",
+      "word": "pino"
+    },
+    "v-grafo--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "γράφω",
+      "word": "grafo"
+    },
+    "v-grafo--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "γράφω",
+      "word": "grafo"
+    },
+    "v-grafo--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "γράφω",
+      "word": "grafo"
+    },
+    "v-grafo--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "to write",
+      "word": "grafo"
+    },
+    "v-diavazo--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "διαβάζω",
+      "word": "diavazo"
+    },
+    "v-diavazo--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "διαβάζω",
+      "word": "diavazo"
+    },
+    "v-diavazo--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "διαβάζω",
+      "word": "diavazo"
+    },
+    "v-diavazo--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "to read",
+      "word": "diavazo"
+    },
+    "v-xero--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "ξέρω",
+      "word": "xero"
+    },
+    "v-xero--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "ξέρω",
+      "word": "xero"
+    },
+    "v-xero--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "ξέρω",
+      "word": "xero"
+    },
+    "v-xero--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "to know",
+      "word": "xero"
+    },
+    "v-agapo--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "αγαπώ",
+      "word": "agapo"
+    },
+    "v-agapo--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "αγαπώ",
+      "word": "agapo"
+    },
+    "v-agapo--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "αγαπώ",
+      "word": "agapo"
+    },
+    "v-agapo--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "to love",
+      "word": "agapo"
+    },
+    "v-dino--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "δίνω",
+      "word": "dino"
+    },
+    "v-dino--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "δίνω",
+      "word": "dino"
+    },
+    "v-dino--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "δίνω",
+      "word": "dino"
+    },
+    "v-dino--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "to give",
+      "word": "dino"
+    },
+    "v-ferno--charon": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "word",
+      "text": "φέρνω",
+      "word": "ferno"
+    },
+    "v-ferno--aoede": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "word",
+      "text": "φέρνω",
+      "word": "ferno"
+    },
+    "v-ferno--kore": {
+      "voice": "kore",
+      "gender": "f",
+      "kind": "word",
+      "text": "φέρνω",
+      "word": "ferno"
+    },
+    "v-ferno--en": {
+      "voice": "en",
+      "gender": "m",
+      "kind": "gloss",
+      "text": "to bring",
+      "word": "ferno"
     },
     "v-erchomai--charon": {
       "voice": "charon",
@@ -247,432 +1171,285 @@
       "text": "to come",
       "word": "erchomai"
     },
-    "v-erchomai-p1--aoede": {
-      "voice": "aoede",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "Ο φίλος έρχεται.",
-      "word": "erchomai"
-    },
-    "v-erchomai-p2--kore": {
-      "voice": "kore",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "Έρχομαι!",
-      "word": "erchomai"
-    },
-    "v-kai--charon": {
+    "v-pigaino--charon": {
       "voice": "charon",
       "gender": "m",
       "kind": "word",
-      "text": "και",
-      "word": "kai"
+      "text": "πηγαίνω",
+      "word": "pigaino"
     },
-    "v-kai--aoede": {
+    "v-pigaino--aoede": {
       "voice": "aoede",
       "gender": "f",
       "kind": "word",
-      "text": "και",
-      "word": "kai"
+      "text": "πηγαίνω",
+      "word": "pigaino"
     },
-    "v-kai--kore": {
+    "v-pigaino--kore": {
       "voice": "kore",
       "gender": "f",
       "kind": "word",
-      "text": "και",
-      "word": "kai"
+      "text": "πηγαίνω",
+      "word": "pigaino"
     },
-    "v-kai--en": {
+    "v-pigaino--en": {
       "voice": "en",
       "gender": "m",
       "kind": "gloss",
-      "text": "and",
-      "word": "kai"
+      "text": "to go",
+      "word": "pigaino"
     },
-    "v-kai-p1--aoede": {
-      "voice": "aoede",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "ο άνθρωπος και το παιδί",
-      "word": "kai"
-    },
-    "v-den--charon": {
+    "v-meno--charon": {
       "voice": "charon",
       "gender": "m",
       "kind": "word",
-      "text": "δεν",
-      "word": "den"
+      "text": "μένω",
+      "word": "meno"
     },
-    "v-den--aoede": {
+    "v-meno--aoede": {
       "voice": "aoede",
       "gender": "f",
       "kind": "word",
-      "text": "δεν",
-      "word": "den"
+      "text": "μένω",
+      "word": "meno"
     },
-    "v-den--kore": {
+    "v-meno--kore": {
       "voice": "kore",
       "gender": "f",
       "kind": "word",
-      "text": "δεν",
-      "word": "den"
+      "text": "μένω",
+      "word": "meno"
     },
-    "v-den--en": {
+    "v-meno--en": {
       "voice": "en",
       "gender": "m",
       "kind": "gloss",
-      "text": "not",
-      "word": "den"
+      "text": "to stay",
+      "word": "meno"
     },
-    "v-den-p1--aoede": {
-      "voice": "aoede",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "Δεν είμαι εδώ.",
-      "word": "den"
-    },
-    "v-den-p2--kore": {
-      "voice": "kore",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "Δεν θέλω νερό.",
-      "word": "den"
-    },
-    "v-pou--charon": {
+    "v-zo--charon": {
       "voice": "charon",
       "gender": "m",
       "kind": "word",
-      "text": "πού",
-      "word": "pou"
+      "text": "ζω",
+      "word": "zo"
     },
-    "v-pou--aoede": {
+    "v-zo--aoede": {
       "voice": "aoede",
       "gender": "f",
       "kind": "word",
-      "text": "πού",
-      "word": "pou"
+      "text": "ζω",
+      "word": "zo"
     },
-    "v-pou--kore": {
+    "v-zo--kore": {
       "voice": "kore",
       "gender": "f",
       "kind": "word",
-      "text": "πού",
-      "word": "pou"
+      "text": "ζω",
+      "word": "zo"
     },
-    "v-pou--en": {
+    "v-zo--en": {
       "voice": "en",
       "gender": "m",
       "kind": "gloss",
-      "text": "where",
-      "word": "pou"
+      "text": "to live",
+      "word": "zo"
     },
-    "v-pou-p1--aoede": {
-      "voice": "aoede",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "Πού είναι το νερό;",
-      "word": "pou"
-    },
-    "v-edo--charon": {
+    "v-vrisko--charon": {
       "voice": "charon",
       "gender": "m",
       "kind": "word",
-      "text": "εδώ",
-      "word": "edo"
+      "text": "βρίσκω",
+      "word": "vrisko"
     },
-    "v-edo--aoede": {
+    "v-vrisko--aoede": {
       "voice": "aoede",
       "gender": "f",
       "kind": "word",
-      "text": "εδώ",
-      "word": "edo"
+      "text": "βρίσκω",
+      "word": "vrisko"
     },
-    "v-edo--kore": {
+    "v-vrisko--kore": {
       "voice": "kore",
       "gender": "f",
       "kind": "word",
-      "text": "εδώ",
-      "word": "edo"
+      "text": "βρίσκω",
+      "word": "vrisko"
     },
-    "v-edo--en": {
+    "v-vrisko--en": {
       "voice": "en",
       "gender": "m",
       "kind": "gloss",
-      "text": "here",
-      "word": "edo"
+      "text": "to find",
+      "word": "vrisko"
     },
-    "v-edo-p1--aoede": {
-      "voice": "aoede",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "Ο άνθρωπος είναι εδώ.",
-      "word": "edo"
-    },
-    "v-anthropos--charon": {
+    "v-fovamai--charon": {
       "voice": "charon",
       "gender": "m",
       "kind": "word",
-      "text": "άνθρωπος",
-      "word": "anthropos"
+      "text": "φοβάμαι",
+      "word": "fovamai"
     },
-    "v-anthropos--aoede": {
+    "v-fovamai--aoede": {
       "voice": "aoede",
       "gender": "f",
       "kind": "word",
-      "text": "άνθρωπος",
-      "word": "anthropos"
+      "text": "φοβάμαι",
+      "word": "fovamai"
     },
-    "v-anthropos--kore": {
+    "v-fovamai--kore": {
       "voice": "kore",
       "gender": "f",
       "kind": "word",
-      "text": "άνθρωπος",
-      "word": "anthropos"
+      "text": "φοβάμαι",
+      "word": "fovamai"
     },
-    "v-anthropos--en": {
+    "v-fovamai--en": {
       "voice": "en",
       "gender": "m",
       "kind": "gloss",
-      "text": "person",
-      "word": "anthropos"
+      "text": "to fear",
+      "word": "fovamai"
     },
-    "v-anthropos-p1--aoede": {
-      "voice": "aoede",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "ο άνθρωπος",
-      "word": "anthropos"
-    },
-    "v-anthropos-p2--kore": {
-      "voice": "kore",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "Ο άνθρωπος έρχεται.",
-      "word": "anthropos"
-    },
-    "v-anthropos-p3--charon": {
-      "voice": "charon",
-      "gender": "m",
-      "kind": "phrase",
-      "text": "Πού είναι ο άνθρωπος;",
-      "word": "anthropos"
-    },
-    "v-nero--charon": {
+    "v-trecho--charon": {
       "voice": "charon",
       "gender": "m",
       "kind": "word",
-      "text": "νερό",
-      "word": "nero"
+      "text": "τρέχω",
+      "word": "trecho"
     },
-    "v-nero--aoede": {
+    "v-trecho--aoede": {
       "voice": "aoede",
       "gender": "f",
       "kind": "word",
-      "text": "νερό",
-      "word": "nero"
+      "text": "τρέχω",
+      "word": "trecho"
     },
-    "v-nero--kore": {
+    "v-trecho--kore": {
       "voice": "kore",
       "gender": "f",
       "kind": "word",
-      "text": "νερό",
-      "word": "nero"
+      "text": "τρέχω",
+      "word": "trecho"
     },
-    "v-nero--en": {
+    "v-trecho--en": {
       "voice": "en",
       "gender": "m",
       "kind": "gloss",
-      "text": "water",
-      "word": "nero"
+      "text": "to run",
+      "word": "trecho"
     },
-    "v-nero-p1--aoede": {
-      "voice": "aoede",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "το νερό",
-      "word": "nero"
-    },
-    "v-nero-p2--kore": {
-      "voice": "kore",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "Θέλω νερό.",
-      "word": "nero"
-    },
-    "v-vivlio--charon": {
+    "v-perpato--charon": {
       "voice": "charon",
       "gender": "m",
       "kind": "word",
-      "text": "βιβλίο",
-      "word": "vivlio"
+      "text": "περπατώ",
+      "word": "perpato"
     },
-    "v-vivlio--aoede": {
+    "v-perpato--aoede": {
       "voice": "aoede",
       "gender": "f",
       "kind": "word",
-      "text": "βιβλίο",
-      "word": "vivlio"
+      "text": "περπατώ",
+      "word": "perpato"
     },
-    "v-vivlio--kore": {
+    "v-perpato--kore": {
       "voice": "kore",
       "gender": "f",
       "kind": "word",
-      "text": "βιβλίο",
-      "word": "vivlio"
+      "text": "περπατώ",
+      "word": "perpato"
     },
-    "v-vivlio--en": {
+    "v-perpato--en": {
       "voice": "en",
       "gender": "m",
       "kind": "gloss",
-      "text": "book",
-      "word": "vivlio"
+      "text": "to walk",
+      "word": "perpato"
     },
-    "v-vivlio-p1--aoede": {
-      "voice": "aoede",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "το βιβλίο",
-      "word": "vivlio"
-    },
-    "v-vivlio-p2--kore": {
-      "voice": "kore",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "Θέλω το βιβλίο.",
-      "word": "vivlio"
-    },
-    "v-vivlio-p3--charon": {
-      "voice": "charon",
-      "gender": "m",
-      "kind": "phrase",
-      "text": "Το βιβλίο είναι εδώ.",
-      "word": "vivlio"
-    },
-    "v-filos--charon": {
+    "v-koimamai--charon": {
       "voice": "charon",
       "gender": "m",
       "kind": "word",
-      "text": "φίλος",
-      "word": "filos"
+      "text": "κοιμάμαι",
+      "word": "koimamai"
     },
-    "v-filos--aoede": {
+    "v-koimamai--aoede": {
       "voice": "aoede",
       "gender": "f",
       "kind": "word",
-      "text": "φίλος",
-      "word": "filos"
+      "text": "κοιμάμαι",
+      "word": "koimamai"
     },
-    "v-filos--kore": {
+    "v-koimamai--kore": {
       "voice": "kore",
       "gender": "f",
       "kind": "word",
-      "text": "φίλος",
-      "word": "filos"
+      "text": "κοιμάμαι",
+      "word": "koimamai"
     },
-    "v-filos--en": {
+    "v-koimamai--en": {
       "voice": "en",
       "gender": "m",
       "kind": "gloss",
-      "text": "friend",
-      "word": "filos"
+      "text": "to sleep",
+      "word": "koimamai"
     },
-    "v-filos-p1--aoede": {
-      "voice": "aoede",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "ο φίλος",
-      "word": "filos"
-    },
-    "v-filos-p2--kore": {
-      "voice": "kore",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "Πού είναι ο φίλος;",
-      "word": "filos"
-    },
-    "v-paidi--charon": {
+    "v-anoigo--charon": {
       "voice": "charon",
       "gender": "m",
       "kind": "word",
-      "text": "παιδί",
-      "word": "paidi"
+      "text": "ανοίγω",
+      "word": "anoigo"
     },
-    "v-paidi--aoede": {
+    "v-anoigo--aoede": {
       "voice": "aoede",
       "gender": "f",
       "kind": "word",
-      "text": "παιδί",
-      "word": "paidi"
+      "text": "ανοίγω",
+      "word": "anoigo"
     },
-    "v-paidi--kore": {
+    "v-anoigo--kore": {
       "voice": "kore",
       "gender": "f",
       "kind": "word",
-      "text": "παιδί",
-      "word": "paidi"
+      "text": "ανοίγω",
+      "word": "anoigo"
     },
-    "v-paidi--en": {
+    "v-anoigo--en": {
       "voice": "en",
       "gender": "m",
       "kind": "gloss",
-      "text": "child",
-      "word": "paidi"
+      "text": "to open",
+      "word": "anoigo"
     },
-    "v-paidi-p1--aoede": {
-      "voice": "aoede",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "το παιδί",
-      "word": "paidi"
-    },
-    "v-paidi-p2--kore": {
-      "voice": "kore",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "Το παιδί είναι εδώ.",
-      "word": "paidi"
-    },
-    "v-thalassa--charon": {
+    "v-fevgo--charon": {
       "voice": "charon",
       "gender": "m",
       "kind": "word",
-      "text": "θάλασσα",
-      "word": "thalassa"
+      "text": "φεύγω",
+      "word": "fevgo"
     },
-    "v-thalassa--aoede": {
+    "v-fevgo--aoede": {
       "voice": "aoede",
       "gender": "f",
       "kind": "word",
-      "text": "θάλασσα",
-      "word": "thalassa"
+      "text": "φεύγω",
+      "word": "fevgo"
     },
-    "v-thalassa--kore": {
+    "v-fevgo--kore": {
       "voice": "kore",
       "gender": "f",
       "kind": "word",
-      "text": "θάλασσα",
-      "word": "thalassa"
+      "text": "φεύγω",
+      "word": "fevgo"
     },
-    "v-thalassa--en": {
+    "v-fevgo--en": {
       "voice": "en",
       "gender": "m",
       "kind": "gloss",
-      "text": "sea",
-      "word": "thalassa"
-    },
-    "v-thalassa-p1--aoede": {
-      "voice": "aoede",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "η θάλασσα",
-      "word": "thalassa"
-    },
-    "v-thalassa-p2--kore": {
-      "voice": "kore",
-      "gender": "f",
-      "kind": "phrase",
-      "text": "Βλέπω τη θάλασσα.",
-      "word": "thalassa"
+      "text": "to leave",
+      "word": "fevgo"
     },
     "mod-kalimera": {
       "voice": "aoede",

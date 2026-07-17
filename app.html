@@ -223,6 +223,13 @@ table.para thead th{font-family:var(--ui);font-size:13px;color:var(--ink-soft);b
 .phr{display:flex;align-items:center;gap:9px;padding:7px 0;border-top:1px dashed var(--line)}
 .phr .pg{font-family:var(--greek);font-size:18px;color:var(--ink);flex:1}
 .phr .pe{font-size:13px;color:var(--ink-soft)}
+.abbox{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:14px 16px;margin:8px 0 4px}
+.abbox b{font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--gold)}
+.abbox p{font-size:13.5px;color:var(--ink-soft);margin:.4em 0 10px;line-height:1.5}
+.transrow{border-top:1px solid var(--line);padding:11px 0}
+.transrow .tg{font-family:var(--greek);font-size:20px;color:var(--ink)}
+.transrow .te{font-size:14px;color:var(--accent-soft);font-weight:600;margin:2px 0}
+.transrow .tx{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
 .loading{text-align:center;color:var(--ink-soft);padding:60px 0;font-size:15px}
 .footer{text-align:center;color:var(--ink-soft);font-size:12px;opacity:.7;margin-top:40px}
 </style>
@@ -595,9 +602,13 @@ function renderGym(arg){
     h+='<h2 style="font-family:var(--ui);font-size:23px">'+esc(L.title)+'</h2>';
     h+='<p class="body" style="color:var(--ink-soft);font-size:15px">Put it in your pocket and listen. Hear a word, hear the meaning, then say it aloud in the pause. Three voices, sentences, and cumulative review — no tapping needed.</p>';
     h+='<audio id="gymaudio" controls preload="metadata" style="width:100%;margin:14px 0" src="'+esc(gymUrl(L.gym_id))+'"></audio>';
+    if(L.sample){h+='<div class="abbox"><b>Voice experiment</b><p>The lesson above uses an English narrator for the explanations. Here a Greek voice (Charon) reads the same English — tighter Greek, slightly accented English. Which do you prefer?</p><audio controls preload="none" style="width:100%" src="'+esc(gymUrl(L.sample.gym_id))+'"></audio></div>';}
     if(lesson){h+='<div class="section-h">Words in this lesson — tap to preview</div><div class="chips">';
       lesson.words.forEach(w=>{h+='<span class="chip" onclick="playClip(\''+wordClip(w.id,'charon')+'\')"><span class="g">'+esc(w.gr)+'</span>'+esc(clean(w.en))+'</span>';});
-      h+='</div>';}
+      h+='</div>';
+      if(lesson.sentences){h+='<div class="section-h">Sentences &amp; explanations — the transcript</div>';
+        lesson.sentences.forEach(sn=>{h+='<div class="transrow"><div class="tg">'+esc(sn.gr)+'</div><div class="te">'+esc(sn.en)+'</div><div class="tx">'+esc(sn.explain)+'</div></div>';});}
+    }
     h+='</div>';$('view').innerHTML=h;
     return;
   }
@@ -606,7 +617,7 @@ function renderGym(arg){
   h+='<div class="subtitle">Pimsleur-style sessions you can do while driving or walking — introduce, drill, build sentences, review. Screen off is fine; it plays straight through.</div>';
   g.lessons.forEach(L=>{const m=Math.floor(L.seconds/60),s=L.seconds%60;
     h+='<button class="card" onclick="go(\'gym/'+esc(L.id)+'\')"><span class="gkbadge">▶</span>'+
-      '<span class="ct"><b>'+esc(L.title)+'</b><span>'+esc(L.id)+' · '+m+'m'+(s<10?'0':'')+s+'s · '+L.words+' words</span></span>'+
+      '<span class="ct"><b>'+esc(L.title)+'</b><span>'+esc(L.id)+' · '+m+'m'+(s<10?'0':'')+s+'s · '+L.words+' words · '+(L.sentences||0)+' sentences</span></span>'+
       '<span class="chk">›</span></button>';});
   $('view').innerHTML=h;
 }

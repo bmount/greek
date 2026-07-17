@@ -1,5 +1,5 @@
 // Ἑλληνικά service worker — bump VER whenever any cached file changes.
-const VER = 'grk-v03';
+const VER = 'grk-v04';
 const CORE = [
   './',
   './index.html',
