@@ -3,3 +3,7 @@ audio_build/
 # scratch
 *.log
 .DS_Store
+
+# python bytecode
+__pycache__/
+*.pyc
