@@ -1,0 +1,81 @@
+{
+  "id": "john",
+  "title": "Κατὰ Ἰωάννην",
+  "title_en": "The Gospel according to John",
+  "ref": "1:1–5",
+  "era": "Koine",
+  "blurb": "The Prologue. Famously the most accessible doorway into Koine Greek — short clauses, heavy repetition, and a vocabulary loaded with words English already owns (λόγος → logos, ζωή → zoo-, φῶς → photo-). Read it once and you have read the Gospel's opening in the language it was written in.",
+  "verses": [
+    { "ref": "1:1", "tokens": [
+      { "w": "Ἐν", "lemma": "ἐν", "parse": "preposition (+ dative)", "gloss_en": "in", "gloss_es": "en", "deriv": "en-/em-: energy (ἐν + ἔργον), enthusiasm, emphasis", "concepts": ["prepositions"] },
+      { "w": "ἀρχῇ", "lemma": "ἀρχή", "parse": "noun · dative singular feminine · 1st declension", "gloss_en": "beginning; first principle", "gloss_es": "principio; comienzo", "deriv": "arche, archetype, archaic, anarchy, monarch, archangel", "concepts": ["decl1", "cases"] },
+      { "w": "ἦν", "lemma": "εἰμί", "parse": "verb · imperfect active indicative · 3rd singular", "gloss_en": "was (continuously)", "gloss_es": "era; estaba", "deriv": "cf. Latin esse → essence; ontology (ὄντ-)", "concepts": ["imperfect-eimi"], "note": "Imperfect = ongoing past state: 'was [and kept on being]'. The prologue leans on it three times." },
+      { "w": "ὁ", "lemma": "ὁ", "parse": "article · nominative singular masculine", "gloss_en": "the", "gloss_es": "el", "concepts": ["article"] },
+      { "w": "λόγος", "after": ",", "lemma": "λόγος", "parse": "noun · nominative singular masculine · 2nd declension", "gloss_en": "word; reason; account", "gloss_es": "palabra; verbo; razón", "deriv": "logos, logic, -logy, eulogy, prologue, analogy, dialogue", "concepts": ["decl2", "cases"] },
+      { "w": "καὶ", "lemma": "καί", "parse": "conjunction", "gloss_en": "and; even", "gloss_es": "y", "concepts": ["conjunctions"] },
+      { "w": "ὁ", "lemma": "ὁ", "parse": "article · nominative singular masculine", "gloss_en": "the", "gloss_es": "el", "concepts": ["article"] },
+      { "w": "λόγος", "lemma": "λόγος", "parse": "noun · nominative singular masculine · 2nd declension", "gloss_en": "word; reason", "gloss_es": "palabra; razón", "deriv": "logos, logic, -logy, eulogy, prologue", "concepts": ["decl2", "cases"] },
+      { "w": "ἦν", "lemma": "εἰμί", "parse": "verb · imperfect active indicative · 3rd singular", "gloss_en": "was", "gloss_es": "era; estaba", "concepts": ["imperfect-eimi"] },
+      { "w": "πρὸς", "lemma": "πρός", "parse": "preposition (+ accusative here)", "gloss_en": "toward; with; face-to-face with", "gloss_es": "hacia; con", "deriv": "pros-: prosthesis, prosody, prosopopoeia", "concepts": ["prepositions"], "note": "With the accusative, πρός can carry the sense of being 'with' someone face-to-face — relational, not merely locational." },
+      { "w": "τὸν", "lemma": "ὁ", "parse": "article · accusative singular masculine", "gloss_en": "the", "gloss_es": "el", "concepts": ["article"] },
+      { "w": "θεόν", "after": ",", "lemma": "θεός", "parse": "noun · accusative singular masculine · 2nd declension", "gloss_en": "God", "gloss_es": "Dios", "deriv": "theo-: theology, theism, atheist, apotheosis, pantheon, enthusiasm (ἔνθεος)", "concepts": ["decl2", "cases"] },
+      { "w": "καὶ", "lemma": "καί", "parse": "conjunction", "gloss_en": "and", "gloss_es": "y", "concepts": ["conjunctions"] },
+      { "w": "θεὸς", "lemma": "θεός", "parse": "noun · nominative singular masculine · 2nd declension", "gloss_en": "God (predicate)", "gloss_es": "Dios (predicado)", "deriv": "theo-: theology, apotheosis, pantheon", "concepts": ["decl2", "predicate-nominative"], "note": "Anarthrous (no article) predicate nominative placed BEFORE the verb — θεὸς ἦν ὁ λόγος. This word order marks θεός as qualitative: 'the Word was God [in nature]', not 'a god' and not identifying the Word as the whole of God. A single grammatical choice carrying the weight of centuries of theology." },
+      { "w": "ἦν", "lemma": "εἰμί", "parse": "verb · imperfect active indicative · 3rd singular", "gloss_en": "was", "gloss_es": "era", "concepts": ["imperfect-eimi"] },
+      { "w": "ὁ", "lemma": "ὁ", "parse": "article · nominative singular masculine", "gloss_en": "the", "gloss_es": "el", "concepts": ["article"] },
+      { "w": "λόγος", "after": ".", "lemma": "λόγος", "parse": "noun · nominative singular masculine · 2nd declension", "gloss_en": "word", "gloss_es": "palabra", "deriv": "logos, -logy, eulogy", "concepts": ["decl2", "predicate-nominative"], "note": "The subject is the arthrous (with-article) ὁ λόγος; θεός is the predicate. The article tells you which noun is the subject even though θεός comes first." }
+    ] },
+    { "ref": "1:2", "tokens": [
+      { "w": "οὗτος", "lemma": "οὗτος", "parse": "demonstrative pronoun · nominative singular masculine", "gloss_en": "this one; he", "gloss_es": "éste; él", "deriv": "—", "concepts": ["demonstrative-houtos"] },
+      { "w": "ἦν", "lemma": "εἰμί", "parse": "verb · imperfect active indicative · 3rd singular", "gloss_en": "was", "gloss_es": "era", "concepts": ["imperfect-eimi"] },
+      { "w": "ἐν", "lemma": "ἐν", "parse": "preposition (+ dative)", "gloss_en": "in", "gloss_es": "en", "deriv": "en-/em-: energy, enthusiasm", "concepts": ["prepositions"] },
+      { "w": "ἀρχῇ", "lemma": "ἀρχή", "parse": "noun · dative singular feminine · 1st declension", "gloss_en": "beginning", "gloss_es": "principio", "deriv": "arche, archetype, anarchy, monarch", "concepts": ["decl1", "cases"] },
+      { "w": "πρὸς", "lemma": "πρός", "parse": "preposition (+ accusative)", "gloss_en": "with; toward", "gloss_es": "con; hacia", "deriv": "pros-: prosthesis, prosody", "concepts": ["prepositions"] },
+      { "w": "τὸν", "lemma": "ὁ", "parse": "article · accusative singular masculine", "gloss_en": "the", "gloss_es": "el", "concepts": ["article"] },
+      { "w": "θεόν", "after": ".", "lemma": "θεός", "parse": "noun · accusative singular masculine · 2nd declension", "gloss_en": "God", "gloss_es": "Dios", "deriv": "theo-: theology, apotheosis", "concepts": ["decl2", "cases"] }
+    ] },
+    { "ref": "1:3", "tokens": [
+      { "w": "πάντα", "lemma": "πᾶς", "parse": "adjective · nominative/accusative neuter plural · 3rd declension", "gloss_en": "all things; everything", "gloss_es": "todas las cosas; todo", "deriv": "pan-: panorama, pantheon, panoply, pandemic, panacea, diapason", "concepts": ["decl3", "pas"] },
+      { "w": "δι᾽", "lemma": "διά", "parse": "preposition (+ genitive)", "gloss_en": "through; by means of", "gloss_es": "por; a través de", "deriv": "dia-: diameter, diagonal, diaspora, dialogue, diaphanous", "concepts": ["prepositions"], "note": "Elided form of διά before a vowel — the α drops and an apostrophe marks it: δι᾽ αὐτοῦ." },
+      { "w": "αὐτοῦ", "lemma": "αὐτός", "parse": "pronoun · genitive singular masculine", "gloss_en": "him; of him", "gloss_es": "de él", "deriv": "auto-: automatic, autonomy, autograph, tautology (τὸ αὐτό)", "concepts": ["pronoun-autos"] },
+      { "w": "ἐγένετο", "after": ",", "lemma": "γίνομαι", "parse": "verb · aorist middle indicative · 3rd singular", "gloss_en": "came into being; was made", "gloss_es": "llegó a ser; fue hecho", "deriv": "gen-: genesis, genetic, -gen, genealogy, cosmogony", "concepts": ["aorist"], "note": "γίνομαι is deponent — middle in form, active in meaning. Aorist = a single completed event, viewed as a whole." },
+      { "w": "καὶ", "lemma": "καί", "parse": "conjunction", "gloss_en": "and", "gloss_es": "y", "concepts": ["conjunctions"] },
+      { "w": "χωρὶς", "lemma": "χωρίς", "parse": "improper preposition / adverb (+ genitive)", "gloss_en": "apart from; without", "gloss_es": "aparte de; sin", "deriv": "cf. χῶρος 'space' → chorography", "concepts": ["prepositions"] },
+      { "w": "αὐτοῦ", "lemma": "αὐτός", "parse": "pronoun · genitive singular masculine", "gloss_en": "him", "gloss_es": "él", "deriv": "auto-: automatic, autonomy", "concepts": ["pronoun-autos"] },
+      { "w": "ἐγένετο", "lemma": "γίνομαι", "parse": "verb · aorist middle indicative · 3rd singular", "gloss_en": "came into being", "gloss_es": "llegó a ser", "deriv": "gen-: genesis, genetic", "concepts": ["aorist"] },
+      { "w": "οὐδὲ", "lemma": "οὐδέ", "parse": "conjunction / adverb", "gloss_en": "not even; and not; nor", "gloss_es": "ni; ni siquiera", "concepts": ["negation"] },
+      { "w": "ἓν", "lemma": "εἷς", "parse": "numeral / adjective · nominative/accusative neuter singular", "gloss_en": "one (thing)", "gloss_es": "uno (una cosa)", "deriv": "hen-: henotheism, henotic; cf. 'hendiadys'", "concepts": ["heis"], "note": "Neuter of εἷς, μία, ἕν — 'one'. Note the rough breathing (ἕν) vs. the preposition ἐν (smooth) — a one-mark difference." },
+      { "w": "ὃ", "lemma": "ὅς", "parse": "relative pronoun · nominative singular neuter", "gloss_en": "which; that", "gloss_es": "que; lo cual", "concepts": ["relative-hos"] },
+      { "w": "γέγονεν", "after": ".", "lemma": "γίνομαι", "parse": "verb · perfect active indicative · 3rd singular", "gloss_en": "has come into being", "gloss_es": "ha llegado a ser", "deriv": "gen-: genesis, -gen", "concepts": ["perfect"], "note": "Perfect = a completed past act whose result still stands. The tense shift from aorist ἐγένετο to perfect γέγονεν is deliberate: things 'came to be' (event) and now 'stand as having come to be' (result)." }
+    ] },
+    { "ref": "1:4", "tokens": [
+      { "w": "ἐν", "lemma": "ἐν", "parse": "preposition (+ dative)", "gloss_en": "in", "gloss_es": "en", "deriv": "en-: energy, enthusiasm", "concepts": ["prepositions"] },
+      { "w": "αὐτῷ", "lemma": "αὐτός", "parse": "pronoun · dative singular masculine/neuter", "gloss_en": "him; it", "gloss_es": "él; ello", "deriv": "auto-: autonomy, autograph", "concepts": ["pronoun-autos"] },
+      { "w": "ζωὴ", "lemma": "ζωή", "parse": "noun · nominative singular feminine · 1st declension", "gloss_en": "life", "gloss_es": "vida", "deriv": "zoo-: zoology, zodiac, protozoa, -zoa", "concepts": ["decl1"] },
+      { "w": "ἦν", "after": ",", "lemma": "εἰμί", "parse": "verb · imperfect active indicative · 3rd singular", "gloss_en": "was", "gloss_es": "era; había", "concepts": ["imperfect-eimi"] },
+      { "w": "καὶ", "lemma": "καί", "parse": "conjunction", "gloss_en": "and", "gloss_es": "y", "concepts": ["conjunctions"] },
+      { "w": "ἡ", "lemma": "ὁ", "parse": "article · nominative singular feminine", "gloss_en": "the", "gloss_es": "la", "concepts": ["article"] },
+      { "w": "ζωὴ", "lemma": "ζωή", "parse": "noun · nominative singular feminine · 1st declension", "gloss_en": "life", "gloss_es": "vida", "deriv": "zoo-: zoology, protozoa", "concepts": ["decl1"] },
+      { "w": "ἦν", "lemma": "εἰμί", "parse": "verb · imperfect active indicative · 3rd singular", "gloss_en": "was", "gloss_es": "era", "concepts": ["imperfect-eimi"] },
+      { "w": "τὸ", "lemma": "ὁ", "parse": "article · nominative/accusative singular neuter", "gloss_en": "the", "gloss_es": "la", "concepts": ["article"] },
+      { "w": "φῶς", "lemma": "φῶς", "parse": "noun · nominative/accusative singular neuter · 3rd declension", "gloss_en": "light", "gloss_es": "luz", "deriv": "phos-/photo-: photograph, phosphorus, phosphene, photon", "concepts": ["decl3"] },
+      { "w": "τῶν", "lemma": "ὁ", "parse": "article · genitive plural (all genders)", "gloss_en": "of the", "gloss_es": "de los", "concepts": ["article"] },
+      { "w": "ἀνθρώπων", "after": "·", "lemma": "ἄνθρωπος", "parse": "noun · genitive plural masculine · 2nd declension", "gloss_en": "of men; of human beings", "gloss_es": "de los hombres; de los seres humanos", "deriv": "anthropo-: anthropology, misanthrope, philanthropy, anthropomorphic", "concepts": ["decl2", "cases"], "note": "The · is the Greek ano teleia (high point) — a colon/semicolon, a medium pause." }
+    ] },
+    { "ref": "1:5", "tokens": [
+      { "w": "καὶ", "lemma": "καί", "parse": "conjunction", "gloss_en": "and", "gloss_es": "y", "concepts": ["conjunctions"] },
+      { "w": "τὸ", "lemma": "ὁ", "parse": "article · nominative/accusative singular neuter", "gloss_en": "the", "gloss_es": "la", "concepts": ["article"] },
+      { "w": "φῶς", "lemma": "φῶς", "parse": "noun · nominative/accusative singular neuter · 3rd declension", "gloss_en": "light", "gloss_es": "luz", "deriv": "photo-: photograph, phosphorus", "concepts": ["decl3"] },
+      { "w": "ἐν", "lemma": "ἐν", "parse": "preposition (+ dative)", "gloss_en": "in", "gloss_es": "en", "deriv": "en-: energy", "concepts": ["prepositions"] },
+      { "w": "τῇ", "lemma": "ὁ", "parse": "article · dative singular feminine", "gloss_en": "the", "gloss_es": "la", "concepts": ["article"] },
+      { "w": "σκοτίᾳ", "lemma": "σκοτία", "parse": "noun · dative singular feminine · 1st declension", "gloss_en": "darkness", "gloss_es": "oscuridad; tiniebla", "deriv": "scoto-: scotoma, scotopic, scotophobia", "concepts": ["decl1"] },
+      { "w": "φαίνει", "after": ",", "lemma": "φαίνω", "parse": "verb · present active indicative · 3rd singular", "gloss_en": "shines; appears", "gloss_es": "brilla; aparece", "deriv": "phaino-/phen-: phenomenon, phantom, phase, epiphany, diaphanous, fantasy", "concepts": ["present-active"], "note": "Present tense in the middle of an aorist/imperfect narrative — the light 'shines', ongoing and timeless." },
+      { "w": "καὶ", "lemma": "καί", "parse": "conjunction", "gloss_en": "and", "gloss_es": "y", "concepts": ["conjunctions"] },
+      { "w": "ἡ", "lemma": "ὁ", "parse": "article · nominative singular feminine", "gloss_en": "the", "gloss_es": "la", "concepts": ["article"] },
+      { "w": "σκοτία", "lemma": "σκοτία", "parse": "noun · nominative singular feminine · 1st declension", "gloss_en": "darkness", "gloss_es": "oscuridad", "deriv": "scoto-: scotoma, scotopic", "concepts": ["decl1"] },
+      { "w": "αὐτὸ", "lemma": "αὐτός", "parse": "pronoun · accusative singular neuter", "gloss_en": "it", "gloss_es": "lo", "deriv": "auto-: automatic", "concepts": ["pronoun-autos"] },
+      { "w": "οὐ", "lemma": "οὐ", "parse": "adverb of negation", "gloss_en": "not", "gloss_es": "no", "concepts": ["negation"] },
+      { "w": "κατέλαβεν", "after": ".", "lemma": "καταλαμβάνω", "parse": "verb · aorist active indicative · 3rd singular", "gloss_en": "overcame; grasped; comprehended", "gloss_es": "venció; comprendió; alcanzó", "deriv": "κατα- (catalog, catastrophe) + λαμβάνω (syllable, epilepsy, catalepsy)", "concepts": ["aorist"], "note": "Deliberately double-edged: κατέλαβεν means both 'overcame/seized' and 'grasped/understood'. 'The darkness did not overcome it' AND 'did not comprehend it' — John almost certainly means both." }
+    ] }
+  ]
+}

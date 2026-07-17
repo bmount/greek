@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4ecd8">
+<title>Ἑλληνικά — Greek across the ages</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<style>
+:root{
+  --bg:#f4ecd8; --panel:#fbf6ea; --ink:#26211a; --ink-soft:#5c5344;
+  --line:#e0d4b8; --accent:#8a2b1f; --accent-soft:#b5502f;
+  --gold:#a07b2d; --sel:#f6e2a8; --link:#7a3a12;
+  --shadow:0 8px 30px rgba(60,40,10,.18);
+  --greek:"Palatino Linotype","Book Antiqua",Palatino,Georgia,"Times New Roman",serif;
+  --ui:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#191510;--panel:#221c14;--ink:#ece3d0;--ink-soft:#b3a488;
+    --line:#3a3022;--accent:#e0855f;--accent-soft:#e0855f;--gold:#d7b25e;
+    --sel:#4a3c1c;--link:#e6a86a;--shadow:0 8px 30px rgba(0,0,0,.5);}
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--ui);
+  line-height:1.5;font-size:17px;overflow-x:hidden}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px 120px}
+
+/* ---- top bar ---- */
+header.top{position:sticky;top:0;z-index:20;background:var(--bg);
+  border-bottom:1px solid var(--line);padding:10px 0 0;
+  padding-top:calc(10px + env(safe-area-inset-top))}
+.top-in{max-width:720px;margin:0 auto;padding:0 18px;
+  display:flex;align-items:center;gap:12px}
+.brand{font-family:var(--greek);font-size:22px;font-weight:600;color:var(--accent);
+  letter-spacing:.5px;margin-right:auto;text-decoration:none}
+.iconbtn{border:1px solid var(--line);background:var(--panel);color:var(--ink-soft);
+  border-radius:9px;padding:6px 10px;font-size:14px;cursor:pointer;font-family:var(--ui)}
+.iconbtn:active{transform:scale(.96)}
+.langtog{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.langtog button{border:0;background:var(--panel);color:var(--ink-soft);
+  padding:6px 11px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--ui)}
+.langtog button.on{background:var(--accent);color:#fff}
+.tabs{max-width:720px;margin:0 auto;padding:8px 18px 0;display:flex;gap:6px}
+.tab{flex:1;text-align:center;border:0;border-bottom:2.5px solid transparent;
+  background:none;color:var(--ink-soft);font-family:var(--ui);font-size:15px;
+  font-weight:600;padding:8px 4px 10px;cursor:pointer}
+.tab.on{color:var(--accent);border-color:var(--accent)}
+
+/* ---- reading ---- */
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.8px;
+  text-transform:uppercase;color:var(--gold);border:1px solid var(--line);
+  border-radius:20px;padding:3px 10px;margin:14px 0 6px}
+h1.title{font-family:var(--greek);font-size:34px;line-height:1.15;margin:.1em 0 .05em;
+  color:var(--ink)}
+.subtitle{font-family:var(--ui);color:var(--ink-soft);font-size:15px;margin:0 0 2px}
+.ref{color:var(--accent-soft);font-weight:600;font-size:14px}
+.blurb{font-size:15.5px;color:var(--ink-soft);border-left:3px solid var(--line);
+  padding:2px 0 2px 14px;margin:16px 0 8px;font-style:italic;line-height:1.55}
+.hint{font-size:13px;color:var(--ink-soft);opacity:.85;margin:18px 0 6px;
+  display:flex;align-items:center;gap:7px}
+.hint .dot{width:16px;height:16px;border-radius:50%;background:var(--sel);
+  border:1px solid var(--gold);display:inline-block}
+
+.verse{margin:6px 0 4px;padding:9px 0;border-bottom:1px dashed var(--line)}
+.vnum{font-family:var(--ui);font-size:12px;font-weight:700;color:var(--gold);
+  vertical-align:super;margin-right:8px;user-select:none}
+.gk{font-family:var(--greek);font-size:25px;line-height:1.85;color:var(--ink)}
+.tok{cursor:pointer;border-radius:5px;padding:1px 2px;transition:background .12s;
+  border-bottom:1px dotted transparent}
+@media(hover:hover){.tok:hover{background:var(--sel);border-bottom-color:var(--gold)}}
+.tok.act{background:var(--sel);border-bottom-color:var(--accent)}
+.tok.flash{animation:flash 1.6s ease}
+@keyframes flash{0%,40%{background:var(--accent);color:#fff}100%{background:transparent}}
+.punct{font-family:var(--greek);font-size:25px;color:var(--ink)}
+
+/* ---- textbook ---- */
+.chline{font-size:12px;font-weight:700;letter-spacing:.5px;color:var(--gold);
+  text-transform:uppercase;margin:22px 0 8px}
+.card{display:flex;align-items:center;gap:14px;background:var(--panel);
+  border:1px solid var(--line);border-radius:13px;padding:14px 16px;margin:9px 0;
+  cursor:pointer;transition:transform .1s,box-shadow .15s;text-align:left;width:100%;
+  font-family:var(--ui);color:inherit}
+.card:active{transform:scale(.99)}
+@media(hover:hover){.card:hover{box-shadow:var(--shadow)}}
+.card .gkbadge{font-family:var(--greek);font-size:23px;color:var(--accent);
+  min-width:58px;text-align:center;line-height:1.1}
+.card .ct{flex:1}
+.card .ct b{font-size:16px;font-weight:600;display:block}
+.card .ct span{font-size:13px;color:var(--ink-soft)}
+.card .chk{color:var(--gold);font-size:17px;min-width:20px;text-align:right}
+.catpill{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;
+  color:var(--ink-soft);background:var(--bg);border:1px solid var(--line);
+  border-radius:20px;padding:2px 8px;margin-left:6px}
+
+/* ---- concept / lexicon detail ---- */
+.back{display:inline-flex;align-items:center;gap:6px;background:none;border:0;
+  color:var(--accent);font-family:var(--ui);font-size:14px;font-weight:600;
+  cursor:pointer;padding:16px 0 6px;margin-left:-2px}
+.detail h2{font-family:var(--greek);font-size:28px;margin:.2em 0 .1em;color:var(--ink)}
+.detail .biggk{font-family:var(--greek);font-size:32px;color:var(--accent);margin:2px 0 10px}
+.body{font-size:16px;line-height:1.62}
+.body p{margin:.7em 0}
+.body b{color:var(--ink)}
+.body i{color:var(--accent-soft)}
+.body ul{padding-left:20px;margin:.6em 0}
+.body li{margin:.35em 0}
+table.para{border-collapse:collapse;width:100%;margin:16px 0;font-family:var(--greek);
+  font-size:19px;background:var(--panel);border-radius:10px;overflow:hidden}
+table.para caption{caption-side:top;font-family:var(--ui);font-size:12.5px;
+  font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.5px;
+  text-align:left;padding:0 0 7px}
+table.para th,table.para td{border:1px solid var(--line);padding:7px 10px;text-align:center}
+table.para tr td:first-child,table.para th:first-child{font-family:var(--ui);font-size:13px;
+  font-weight:700;color:var(--ink-soft);text-align:left;background:var(--bg)}
+table.para thead th{font-family:var(--ui);font-size:13px;color:var(--ink-soft);background:var(--bg)}
+.tblwrap{overflow-x:auto}
+.section-h{font-family:var(--ui);font-size:12px;font-weight:700;letter-spacing:.6px;
+  text-transform:uppercase;color:var(--gold);margin:22px 0 8px;
+  border-top:1px solid var(--line);padding-top:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--panel);
+  border:1px solid var(--line);border-radius:20px;padding:6px 13px;font-size:13.5px;
+  font-weight:600;color:var(--link);cursor:pointer;font-family:var(--ui)}
+.chip .g{font-family:var(--greek);font-size:15px;color:var(--accent)}
+.chip:active{transform:scale(.97)}
+.occ{display:inline-flex;align-items:baseline;gap:8px;background:var(--panel);
+  border:1px solid var(--line);border-radius:10px;padding:8px 13px;margin:5px 7px 0 0;
+  cursor:pointer;font-family:var(--greek);font-size:20px;color:var(--ink)}
+.occ small{font-family:var(--ui);font-size:11.5px;color:var(--accent-soft);font-weight:700}
+
+/* ---- parse sheet ---- */
+.backdrop{position:fixed;inset:0;background:rgba(30,20,5,.42);z-index:40;opacity:0;
+  pointer-events:none;transition:opacity .2s}
+.backdrop.show{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--panel);
+  border-radius:20px 20px 0 0;box-shadow:var(--shadow);
+  padding:8px 20px calc(26px + env(safe-area-inset-bottom));
+  max-width:720px;margin:0 auto;transform:translateY(102%);transition:transform .26s cubic-bezier(.2,.8,.2,1);
+  max-height:82vh;overflow-y:auto}
+.sheet.show{transform:translateY(0)}
+.grip{width:40px;height:4px;border-radius:3px;background:var(--line);margin:8px auto 12px}
+.sheet .surf{font-family:var(--greek);font-size:40px;color:var(--accent);
+  line-height:1.1;margin:2px 0 2px}
+.sheet .lemrow{font-family:var(--ui);font-size:13.5px;color:var(--ink-soft);margin-bottom:12px}
+.sheet .lemrow b{font-family:var(--greek);font-size:18px;color:var(--link);
+  cursor:pointer;border-bottom:1px dotted var(--link)}
+.plabel{font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;
+  color:var(--gold);margin:14px 0 3px}
+.parse{font-size:15.5px;color:var(--ink);font-weight:500}
+.gloss{font-family:var(--greek);font-size:21px;color:var(--ink)}
+.deriv{font-size:14.5px;color:var(--ink-soft);line-height:1.5}
+.deriv b{color:var(--accent-soft);font-family:var(--ui);font-weight:700;font-size:11px;
+  letter-spacing:.5px;text-transform:uppercase;display:block;margin-bottom:2px}
+.note{font-size:14.5px;color:var(--ink-soft);line-height:1.55;font-style:italic;
+  border-left:3px solid var(--gold);padding:3px 0 3px 12px;margin-top:6px;background:var(--bg)}
+.learn-h{font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;
+  color:var(--gold);margin:16px 0 7px}
+
+/* ---- settings ---- */
+.settings{background:var(--panel);border:1px solid var(--line);border-radius:13px;
+  padding:16px;margin:16px 0}
+.settings h3{margin:0 0 8px;font-size:16px}
+.loading{text-align:center;color:var(--ink-soft);padding:60px 0;font-size:15px}
+.footer{text-align:center;color:var(--ink-soft);font-size:12px;opacity:.7;margin-top:40px}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="#reading" onclick="go('reading');return false;">Ἑλληνικά</a>
+    <div class="langtog" id="langtog">
+      <button data-l="en" class="on" onclick="setLang('en')">EN</button>
+      <button data-l="es" onclick="setLang('es')">ES</button>
+    </div>
+    <button class="iconbtn" onclick="go('settings')" aria-label="Settings">⚙</button>
+  </div>
+  <div class="tabs">
+    <button class="tab" id="tab-reading" onclick="go('reading')">Reading</button>
+    <button class="tab" id="tab-textbook" onclick="go('textbook')">Textbook</button>
+  </div>
+</header>
+
+<div class="wrap"><div id="view"><div class="loading">Loading Greek…</div></div>
+  <div class="footer">Ἑλληνικά · Greek across the ages · one continuous tradition</div>
+</div>
+
+<div class="backdrop" id="backdrop" onclick="closeSheet()"></div>
+<div class="sheet" id="sheet"></div>
+
+<script>
+const state={lang:'en',john:null,grammar:null,concept:{},tokens:[]};
+const $=id=>document.getElementById(id);
+const esc=s=>(s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---------- persistence ---------- */
+function loadPrefs(){try{state.lang=localStorage.getItem('grk_lang')||'en';}catch(e){}}
+function readSet(){try{return new Set(JSON.parse(localStorage.getItem('grk_progress')||'[]'));}catch(e){return new Set();}}
+function markRead(id){try{const s=readSet();s.add(id);localStorage.setItem('grk_progress',JSON.stringify([...s]));}catch(e){}}
+
+/* ---------- data ---------- */
+async function boot(){
+  loadPrefs();
+  document.querySelectorAll('#langtog button').forEach(b=>b.classList.toggle('on',b.dataset.l===state.lang));
+  try{
+    const [j,g]=await Promise.all([
+      fetch('data/texts/john.json').then(r=>r.json()),
+      fetch('data/grammar.json').then(r=>r.json())
+    ]);
+    state.john=j; state.grammar=g;
+    g.concepts.forEach(c=>state.concept[c.id]=c);
+    // flatten tokens with stable positions
+    j.verses.forEach(v=>v.tokens.forEach((t,i)=>{t._ref=v.ref;t._i=i;t._id=v.ref+'#'+i;state.tokens.push(t);}));
+    route();
+  }catch(e){
+    $('view').innerHTML='<div class="loading">Could not load course data.<br><small>'+esc(e.message)+'</small></div>';
+  }
+}
+window.addEventListener('hashchange',route);
+
+/* ---------- routing ---------- */
+function go(v){location.hash=v;}
+function route(){
+  const h=location.hash.replace(/^#/,'')||'reading';
+  const [base,arg]=h.split('/');
+  setTabs(base);
+  if(base==='reading')renderReading();
+  else if(base==='textbook')renderTextbook();
+  else if(base==='concept')renderConcept(arg);
+  else if(base==='lex')renderLexicon(decodeURIComponent(arg||''));
+  else if(base==='settings')renderSettings();
+  else renderReading();
+  window.scrollTo(0,0);
+}
+function setTabs(base){
+  const r=(base==='reading');const t=(base==='textbook'||base==='concept');
+  $('tab-reading').classList.toggle('on',r);
+  $('tab-textbook').classList.toggle('on',t);
+}
+
+/* ---------- reading ---------- */
+function renderReading(){
+  const j=state.john;
+  let html='<div class="tag">Koine · '+esc(j.era)+'</div>';
+  html+='<h1 class="title">'+esc(j.title)+'</h1>';
+  html+='<div class="subtitle">'+esc(j.title_en)+' · <span class="ref">'+esc(j.ref)+'</span></div>';
+  html+='<div class="blurb">'+esc(j.blurb)+'</div>';
+  html+='<div class="hint"><span class="dot"></span>Tap any word for its parse, gloss, and a link into the grammar.</div>';
+  j.verses.forEach(v=>{
+    html+='<div class="verse" id="v-'+v.ref.replace(/[:]/g,'_')+'"><span class="gk"><span class="vnum">'+esc(v.ref)+'</span>';
+    v.tokens.forEach((t,i)=>{
+      html+='<span class="tok" id="tok-'+esc(v.ref+'#'+i)+'" onclick="openSheet(\''+esc(v.ref)+'\','+i+')">'+esc(t.w)+'</span>';
+      if(t.after)html+='<span class="punct">'+esc(t.after)+'</span>';
+      html+=' ';
+    });
+    html+='</span></div>';
+  });
+  $('view').innerHTML=html;
+}
+
+/* ---------- parse sheet ---------- */
+let activeTok=null;
+function openSheet(ref,i){
+  const v=state.john.verses.find(x=>x.ref===ref);const t=v.tokens[i];
+  if(activeTok)activeTok.classList.remove('act');
+  activeTok=$('tok-'+ref+'#'+i);if(activeTok)activeTok.classList.add('act');
+  const g=state.lang==='es'?(t.gloss_es||t.gloss_en):t.gloss_en;
+  let h='<div class="grip"></div>';
+  h+='<div class="surf">'+esc(t.w)+'</div>';
+  h+='<div class="lemrow">from <b onclick="openLex(\''+esc(t.lemma)+'\')">'+esc(t.lemma)+'</b> · '+esc(v.ref)+'</div>';
+  h+='<div class="plabel">Parse</div><div class="parse">'+esc(t.parse)+'</div>';
+  h+='<div class="plabel">Meaning</div><div class="gloss">'+esc(g)+'</div>';
+  if(t.deriv&&t.deriv!=='—')h+='<div class="plabel">English / Spanish it unlocks</div><div class="deriv">'+esc(t.deriv)+'</div>';
+  if(t.note)h+='<div class="note">'+esc(t.note)+'</div>';
+  if(t.concepts&&t.concepts.length){
+    h+='<div class="learn-h">▸ Learn this — jump to the grammar</div><div class="chips">';
+    t.concepts.forEach(cid=>{const c=state.concept[cid];if(!c)return;
+      h+='<span class="chip" onclick="gotoConcept(\''+esc(cid)+'\')"><span class="g">'+esc(c.greek)+'</span>'+esc(state.lang==='es'?c.title_es:c.title_en)+'</span>';});
+    h+='</div>';
+  }
+  $('sheet').innerHTML=h;
+  $('sheet').classList.add('show');$('backdrop').classList.add('show');
+}
+function closeSheet(){
+  $('sheet').classList.remove('show');$('backdrop').classList.remove('show');
+  if(activeTok)activeTok.classList.remove('act');activeTok=null;
+}
+function gotoConcept(id){closeSheet();go('concept/'+id);}
+function openLex(lemma){closeSheet();go('lex/'+encodeURIComponent(lemma));}
+
+/* ---------- textbook ---------- */
+function renderTextbook(){
+  const cs=[...state.grammar.concepts].sort((a,b)=>a.chapter-b.chapter);
+  const done=readSet();
+  let html='<div class="tag">Textbook · systematic grammar</div>';
+  html+='<h1 class="title" style="font-family:var(--ui);font-size:26px">The Grammar, in order</h1>';
+  html+='<div class="subtitle">A traditional sequential spine. Every lesson is cross-linked to where it appears in the live text — and every word in Reading links back here.</div>';
+  let cat='';
+  cs.forEach(c=>{
+    html+='<button class="card" onclick="go(\'concept/'+esc(c.id)+'\')">'+
+      '<span class="gkbadge">'+esc(c.greek)+'</span>'+
+      '<span class="ct"><b>'+esc(c.chapter)+'. '+esc(state.lang==='es'?c.title_es:c.title_en)+
+      '<span class="catpill">'+esc(c.category)+'</span></b>'+
+      '<span>'+occCount(c.id)+'</span></span>'+
+      '<span class="chk">'+(done.has('c:'+c.id)?'✓':'›')+'</span></button>';
+  });
+  $('view').innerHTML=html;
+}
+function occCount(cid){
+  const n=state.tokens.filter(t=>(t.concepts||[]).includes(cid)).length;
+  return n?('appears '+n+'× in the Prologue'):'foundational';
+}
+
+/* ---------- concept detail ---------- */
+function renderConcept(id){
+  const c=state.concept[id];
+  if(!c){$('view').innerHTML='<button class="back" onclick="go(\'textbook\')">‹ Textbook</button><p>Unknown lesson.</p>';return;}
+  markRead('c:'+id);
+  const body=state.lang==='es'?(c.body_es||c.body_en):c.body_en;
+  let h='<button class="back" onclick="go(\'textbook\')">‹ Textbook</button>';
+  h+='<div class="detail"><div class="chline">Chapter '+esc(c.chapter)+' · '+esc(c.category)+'</div>';
+  h+='<h2>'+esc(state.lang==='es'?c.title_es:c.title_en)+'</h2>';
+  h+='<div class="biggk">'+esc(c.greek)+'</div>';
+  h+='<div class="body">'+body+'</div>';
+  if(c.table){
+    const tb=c.table;
+    h+='<div class="tblwrap"><table class="para"><caption>'+esc(tb.caption)+'</caption>';
+    if(tb.cols)h+='<thead><tr>'+tb.cols.map(x=>'<th>'+esc(x)+'</th>').join('')+'</tr></thead>';
+    h+='<tbody>'+tb.rows.map(r=>'<tr>'+r.map((x,i)=>i===0?'<td>'+esc(x)+'</td>':'<td>'+esc(x)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
+  }
+  // occurrences in the text
+  const occ=state.tokens.filter(t=>(t.concepts||[]).includes(id));
+  if(occ.length){
+    h+='<div class="section-h">Where it appears in the Prologue — tap to read it in place</div>';
+    const seen=new Set();
+    occ.forEach(t=>{const k=t.w+t._ref;if(seen.has(k))return;seen.add(k);
+      h+='<span class="occ" onclick="jumpToTok(\''+esc(t._ref)+'\','+t._i+')">'+esc(t.w)+' <small>'+esc(t._ref)+'</small></span>';});
+  }
+  if(c.see_also&&c.see_also.length){
+    h+='<div class="section-h">See also</div><div class="chips">';
+    c.see_also.forEach(sid=>{const s=state.concept[sid];if(!s)return;
+      h+='<span class="chip" onclick="go(\'concept/'+esc(sid)+'\')"><span class="g">'+esc(s.greek)+'</span>'+esc(state.lang==='es'?s.title_es:s.title_en)+'</span>';});
+    h+='</div>';
+  }
+  h+='</div>';
+  $('view').innerHTML=h;
+}
+function jumpToTok(ref,i){
+  location.hash='reading';
+  setTimeout(()=>{
+    const el=$('tok-'+ref+'#'+i);
+    if(el){el.scrollIntoView({block:'center',behavior:'smooth'});
+      el.classList.add('flash');setTimeout(()=>el.classList.remove('flash'),1600);}
+  },80);
+}
+
+/* ---------- lexicon ---------- */
+function renderLexicon(lemma){
+  const occ=state.tokens.filter(t=>t.lemma===lemma);
+  const first=occ[0]||{};
+  const g=state.lang==='es'?(first.gloss_es||first.gloss_en):first.gloss_en;
+  let h='<button class="back" onclick="history.back()">‹ Back</button>';
+  h+='<div class="detail"><div class="chline">Lexicon entry</div>';
+  h+='<h2 style="font-family:var(--greek)">'+esc(lemma)+'</h2>';
+  h+='<div class="body"><p style="font-size:19px;font-family:var(--greek)">'+esc(g)+'</p>';
+  if(first.deriv&&first.deriv!=='—')h+='<p class="deriv"><b>English / Spanish it unlocks</b>'+esc(first.deriv)+'</p>';
+  h+='</div>';
+  h+='<div class="section-h">Every occurrence in this text — tap to read it in place</div>';
+  const seen=new Set();
+  occ.forEach(t=>{const k=t.w+t._ref+t._i;if(seen.has(k))return;seen.add(k);
+    h+='<span class="occ" onclick="jumpToTok(\''+esc(t._ref)+'\','+t._i+')">'+esc(t.w)+' <small>'+esc(t._ref)+'</small></span>';});
+  // concepts touching this lemma
+  const cset=new Set();occ.forEach(t=>(t.concepts||[]).forEach(c=>cset.add(c)));
+  if(cset.size){
+    h+='<div class="section-h">Grammar it involves</div><div class="chips">';
+    [...cset].forEach(cid=>{const c=state.concept[cid];if(!c)return;
+      h+='<span class="chip" onclick="go(\'concept/'+esc(cid)+'\')"><span class="g">'+esc(c.greek)+'</span>'+esc(state.lang==='es'?c.title_es:c.title_en)+'</span>';});
+    h+='</div>';
+  }
+  h+='</div>';
+  $('view').innerHTML=h;
+}
+
+/* ---------- settings ---------- */
+function renderSettings(){
+  const done=readSet();const total=state.grammar?state.grammar.concepts.length:0;
+  const read=[...done].filter(x=>x.startsWith('c:')).length;
+  let h='<button class="back" onclick="go(\'reading\')">‹ Reading</button>';
+  h+='<div class="detail"><div class="chline">Settings</div>';
+  h+='<div class="settings"><h3>Gloss language</h3><p style="color:var(--ink-soft);font-size:14px;margin:.2em 0 10px">English is the language of instruction; Spanish is available as a second gloss (you are native in both).</p>';
+  h+='<div class="langtog"><button class="'+(state.lang==='en'?'on':'')+'" onclick="setLang(\'en\')">English</button><button class="'+(state.lang==='es'?'on':'')+'" onclick="setLang(\'es\')">Español</button></div></div>';
+  h+='<div class="settings"><h3>Progress</h3><p style="color:var(--ink-soft);font-size:14px;margin:.2em 0 10px">'+read+' of '+total+' grammar lessons opened.</p>';
+  h+='<button class="iconbtn" onclick="if(confirm(\'Clear all saved progress?\')){localStorage.removeItem(\'grk_progress\');go(\'settings\');}">Reset progress</button></div>';
+  h+='<div class="settings"><h3>About</h3><p style="color:var(--ink-soft);font-size:14px;margin:.2em 0 0">Ἑλληνικά treats Greek as one continuous culture — Koine, Classical, and Modern. This early build proves the core loop on the Prologue of John. Audio, more texts (Homer, Herodotus, Ecclesiastes, the pre-Socratics), quizzes and flashcards are coming.</p></div>';
+  h+='</div>';
+  $('view').innerHTML=h;
+}
+
+/* ---------- lang ---------- */
+function setLang(l){
+  state.lang=l;try{localStorage.setItem('grk_lang',l);}catch(e){}
+  document.querySelectorAll('#langtog button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
+  route();
+}
+
+boot();
+if('serviceWorker'in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{});}
+</script>
+</body>
+</html>

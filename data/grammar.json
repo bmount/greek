@@ -1,0 +1,278 @@
+{
+  "concepts": [
+    {
+      "id": "alphabet",
+      "chapter": 0,
+      "title_en": "The Alphabet, Breathings & Accents",
+      "title_es": "El alfabeto, espíritus y acentos",
+      "greek": "Α α · Ω ω",
+      "category": "phonology",
+      "body_en": "<p>Twenty-four letters. You already read half of them from mathematics and science: <b>α β γ δ ε … π ρ σ τ … φ χ ψ ω</b>. We use <b>Modern/Byzantine pronunciation</b> for every era — one living sound-system across the whole tradition.</p><p><b>Breathings.</b> Every word beginning with a vowel carries a breathing mark. A <i>rough</i> breathing (ἡ, spiritus asper) adds an /h/ in older reckoning and always corresponds to English words that begin with <b>h-</b> (ἡμέρα → 'ephemeral', ὑπέρ → 'hyper', ἕν → 'hen-'). A <i>smooth</i> breathing (ἐν) adds nothing. Watch the pair ἕν 'one' (rough) vs. ἐν 'in' (smooth) — one mark, two words.</p><p><b>Accents.</b> Ancient texts are <b>polytonic</b>: acute (ά), grave (ὰ), circumflex (ᾶ). Originally pitch, not stress. Modern Greek is <b>monotonic</b> — one accent, marking the stressed syllable. In this course ancient excerpts keep their authentic polytonic marks; Modern Greek uses the single accent.</p>",
+      "body_es": "<p>Veinticuatro letras — ya conoces la mitad por las matemáticas y las ciencias. Usamos la <b>pronunciación moderna/bizantina</b> para todas las épocas.</p><p><b>Espíritus:</b> toda palabra que empieza por vocal lleva un espíritu. El áspero (ἡ) corresponde a palabras inglesas con <b>h-</b> (ὑπέρ → 'hyper'); el suave (ἐν) no añade nada. Compara ἕν 'uno' (áspero) con ἐν 'en' (suave).</p><p><b>Acentos:</b> los textos antiguos son <b>politónicos</b> (agudo, grave, circunflejo — originalmente tono); el griego moderno es <b>monotónico</b>.</p>",
+      "see_also": ["article"]
+    },
+    {
+      "id": "cases",
+      "chapter": 1,
+      "title_en": "The Five Cases",
+      "title_es": "Los cinco casos",
+      "greek": "πτῶσις",
+      "category": "morphology",
+      "body_en": "<p>Greek is an <b>inflected</b> language: a noun's ending tells you its job in the sentence, so word order is free (which is exactly why θεὸς ἦν ὁ λόγος can put the predicate first). Five cases:</p><ul><li><b>Nominative</b> — the subject. <i>ὁ λόγος</i> = the Word (doing).</li><li><b>Genitive</b> — of / from / possession. <i>τῶν ἀνθρώπων</i> = of men.</li><li><b>Dative</b> — to / for / in / by / with. <i>ἐν ἀρχῇ</i> = in [the] beginning.</li><li><b>Accusative</b> — the direct object; goal of motion. <i>τὸν θεόν</i> = God (as object).</li><li><b>Vocative</b> — direct address ('O Lord!'). Rare in narrative.</li></ul><p>Your Spanish intuition for prepositions maps loosely onto the genitive (<i>de</i>) and dative (<i>a / en / con</i>), but Greek packs those relationships into the <b>ending itself</b>.</p>",
+      "body_es": "<p>El griego es una lengua <b>flexiva</b>: la terminación del sustantivo indica su función, así que el orden de palabras es libre. Cinco casos: <b>nominativo</b> (sujeto), <b>genitivo</b> (de / posesión), <b>dativo</b> (a / para / en / con), <b>acusativo</b> (objeto directo, meta) y <b>vocativo</b> (llamada directa). Tu intuición del español (<i>de</i>, <i>a</i>, <i>con</i>) ayuda, pero el griego lo encierra en la <b>terminación</b>.</p>",
+      "see_also": ["article", "decl1", "decl2", "decl3", "prepositions"]
+    },
+    {
+      "id": "article",
+      "chapter": 2,
+      "title_en": "The Definite Article",
+      "title_es": "El artículo definido",
+      "greek": "ὁ, ἡ, τό",
+      "category": "morphology",
+      "body_en": "<p>The article is the single most useful paradigm in Greek: memorise it and you can read the case, gender, and number of almost any noun phrase, because the article agrees with its noun. Greek has <b>no indefinite article</b> ('a/an') — its absence is meaningful (see <i>predicate nominatives</i>).</p><p>Notice how the article does the grammatical signposting in the prologue: <i>ὁ</i> λόγος (subject, nom.), πρὸς <i>τὸν</i> θεόν (object of prep., acc.), <i>τῶν</i> ἀνθρώπων (gen. pl.), ἐν <i>τῇ</i> σκοτίᾳ (dat. sg. fem.).</p>",
+      "body_es": "<p>El artículo es el paradigma más útil del griego: apréndelo y podrás leer el caso, el género y el número de casi cualquier sintagma nominal, porque concuerda con su sustantivo. El griego <b>no tiene artículo indefinido</b> ('un/una'): su ausencia significa algo (ver <i>predicado nominal</i>).</p>",
+      "table": {
+        "caption": "The definite article — full paradigm",
+        "cols": ["", "Masc.", "Fem.", "Neut."],
+        "rows": [
+          ["Nom. sg.", "ὁ", "ἡ", "τό"],
+          ["Gen. sg.", "τοῦ", "τῆς", "τοῦ"],
+          ["Dat. sg.", "τῷ", "τῇ", "τῷ"],
+          ["Acc. sg.", "τόν", "τήν", "τό"],
+          ["Nom. pl.", "οἱ", "αἱ", "τά"],
+          ["Gen. pl.", "τῶν", "τῶν", "τῶν"],
+          ["Dat. pl.", "τοῖς", "ταῖς", "τοῖς"],
+          ["Acc. pl.", "τούς", "τάς", "τά"]
+        ]
+      },
+      "see_also": ["cases", "decl1", "decl2"]
+    },
+    {
+      "id": "decl1",
+      "chapter": 3,
+      "title_en": "First Declension (feminine -η / -α)",
+      "title_es": "Primera declinación (femenina -η / -α)",
+      "greek": "ἀρχή, ζωή, σκοτία",
+      "category": "morphology",
+      "body_en": "<p>Mostly feminine nouns whose endings ring on <b>-η</b> or <b>-α</b>. Three of the prologue's key words live here: ἀρχή (beginning), ζωή (life), σκοτία (darkness). The endings echo the feminine article — τῆς ζωῆς, τῇ σκοτίᾳ.</p><p>Nouns whose stem ends in ε, ι, or ρ keep <b>-α</b> throughout (σκοτί<b>α</b>, σκοτί<b>ας</b>); others use <b>-η</b> (ζω<b>ή</b>, ζω<b>ῆς</b>). Same skeleton, different vowel.</p>",
+      "body_es": "<p>Sustantivos en su mayoría femeninos con terminaciones en <b>-η</b> o <b>-α</b>. Tres palabras clave del prólogo pertenecen aquí: ἀρχή (principio), ζωή (vida), σκοτία (oscuridad). Los sustantivos con raíz en ε, ι o ρ conservan <b>-α</b>; los demás usan <b>-η</b>.</p>",
+      "table": {
+        "caption": "ζωή 'life' (η-type) — singular",
+        "cols": ["", "Sg.", "Pl."],
+        "rows": [
+          ["Nom.", "ζωή", "ζωαί"],
+          ["Gen.", "ζωῆς", "ζωῶν"],
+          ["Dat.", "ζωῇ", "ζωαῖς"],
+          ["Acc.", "ζωήν", "ζωάς"]
+        ]
+      },
+      "see_also": ["article", "cases", "decl2"]
+    },
+    {
+      "id": "decl2",
+      "chapter": 4,
+      "title_en": "Second Declension (-ος masc. / -ον neut.)",
+      "title_es": "Segunda declinación (-ος masc. / -ον neut.)",
+      "greek": "λόγος, θεός, ἄνθρωπος",
+      "category": "morphology",
+      "body_en": "<p>The <b>-ος</b> nouns — mostly masculine — are the workhorses of the prologue: λόγος, θεός, ἄνθρωπος. Learn λόγος and you can decline hundreds of words. The endings pair with the masculine article: ὁ λόγ<b>ος</b>, τοῦ λόγ<b>ου</b>, τῷ λόγ<b>ῳ</b>, τὸν λόγ<b>ον</b>.</p><p>Neuters in <b>-ον</b> (e.g. ἔργον 'work') differ only in that nominative and accusative are identical, and the neuter plural ends in <b>-α</b> (τὰ ἔργα). A rule you'll meet often: neuter plural subjects often take a <i>singular</i> verb.</p>",
+      "body_es": "<p>Los sustantivos en <b>-ος</b> —casi todos masculinos— son los protagonistas del prólogo: λόγος, θεός, ἄνθρωπος. Aprende λόγος y podrás declinar cientos de palabras. Los neutros en <b>-ον</b> tienen nominativo y acusativo idénticos y plural en <b>-α</b>.</p>",
+      "table": {
+        "caption": "λόγος 'word' (masc.) & ἔργον 'work' (neut.)",
+        "cols": ["", "λόγος sg.", "λόγος pl.", "ἔργον sg.", "ἔργον pl."],
+        "rows": [
+          ["Nom.", "λόγος", "λόγοι", "ἔργον", "ἔργα"],
+          ["Gen.", "λόγου", "λόγων", "ἔργου", "ἔργων"],
+          ["Dat.", "λόγῳ", "λόγοις", "ἔργῳ", "ἔργοις"],
+          ["Acc.", "λόγον", "λόγους", "ἔργον", "ἔργα"]
+        ]
+      },
+      "see_also": ["article", "cases", "decl1"]
+    },
+    {
+      "id": "decl3",
+      "chapter": 5,
+      "title_en": "Third Declension (consonant stems)",
+      "title_es": "Tercera declinación (raíces consonánticas)",
+      "greek": "φῶς (φωτ-), πᾶς (παντ-)",
+      "category": "morphology",
+      "body_en": "<p>The third declension looks irregular until you learn its trick: the <b>nominative hides the stem</b>, and the <b>genitive reveals it</b>. φῶς 'light' has genitive φω<b>τ</b>ός — so the real stem is φωτ- (hence English <i>photo-</i>). πᾶς 'all' has stem παντ- (hence <i>pan-</i>, and the neuter plural πάν<b>τ</b>α in the prologue).</p><p>Strategy: for any third-declension noun, <b>learn the genitive alongside the nominative</b>; every other case is built on that revealed stem with a fixed set of endings (gen. -ος, dat. -ι, acc. -α, etc.).</p>",
+      "body_es": "<p>La tercera declinación parece irregular hasta que aprendes su truco: el <b>nominativo esconde la raíz</b> y el <b>genitivo la revela</b>. φῶς 'luz' tiene genitivo φω<b>τ</b>ός (raíz φωτ-, de ahí <i>photo-</i>). πᾶς 'todo' tiene raíz παντ- (de ahí <i>pan-</i>). Aprende siempre el genitivo junto al nominativo.</p>",
+      "table": {
+        "caption": "φῶς 'light', stem φωτ- — singular",
+        "cols": ["", "Sg.", "Pl."],
+        "rows": [
+          ["Nom.", "φῶς", "φῶτα"],
+          ["Gen.", "φωτός", "φώτων"],
+          ["Dat.", "φωτί", "φωσί(ν)"],
+          ["Acc.", "φῶς", "φῶτα"]
+        ]
+      },
+      "see_also": ["cases", "pas"]
+    },
+    {
+      "id": "prepositions",
+      "chapter": 6,
+      "title_en": "Prepositions & Their Cases",
+      "title_es": "Preposiciones y sus casos",
+      "greek": "ἐν, πρός, διά",
+      "category": "syntax",
+      "body_en": "<p>A Greek preposition governs a <b>case</b>, and many govern different cases with different meanings. The prologue shows three:</p><ul><li><b>ἐν</b> + dative = 'in' (ἐν ἀρχῇ, ἐν τῇ σκοτίᾳ). Always dative.</li><li><b>πρός</b> + accusative = 'toward / with, face-to-face' (πρὸς τὸν θεόν). The relational nuance matters theologically.</li><li><b>διά</b> + genitive = 'through, by means of' (δι᾽ αὐτοῦ 'through him'); διά + accusative = 'because of'. The case changes the meaning.</li></ul><p>Before a vowel a preposition often <b>elides</b>: διά + αὐτοῦ → δι᾽ αὐτοῦ. Learn each preposition <i>with the case(s) it takes</i>, not as a bare word.</p>",
+      "body_es": "<p>Una preposición griega rige un <b>caso</b>, y muchas cambian de significado según el caso. El prólogo muestra tres: <b>ἐν</b> + dativo = 'en'; <b>πρός</b> + acusativo = 'hacia / con, cara a cara'; <b>διά</b> + genitivo = 'por medio de' (δι᾽ αὐτοῦ), pero + acusativo = 'a causa de'. Antes de vocal suelen <b>elidir</b>: διά + αὐτοῦ → δι᾽ αὐτοῦ.</p>",
+      "see_also": ["cases"]
+    },
+    {
+      "id": "imperfect-eimi",
+      "chapter": 7,
+      "title_en": "εἰμί and the Imperfect",
+      "title_es": "εἰμί y el imperfecto",
+      "greek": "ἦν · ἦσαν",
+      "category": "verb",
+      "body_en": "<p>εἰμί 'I am' is the most common verb in Greek and irregular — learn it cold. The prologue hammers its imperfect <b>ἦν</b> 'was' three times in verse 1. The <b>imperfect</b> tense views the past as <i>ongoing, continuous, unbounded</i> — 'was [and kept on being]'. That is why ἦν, not the aorist, opens the Gospel: the Word did not <i>come to be</i> (that is ἐγένετο, said of created things in v.3); the Word simply <i>was</i>, timelessly.</p><p>Contrast is the whole point: ἦν (imperfect, of the Word) vs. ἐγένετο (aorist, of everything made). The grammar draws the line between uncreated and created.</p>",
+      "body_es": "<p>εἰμί 'soy/estoy' es el verbo más común del griego e irregular: apréndelo de memoria. El prólogo repite su imperfecto <b>ἦν</b> 'era' tres veces. El <b>imperfecto</b> ve el pasado como <i>continuo, sin límite</i>. Por eso el Verbo no 'llegó a ser' (ἐγένετο, aoristo, dicho de lo creado en v.3), sino que simplemente 'era' (ἦν). La gramática traza la línea entre lo increado y lo creado.</p>",
+      "table": {
+        "caption": "εἰμί — present & imperfect indicative",
+        "cols": ["", "Present", "Imperfect"],
+        "rows": [
+          ["1 sg.", "εἰμί", "ἤμην"],
+          ["2 sg.", "εἶ", "ἦς"],
+          ["3 sg.", "ἐστί(ν)", "ἦν"],
+          ["1 pl.", "ἐσμέν", "ἦμεν"],
+          ["2 pl.", "ἐστέ", "ἦτε"],
+          ["3 pl.", "εἰσί(ν)", "ἦσαν"]
+        ]
+      },
+      "see_also": ["aorist", "present-active", "predicate-nominative"]
+    },
+    {
+      "id": "present-active",
+      "chapter": 8,
+      "title_en": "Present Active Indicative",
+      "title_es": "Presente activo de indicativo",
+      "greek": "φαίνει",
+      "category": "verb",
+      "body_en": "<p>The default verb tense. Endings attach to the verb stem: <b>-ω, -εις, -ει, -ομεν, -ετε, -ουσι(ν)</b>. φαίν<b>ει</b> 'it shines' (v.5) is 3rd singular. Note the tense shift: after four verses of past-tense narration, John switches to the <b>present</b> φαίνει — the light 'shines', a timeless ongoing present set against the aorist κατέλαβεν 'did not overcome' that follows it.</p><p>The present stem carries <b>imperfective aspect</b>: ongoing, in-progress action, not a bare 'point' in time. Aspect, not time, is the heart of the Greek verb.</p>",
+      "body_es": "<p>El tiempo verbal por defecto. Terminaciones sobre la raíz: <b>-ω, -εις, -ει, -ομεν, -ετε, -ουσι(ν)</b>. φαίν<b>ει</b> 'brilla' (v.5) es 3.ª singular. Tras cuatro versículos en pasado, Juan cambia al <b>presente</b>: la luz 'brilla', un presente atemporal frente al aoristo κατέλαβεν que sigue. La raíz de presente lleva <b>aspecto imperfectivo</b>.</p>",
+      "table": {
+        "caption": "Present active indicative (λύω 'I loose' as model)",
+        "cols": ["", "Sg.", "Pl."],
+        "rows": [
+          ["1", "λύω", "λύομεν"],
+          ["2", "λύεις", "λύετε"],
+          ["3", "λύει", "λύουσι(ν)"]
+        ]
+      },
+      "see_also": ["imperfect-eimi", "aorist"]
+    },
+    {
+      "id": "aorist",
+      "chapter": 9,
+      "title_en": "The Aorist",
+      "title_es": "El aoristo",
+      "greek": "ἐγένετο · κατέλαβεν",
+      "category": "verb",
+      "body_en": "<p>The aorist views an action as a <b>single whole event</b> — perfective aspect — with no comment on duration. It usually carries a past-time augment (the ἐ- prefix: <b>ἐ</b>γένετο, κατ<b>έ</b>λαβεν). Two aorists close the prologue's argument:</p><ul><li><b>ἐγένετο</b> (aorist <i>middle</i> of γίνομαι) 'came into being' — everything created, v.3. γίνομαι is deponent: middle form, active sense.</li><li><b>κατέλαβεν</b> (aorist <i>active</i> of καταλαμβάνω) 'overcame / grasped' — v.5, deliberately double-edged.</li></ul><p>The theological weight rides on aspect: created things <i>came to be</i> (aorist, bounded events) while the Word simply <i>was</i> (imperfect, unbounded). Learn to feel the difference and Greek narrative opens up.</p>",
+      "body_es": "<p>El aoristo ve la acción como un <b>evento único y completo</b> (aspecto perfectivo), normalmente con aumento pasado (ἐ-). Dos aoristos cierran el prólogo: <b>ἐγένετο</b> (aoristo medio de γίνομαι, deponente) 'llegó a ser' (v.3) y <b>κατέλαβεν</b> (aoristo activo de καταλαμβάνω) 'venció / comprendió' (v.5). El peso teológico está en el aspecto: lo creado 'llegó a ser' (aoristo) mientras que el Verbo 'era' (imperfecto).</p>",
+      "see_also": ["imperfect-eimi", "perfect", "present-active"]
+    },
+    {
+      "id": "perfect",
+      "chapter": 10,
+      "title_en": "The Perfect",
+      "title_es": "El perfecto",
+      "greek": "γέγονεν",
+      "category": "verb",
+      "body_en": "<p>The perfect describes a <b>past action whose result stands in the present</b>. Its tell-tale sign is <b>reduplication</b> — the initial consonant doubled with ε: <b>γέ</b>γονεν ('has come into being', v.3), from γίνομαι. English 'has/have + participle' is the closest fit.</p><p>Watch John's precise tense choreography in v.3: πάντα <b>ἐγένετο</b> (aorist: all things came to be, as events) … ὃ <b>γέγονεν</b> (perfect: that which has come to be, and now stands so). The shift from event to abiding result is intentional.</p>",
+      "body_es": "<p>El perfecto describe una <b>acción pasada cuyo resultado permanece en el presente</b>. Su marca es la <b>reduplicación</b>: la consonante inicial doblada con ε — <b>γέ</b>γονεν ('ha llegado a ser', v.3). Observa el juego de tiempos en v.3: ἐγένετο (aoristo, evento) … γέγονεν (perfecto, resultado permanente).</p>",
+      "see_also": ["aorist"]
+    },
+    {
+      "id": "predicate-nominative",
+      "chapter": 11,
+      "title_en": "Predicate Nominatives (θεὸς ἦν ὁ λόγος)",
+      "title_es": "El predicado nominal (θεὸς ἦν ὁ λόγος)",
+      "greek": "θεὸς ἦν ὁ λόγος",
+      "category": "syntax",
+      "body_en": "<p>With the copula εἰμί ('to be'), <b>both</b> subject and predicate stand in the nominative — so how do you tell which is which? The rule of thumb: the noun <b>with the article is the subject</b>. In θεὸς ἦν ὁ λόγος, ὁ λόγος (with article) is the subject — 'the Word was θεός'.</p><p>θεός is anarthrous (no article) <i>and</i> fronted before the verb. This word order makes it <b>qualitative</b>: it describes the Word's nature ('was God, was fully divine') rather than identifying the Word with the entire person of the Father — and it is emphatically not 'a god'. A single choice about the article and word order carries the doctrine. Greek's free word order plus its meaningful article make this precision possible.</p>",
+      "body_es": "<p>Con el verbo copulativo εἰμί, <b>tanto</b> el sujeto como el predicado van en nominativo. ¿Cómo distinguirlos? Regla práctica: el sustantivo <b>con artículo es el sujeto</b>. En θεὸς ἦν ὁ λόγος, ὁ λόγος (con artículo) es el sujeto: 'el Verbo era θεός'. θεός sin artículo y antepuesto es <b>cualitativo</b>: describe la naturaleza del Verbo ('era Dios, plenamente divino'), no lo identifica con toda la persona del Padre, y no significa 'un dios'.</p>",
+      "see_also": ["imperfect-eimi", "article", "cases"]
+    },
+    {
+      "id": "pronoun-autos",
+      "chapter": 12,
+      "title_en": "The Pronoun αὐτός",
+      "title_es": "El pronombre αὐτός",
+      "greek": "αὐτός, αὐτή, αὐτό",
+      "category": "morphology",
+      "body_en": "<p>αὐτός is the everyday 3rd-person pronoun ('he, she, it, them') in the oblique cases: αὐτ<b>οῦ</b> 'of him' (v.3), αὐτ<b>ῷ</b> 'in him' (v.4), αὐτ<b>ό</b> 'it' (v.5). It declines like a 2-1-2 adjective and agrees in gender/number with what it refers back to. (In the attributive position, ὁ αὐτός also means 'the same' — τὸ αὐτό → English <i>tautology</i>, 'saying the same'.)</p>",
+      "body_es": "<p>αὐτός es el pronombre habitual de 3.ª persona ('él, ella, ello') en los casos oblicuos: αὐτοῦ 'de él' (v.3), αὐτῷ 'en él' (v.4), αὐτό 'lo' (v.5). Se declina como adjetivo 2-1-2. En posición atributiva, ὁ αὐτός significa 'el mismo' (τὸ αὐτό → 'tautología').</p>",
+      "see_also": ["article", "cases"]
+    },
+    {
+      "id": "demonstrative-houtos",
+      "chapter": 13,
+      "title_en": "The Demonstrative οὗτος",
+      "title_es": "El demostrativo οὗτος",
+      "greek": "οὗτος, αὕτη, τοῦτο",
+      "category": "morphology",
+      "body_en": "<p>οὗτος 'this / this one' points to something near or just-mentioned. In v.2, οὗτος ('this one', i.e. the Word) gathers up everything just said and drives it forward: 'He was in the beginning with God.' It always carries a rough breathing and agrees with its noun in gender, number, and case.</p>",
+      "body_es": "<p>οὗτος 'este / éste' señala algo cercano o recién mencionado. En v.2, οὗτος ('éste', el Verbo) recoge lo dicho: 'Éste era en el principio con Dios.' Lleva siempre espíritu áspero y concuerda con su sustantivo.</p>",
+      "see_also": ["pronoun-autos", "article"]
+    },
+    {
+      "id": "relative-hos",
+      "chapter": 14,
+      "title_en": "The Relative Pronoun ὅς",
+      "title_es": "El pronombre relativo ὅς",
+      "greek": "ὅς, ἥ, ὅ",
+      "category": "syntax",
+      "body_en": "<p>ὅς, ἥ, ὅ = 'who, which, that'. It takes its <b>gender and number from the word it refers back to</b> (its antecedent) but its <b>case from its own job</b> in the relative clause. In v.3, ὃ γέγονεν 'that which has come into being': neuter singular ὅ agreeing with ἕν, nominative because it is the subject of γέγονεν.</p>",
+      "body_es": "<p>ὅς, ἥ, ὅ = 'que, el cual'. Toma el <b>género y número del antecedente</b>, pero el <b>caso de su función</b> en la oración de relativo. En v.3, ὃ γέγονεν 'lo que ha llegado a ser': ὅ neutro singular concuerda con ἕν, y va en nominativo por ser sujeto de γέγονεν.</p>",
+      "see_also": ["cases", "pronoun-autos"]
+    },
+    {
+      "id": "pas",
+      "chapter": 15,
+      "title_en": "πᾶς 'all, every'",
+      "title_es": "πᾶς 'todo'",
+      "greek": "πᾶς, πᾶσα, πᾶν",
+      "category": "morphology",
+      "body_en": "<p>πᾶς 'all, every' is a third-declension adjective with stem <b>παντ-</b> (English <i>pan-</i>: panorama, pantheon). The neuter plural πάντα in v.3 means 'all things': πάντα δι᾽ αὐτοῦ ἐγένετο — 'all things came into being through him', the sweeping claim of the prologue.</p>",
+      "body_es": "<p>πᾶς 'todo, cada' es un adjetivo de tercera declinación con raíz <b>παντ-</b> (español/inglés <i>pan-</i>: panorama, panteón). El neutro plural πάντα en v.3 significa 'todas las cosas': πάντα δι᾽ αὐτοῦ ἐγένετο.</p>",
+      "see_also": ["decl3", "cases"]
+    },
+    {
+      "id": "heis",
+      "chapter": 16,
+      "title_en": "The Numeral εἷς 'one'",
+      "title_es": "El numeral εἷς 'uno'",
+      "greek": "εἷς, μία, ἕν",
+      "category": "morphology",
+      "body_en": "<p>'One' has three genders: masc. εἷς, fem. μία, neut. ἕν. The neuter ἕν appears in v.3 (οὐδὲ ἕν 'not even one thing'). Mind the breathing: ἕν 'one' has a <b>rough</b> breathing (→ English <i>hen-</i>, henotheism), whereas the preposition ἐν 'in' has a <b>smooth</b> one. Same three letters, opposite marks.</p>",
+      "body_es": "<p>'Uno' tiene tres géneros: masc. εἷς, fem. μία, neut. ἕν. El neutro ἕν aparece en v.3 (οὐδὲ ἕν 'ni una sola cosa'). Atención al espíritu: ἕν 'uno' es <b>áspero</b>, mientras que la preposición ἐν 'en' es <b>suave</b>.</p>",
+      "see_also": ["negation", "decl3"]
+    },
+    {
+      "id": "conjunctions",
+      "chapter": 17,
+      "title_en": "καί and Coordination",
+      "title_es": "καί y la coordinación",
+      "greek": "καί",
+      "category": "syntax",
+      "body_en": "<p>καί 'and, also, even' is the connective tissue of Greek narrative — the prologue strings its clauses with it (καὶ … καὶ …). Beyond 'and', καί can be <b>adverbial</b>: 'also', 'even'. Greek loves <b>parataxis</b> (clauses chained by 'and') where English would subordinate; reading with the grain of καί is half of reading Greek prose, especially the Gospels and the Septuagint.</p>",
+      "body_es": "<p>καί 'y, también, incluso' es el tejido conectivo de la narrativa griega — el prólogo encadena sus cláusulas con él. Además de 'y', καί puede ser <b>adverbial</b>: 'también', 'incluso'. El griego prefiere la <b>parataxis</b> (cláusulas unidas por 'y') donde el español subordinaría.</p>",
+      "see_also": ["negation"]
+    },
+    {
+      "id": "negation",
+      "chapter": 18,
+      "title_en": "Negation: οὐ and οὐδέ",
+      "title_es": "La negación: οὐ y οὐδέ",
+      "greek": "οὐ, οὐδέ",
+      "category": "syntax",
+      "body_en": "<p>Greek has two negatives. <b>οὐ</b> (οὐκ before a vowel, οὐχ before rough breathing) negates statements of fact — indicative mood: οὐ κατέλαβεν 'did not overcome' (v.5). <b>μή</b> negates everything else (commands, wishes, non-indicative). <b>οὐδέ</b> = οὐ + δέ, 'and not, not even' — in v.3, οὐδὲ ἕν 'not even one thing'. Piling up negatives <i>strengthens</i> the negation in Greek rather than cancelling it.</p>",
+      "body_es": "<p>El griego tiene dos negaciones. <b>οὐ</b> (οὐκ ante vocal, οὐχ ante espíritu áspero) niega hechos, en indicativo: οὐ κατέλαβεν 'no venció' (v.5). <b>μή</b> niega lo demás (órdenes, deseos). <b>οὐδέ</b> = οὐ + δέ, 'ni, ni siquiera': οὐδὲ ἕν 'ni una sola cosa' (v.3). Acumular negaciones <b>refuerza</b> la negación.</p>",
+      "see_also": ["conjunctions", "heis"]
+    }
+  ]
+}

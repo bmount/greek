@@ -1,0 +1,13 @@
+{
+  "name": "Ἑλληνικά — Greek across the ages",
+  "short_name": "Ἑλληνικά",
+  "description": "Learn Greek as one continuous culture — Koine, Classical, and Modern — reading real texts with tap-to-parse grammar.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4ecd8",
+  "theme_color": "#f4ecd8",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4ecd8">
+<title>Ἑλληνικά — Greek across the ages</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<style>
+:root{
+  --bg:#f4ecd8;--panel:#fbf6ea;--ink:#26211a;--ink-soft:#5c5344;--line:#e0d4b8;
+  --accent:#8a2b1f;--accent-soft:#b5502f;--gold:#a07b2d;--link:#7a3a12;
+  --shadow:0 8px 30px rgba(60,40,10,.15);
+  --greek:"Palatino Linotype","Book Antiqua",Palatino,Georgia,"Times New Roman",serif;
+  --ui:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#191510;--panel:#221c14;--ink:#ece3d0;--ink-soft:#b3a488;--line:#3a3022;
+    --accent:#e0855f;--accent-soft:#e0855f;--gold:#d7b25e;--link:#e6a86a;
+    --shadow:0 8px 30px rgba(0,0,0,.5);}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ui);line-height:1.55}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 80px}
+.hero{text-align:center;padding:64px 0 30px}
+.hero .big{font-family:var(--greek);font-size:64px;color:var(--accent);margin:0;line-height:1}
+.hero .en{font-size:18px;color:var(--ink-soft);letter-spacing:2px;text-transform:uppercase;margin:14px 0 0}
+.hero .tagline{font-family:var(--greek);font-size:21px;color:var(--ink);font-style:italic;margin:20px 0 0}
+.begin{display:inline-block;margin:30px 0 6px;background:var(--accent);color:#fff;
+  text-decoration:none;font-weight:700;font-size:17px;padding:14px 40px;border-radius:30px;
+  box-shadow:var(--shadow)}
+.begin:active{transform:scale(.98)}
+.lead{font-size:16.5px;color:var(--ink-soft);border-left:3px solid var(--line);padding:4px 0 4px 16px;margin:36px 0}
+.lead b{color:var(--ink)}
+.sech{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin:38px 0 4px}
+.map{display:grid;gap:12px;margin-top:14px}
+.pillar{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;
+  display:flex;gap:16px;align-items:flex-start}
+.pillar .gk{font-family:var(--greek);font-size:30px;color:var(--accent);min-width:52px;text-align:center;line-height:1.1}
+.pillar b{font-size:16.5px;display:block;margin-bottom:2px}
+.pillar p{margin:0;font-size:14px;color:var(--ink-soft)}
+.pillar .st{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+  padding:2px 9px;border-radius:20px;border:1px solid var(--line);color:var(--ink-soft);white-space:nowrap}
+.pillar .st.live{color:#fff;background:var(--accent);border-color:var(--accent)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%}
+.footer{text-align:center;color:var(--ink-soft);font-size:12px;opacity:.7;margin-top:52px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1 class="big">Ἑλληνικά</h1>
+    <div class="en">Greek across the ages</div>
+    <div class="tagline">ἓν τὸ πᾶν — one continuous tradition</div>
+    <a class="begin" href="app.html#reading">Begin with the Prologue →</a>
+  </div>
+
+  <div class="lead">Learn Greek as <b>one continuous culture</b> — Koine, Classical, and Modern as a single language across time. Read the real texts — <b>Homer, John, Ecclesiastes, Herodotus, the pre-Socratics</b> — with every word one tap away from its full grammatical parse and the lesson that explains it. Bridge language: <b>English</b>, with Spanish as a second gloss.</div>
+
+  <div class="sech">Available now</div>
+  <div class="map">
+    <a class="pillar" href="app.html#reading" style="text-decoration:none;color:inherit">
+      <span class="gk">Ἰω</span>
+      <div class="row"><div><b>The Prologue of John (1:1–5)</b><p>Fully parsed. Tap any word → parse, gloss, derivatives, and a jump into the grammar. 18 cross-linked grammar lessons.</p></div><span class="st live">Live</span></div>
+    </a>
+    <a class="pillar" href="app.html#textbook" style="text-decoration:none;color:inherit">
+      <span class="gk">Γρ</span>
+      <div class="row"><div><b>The Grammar, in order</b><p>A traditional textbook spine — the article, the five cases, all three declensions, the verb and its aspects — cross-linked to the live text.</p></div><span class="st live">Live</span></div>
+    </a>
+  </div>
+
+  <div class="sech">Coming</div>
+  <div class="map">
+    <div class="pillar"><span class="gk">Ὅμ</span><div class="row"><div><b>Homer</b><p>Worldview, morality, theology — the epic dialect, tackled last.</p></div><span class="st">Soon</span></div></div>
+    <div class="pillar"><span class="gk">Ἡρ</span><div class="row"><div><b>Herodotus</b><p>The Histories — narrative by the yard, and the source of the mythology & history quizzes.</p></div><span class="st">Soon</span></div></div>
+    <div class="pillar"><span class="gk">Ἐκ</span><div class="row"><div><b>Ecclesiastes (Septuagint)</b><p>“Vanity of vanities” — ματαιότης ματαιοτήτων — in the Greek of the LXX.</p></div><span class="st">Soon</span></div></div>
+    <div class="pillar"><span class="gk">Φιλ</span><div class="row"><div><b>The pre-Socratics & Cynics</b><p>Heraclitus, and the idiosyncratic, oddly relatable philosophers.</p></div><span class="st">Soon</span></div></div>
+    <div class="pillar"><span class="gk">Νέα</span><div class="row"><div><b>Modern Greek</b><p>The living end of the continuum — excerpts & explainers.</p></div><span class="st">Soon</span></div></div>
+    <div class="pillar"><span class="gk">🔊</span><div class="row"><div><b>Audio, Quizzes & Flashcards</b><p>Full-sentence Modern-Greek voices; history/mythology quizzes; cognate-aware cards.</p></div><span class="st">Soon</span></div></div>
+  </div>
+
+  <div class="footer">Ἑλληνικά · built on the Language Course Creator framework</div>
+</div>
+</body>
+</html>
