@@ -1,21 +1,97 @@
 {
   "audio_base": "https://storage.googleapis.com/bmount-public-share/greek/",
   "prefix": "gg",
+  "version": 1,
   "lessons": [
     {
       "id": "L01",
       "gym_id": "gym-L01",
       "title": "Fifty words that already make sentences",
-      "seconds": 694,
+      "seconds": 691,
       "words": 50,
       "sentences": 20,
-      "teacher": "en",
-      "sample": {
-        "gym_id": "gym-L01-grvoice",
-        "seconds": 90,
-        "teacher": "charon",
-        "label": "A/B: Greek voice reads the English"
-      }
+      "sentence_clips": [
+        {
+          "gr": "s-L01-0",
+          "ex": "x-L01-0"
+        },
+        {
+          "gr": "s-L01-1",
+          "ex": "x-L01-1"
+        },
+        {
+          "gr": "s-L01-2",
+          "ex": "x-L01-2"
+        },
+        {
+          "gr": "s-L01-3",
+          "ex": "x-L01-3"
+        },
+        {
+          "gr": "s-L01-4",
+          "ex": "x-L01-4"
+        },
+        {
+          "gr": "s-L01-5",
+          "ex": "x-L01-5"
+        },
+        {
+          "gr": "s-L01-6",
+          "ex": "x-L01-6"
+        },
+        {
+          "gr": "s-L01-7",
+          "ex": "x-L01-7"
+        },
+        {
+          "gr": "s-L01-8",
+          "ex": "x-L01-8"
+        },
+        {
+          "gr": "s-L01-9",
+          "ex": "x-L01-9"
+        },
+        {
+          "gr": "s-L01-10",
+          "ex": "x-L01-10"
+        },
+        {
+          "gr": "s-L01-11",
+          "ex": "x-L01-11"
+        },
+        {
+          "gr": "s-L01-12",
+          "ex": "x-L01-12"
+        },
+        {
+          "gr": "s-L01-13",
+          "ex": "x-L01-13"
+        },
+        {
+          "gr": "s-L01-14",
+          "ex": "x-L01-14"
+        },
+        {
+          "gr": "s-L01-15",
+          "ex": "x-L01-15"
+        },
+        {
+          "gr": "s-L01-16",
+          "ex": "x-L01-16"
+        },
+        {
+          "gr": "s-L01-17",
+          "ex": "x-L01-17"
+        },
+        {
+          "gr": "s-L01-18",
+          "ex": "x-L01-18"
+        },
+        {
+          "gr": "s-L01-19",
+          "ex": "x-L01-19"
+        }
+      ]
     }
   ]
 }

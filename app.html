@@ -223,13 +223,25 @@ table.para thead th{font-family:var(--ui);font-size:13px;color:var(--ink-soft);b
 .phr{display:flex;align-items:center;gap:9px;padding:7px 0;border-top:1px dashed var(--line)}
 .phr .pg{font-family:var(--greek);font-size:18px;color:var(--ink);flex:1}
 .phr .pe{font-size:13px;color:var(--ink-soft)}
-.abbox{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:14px 16px;margin:8px 0 4px}
-.abbox b{font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--gold)}
-.abbox p{font-size:13.5px;color:var(--ink-soft);margin:.4em 0 10px;line-height:1.5}
-.transrow{border-top:1px solid var(--line);padding:11px 0}
-.transrow .tg{font-family:var(--greek);font-size:20px;color:var(--ink)}
-.transrow .te{font-size:14px;color:var(--accent-soft);font-weight:600;margin:2px 0}
-.transrow .tx{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+/* big vocabulary grid */
+.wgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:10px 0 6px}
+@media(max-width:400px){.wgrid{grid-template-columns:1fr}}
+.wcell{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;
+  background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:14px 16px;
+  cursor:pointer;font-family:var(--ui);color:inherit;transition:transform .1s,box-shadow .15s}
+.wcell:active{transform:scale(.98)}
+@media(hover:hover){.wcell:hover{box-shadow:var(--shadow)}}
+.wcell.on{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent) inset}
+.wcell .wg{font-family:var(--greek);font-size:28px;line-height:1.15;color:var(--ink)}
+.wcell .we{font-size:15px;color:var(--ink-soft)}
+/* larger transcript, each part playable */
+.transrow{border-top:1px solid var(--line);padding:16px 0}
+.tline{display:flex;align-items:flex-start;gap:11px}
+.tline.tsub{margin-top:8px}
+.transrow .tg{font-family:var(--greek);font-size:27px;line-height:1.3;color:var(--ink);flex:1}
+.transrow .te{font-size:17px;color:var(--accent-soft);font-weight:600;margin:8px 0 2px}
+.transrow .tx{font-size:16px;color:var(--ink-soft);line-height:1.6;flex:1}
+.transrow .play{margin-top:4px}
 .loading{text-align:center;color:var(--ink-soft);padding:60px 0;font-size:15px}
 .footer{text-align:center;color:var(--ink-soft);font-size:12px;opacity:.7;margin-top:40px}
 </style>
@@ -281,8 +293,8 @@ function setPlayIcons(playingId){
     const on=b.dataset.clip===playingId;b.classList.toggle('on',on);
     b.textContent=on?'⏸':'▶';});
 }
-function playClip(id){
-  const url=clipUrl(id);if(!url)return;
+function playAt(id,url){
+  if(!url)return;
   if(audioEl&&audioCur===id&&!audioEl.paused){audioEl.pause();setPlayIcons(null);return;}
   if(audioEl){audioEl.pause();}
   audioEl=new Audio(url);audioCur=id;
@@ -290,6 +302,10 @@ function playClip(id){
   audioEl.play().then(()=>setPlayIcons(id)).catch(()=>setPlayIcons(null));
   setPlayIcons(id);
 }
+function playClip(id){playAt(id,clipUrl(id));}
+function gymClipUrl(id){const g=state.gym;if(!g)return null;return g.audio_base+g.prefix+'/'+id+'.mp3?v='+(g.version||1);}
+function playGym(id){playAt(id,gymClipUrl(id));}
+function gymPlayBtn(id){return '<button class="play" data-clip="'+esc(id)+'" onclick="event.stopPropagation();playGym(\''+esc(id)+'\')" aria-label="Play">▶</button>';}
 function stopAudio(){if(audioEl){audioEl.pause();}audioCur=null;setPlayIcons(null);}
 function playBtn(id,cls){return hasClip(id)?'<button class="play'+(cls?' '+cls:'')+'" data-clip="'+esc(id)+'" onclick="event.stopPropagation();playClip(\''+esc(id)+'\')" aria-label="Play audio">▶</button>':'';}
 function verseClipId(ref){return 'john-'+ref.replace(/:/g,'-');}
@@ -602,12 +618,19 @@ function renderGym(arg){
     h+='<h2 style="font-family:var(--ui);font-size:23px">'+esc(L.title)+'</h2>';
     h+='<p class="body" style="color:var(--ink-soft);font-size:15px">Put it in your pocket and listen. Hear a word, hear the meaning, then say it aloud in the pause. Three voices, sentences, and cumulative review — no tapping needed.</p>';
     h+='<audio id="gymaudio" controls preload="metadata" style="width:100%;margin:14px 0" src="'+esc(gymUrl(L.gym_id))+'"></audio>';
-    if(L.sample){h+='<div class="abbox"><b>Voice experiment</b><p>The lesson above uses an English narrator for the explanations. Here a Greek voice (Charon) reads the same English — tighter Greek, slightly accented English. Which do you prefer?</p><audio controls preload="none" style="width:100%" src="'+esc(gymUrl(L.sample.gym_id))+'"></audio></div>';}
-    if(lesson){h+='<div class="section-h">Words in this lesson — tap to preview</div><div class="chips">';
-      lesson.words.forEach(w=>{h+='<span class="chip" onclick="playClip(\''+wordClip(w.id,'charon')+'\')"><span class="g">'+esc(w.gr)+'</span>'+esc(clean(w.en))+'</span>';});
-      h+='</div>';
-      if(lesson.sentences){h+='<div class="section-h">Sentences &amp; explanations — the transcript</div>';
-        lesson.sentences.forEach(sn=>{h+='<div class="transrow"><div class="tg">'+esc(sn.gr)+'</div><div class="te">'+esc(sn.en)+'</div><div class="tx">'+esc(sn.explain)+'</div></div>';});}
+    if(lesson){
+      const grid=ws=>{let g='<div class="wgrid">';ws.forEach(w=>{const cid=wordClip(w.id,'charon');
+        g+='<button class="wcell" data-clip="'+esc(cid)+'" onclick="playClip(\''+esc(cid)+'\')">'+
+           '<span class="wg">'+esc(w.article?w.article+' ':'')+esc(w.gr)+'</span>'+
+           '<span class="we">'+esc(clean(state.lang==='es'&&w.es?w.es:w.en))+'</span></button>';});return g+'</div>';};
+      const nouns=lesson.words.filter(w=>w.pos==='noun'), verbs=lesson.words.filter(w=>w.pos==='verb');
+      h+='<div class="section-h">The '+nouns.length+' nouns — tap to hear</div>'+grid(nouns);
+      h+='<div class="section-h">The '+verbs.length+' verbs — tap to hear</div>'+grid(verbs);
+      if(lesson.sentences){h+='<div class="section-h">Sentences &amp; explanations — tap ▶ to hear each part</div>';
+        lesson.sentences.forEach((sn,i)=>{const cl=(L.sentence_clips||[])[i]||{};
+          h+='<div class="transrow"><div class="tline">'+(cl.gr?gymPlayBtn(cl.gr):'')+'<span class="tg">'+esc(sn.gr)+'</span></div>'+
+             '<div class="te">'+esc(state.lang==='es'&&sn.es?sn.es:sn.en)+'</div>'+
+             '<div class="tline tsub">'+(cl.ex?gymPlayBtn(cl.ex):'')+'<span class="tx">'+esc(sn.explain)+'</span></div></div>';});}
     }
     h+='</div>';$('view').innerHTML=h;
     return;
