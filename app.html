@@ -209,6 +209,20 @@ table.para thead th{font-family:var(--ui);font-size:13px;color:var(--ink-soft);b
   font-weight:700;cursor:pointer;font-family:var(--ui)}
 .deckdone{text-align:center;padding:50px 20px;color:var(--ink-soft)}
 .deckdone .big{font-family:var(--greek);font-size:40px;color:var(--accent);margin-bottom:10px}
+.voicerow{display:flex;gap:8px;justify-content:center;margin-top:4px}
+.vbtn{width:auto;height:32px;border-radius:16px;padding:0 12px;gap:3px}
+.vbtn b{font-size:13px}
+.arttag{display:inline-block;font-family:var(--greek);font-size:15px;font-weight:600;
+  border-radius:14px;padding:1px 12px;margin-bottom:2px}
+.arttag.g-ο{background:#2b5c8a;color:#fff}.arttag.g-η{background:#8a2b5c;color:#fff}
+.arttag.g-το{background:#5c7a2b;color:#fff}
+.formsb{margin-top:14px;font-family:var(--greek);font-size:17px;color:var(--ink);line-height:1.7;
+  border-top:1px solid var(--line);padding-top:12px}
+.formsb div{color:var(--ink-soft)}
+.phrasesb{margin-top:12px;text-align:left}
+.phr{display:flex;align-items:center;gap:9px;padding:7px 0;border-top:1px dashed var(--line)}
+.phr .pg{font-family:var(--greek);font-size:18px;color:var(--ink);flex:1}
+.phr .pe{font-size:13px;color:var(--ink-soft)}
 .loading{text-align:center;color:var(--ink-soft);padding:60px 0;font-size:15px}
 .footer{text-align:center;color:var(--ink-soft);font-size:12px;opacity:.7;margin-top:40px}
 </style>
@@ -224,9 +238,10 @@ table.para thead th{font-family:var(--ui);font-size:13px;color:var(--ink-soft);b
     <button class="iconbtn" onclick="go('settings')" aria-label="Settings">⚙</button>
   </div>
   <div class="tabs">
-    <button class="tab" id="tab-reading" onclick="go('reading')">Reading</button>
-    <button class="tab" id="tab-textbook" onclick="go('textbook')">Textbook</button>
+    <button class="tab" id="tab-gym" onclick="go('gym')">Gym</button>
     <button class="tab" id="tab-cards" onclick="go('cards')">Cards</button>
+    <button class="tab" id="tab-reading" onclick="go('reading')">Read</button>
+    <button class="tab" id="tab-textbook" onclick="go('textbook')">Grammar</button>
   </div>
 </header>
 
@@ -238,7 +253,7 @@ table.para thead th{font-family:var(--ui);font-size:13px;color:var(--ink-soft);b
 <div class="sheet" id="sheet"></div>
 
 <script>
-const state={lang:'en',john:null,grammar:null,concept:{},tokens:[],manifest:null,modern:null};
+const state={lang:'en',john:null,grammar:null,concept:{},tokens:[],manifest:null,modern:null,vocab:null,words:[],gym:null};
 const $=id=>document.getElementById(id);
 const esc=s=>(s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
@@ -277,16 +292,20 @@ async function boot(){
   loadPrefs();
   document.querySelectorAll('#langtog button').forEach(b=>b.classList.toggle('on',b.dataset.l===state.lang));
   try{
-    const [j,g,man,mod]=await Promise.all([
+    const [j,g,man,mod,voc,gym]=await Promise.all([
       fetch('data/texts/john.json').then(r=>r.json()),
       fetch('data/grammar.json').then(r=>r.json()),
       fetch('data/audio_manifest.json').then(r=>r.ok?r.json():null).catch(()=>null),
-      fetch('data/modern.json').then(r=>r.ok?r.json():null).catch(()=>null)
+      fetch('data/modern.json').then(r=>r.ok?r.json():null).catch(()=>null),
+      fetch('data/vocab.json').then(r=>r.ok?r.json():null).catch(()=>null),
+      fetch('data/gym_manifest.json').then(r=>r.ok?r.json():null).catch(()=>null)
     ]);
-    state.john=j; state.grammar=g; state.manifest=man; state.modern=mod;
+    state.john=j; state.grammar=g; state.manifest=man; state.modern=mod; state.vocab=voc; state.gym=gym;
     g.concepts.forEach(c=>state.concept[c.id]=c);
     // flatten tokens with stable positions
     j.verses.forEach(v=>v.tokens.forEach((t,i)=>{t._ref=v.ref;t._i=i;t._id=v.ref+'#'+i;state.tokens.push(t);}));
+    // flatten vocab words
+    if(voc)voc.lessons.forEach(L=>L.words.forEach(w=>{w._lesson=L.id;state.words.push(w);}));
     route();
   }catch(e){
     $('view').innerHTML='<div class="loading">Could not load course data.<br><small>'+esc(e.message)+'</small></div>';
@@ -298,7 +317,7 @@ window.addEventListener('hashchange',route);
 function go(v){location.hash=v;}
 function route(){
   stopAudio();
-  const h=location.hash.replace(/^#/,'')||'reading';
+  const h=location.hash.replace(/^#/,'')||'cards';
   const [base,arg]=h.split('/');
   setTabs(base);
   if(base==='reading')renderReading();
@@ -306,14 +325,16 @@ function route(){
   else if(base==='concept')renderConcept(arg);
   else if(base==='lex')renderLexicon(decodeURIComponent(arg||''));
   else if(base==='cards')renderCards(arg);
+  else if(base==='gym')renderGym(arg);
   else if(base==='settings')renderSettings();
-  else renderReading();
+  else renderCards(arg);
   window.scrollTo(0,0);
 }
 function setTabs(base){
+  $('tab-gym').classList.toggle('on',base==='gym');
+  $('tab-cards').classList.toggle('on',base==='cards'||base===''||base==='settings');
   $('tab-reading').classList.toggle('on',base==='reading');
   $('tab-textbook').classList.toggle('on',base==='textbook'||base==='concept');
-  $('tab-cards').classList.toggle('on',base==='cards');
 }
 
 /* ---------- reading ---------- */
@@ -460,13 +481,26 @@ function renderLexicon(lemma){
   $('view').innerHTML=h;
 }
 
-/* ---------- flashcards ---------- */
-let deck={queue:[],idx:0,filter:'all'};
+/* ---------- audio: multi-voice word playback ---------- */
+const SPEAKERS3=[['charon','♂','older man'],['aoede','♀','woman'],['kore','♀','younger']];
+function PV(pi){return ['charon','aoede','kore'][pi%3];}
+function wordClip(wid,vk){return 'v-'+wid+'--'+vk;}
+function voiceRow(wid){
+  let h='<div class="voicerow" onclick="event.stopPropagation()">';
+  SPEAKERS3.forEach(([vk,sym])=>{const id=wordClip(wid,vk);
+    if(hasClip(id))h+='<button class="vbtn play" data-clip="'+id+'" onclick="playClip(\''+id+'\')">▶ <b>'+sym+'</b></button>';});
+  return h+'</div>';
+}
+
+/* ---------- flashcards + spaced review ---------- */
+const DAY=864e5, IV=[6e5,1*DAY,2*DAY,4*DAY,8*DAY,16*DAY]; // box0 'again'=10min
+let deck={queue:[],idx:0,filter:'due'};
+function isDue(id,st){const s=st[id];if(!s||!s.seen)return true;return (s.due||0)<=Date.now();}
 function allCards(){
-  const out=[],seen=new Set();
-  state.tokens.forEach(t=>{if(seen.has(t.lemma))return;seen.add(t.lemma);
-    out.push({id:'lex:'+t.lemma,kind:'vocab',gk:t.lemma,gloss_en:t.gloss_en,
-      gloss_es:t.gloss_es,deriv:t.deriv,ref:t._ref,hard:!t.deriv||t.deriv==='—'});});
+  const out=[];
+  state.words.forEach(w=>out.push({id:'v:'+w.id,kind:'vocab',wid:w.id,gk:w.gr,article:w.article,
+    cat:w.cat,pos:w.pos,gloss_en:w.en,gloss_es:w.es,cont:w.continuity,forms:w.forms,
+    phrases:w.phrases,lesson:w._lesson,hard:(w.cat==='function'||w.pos==='verb')}));
   if(state.modern&&state.modern.phrases)state.modern.phrases.forEach(p=>{
     const forms=p.variants?p.variants.map(v=>({t:v.t,clip:p.id+'-'+v.gender,gender:v.gender}))
                           :[{t:p.t,clip:p.id}];
@@ -475,47 +509,55 @@ function allCards(){
 }
 function buildDeck(filter){
   let cards=allCards();
-  if(filter==='hard')cards=cards.filter(c=>c.hard);
+  if(filter==='function')cards=cards.filter(c=>c.hard&&c.kind==='vocab');
   else if(filter==='modern')cards=cards.filter(c=>c.kind==='modern');
   const st=cardStore();
-  cards.forEach(c=>{const s=st[c.id]||{box:0,seen:0};c._box=s.box||0;c._seen=s.seen||0;});
-  // cognate-aware: lower box first, then harder (non-cognate) first, then least-seen.
-  cards.sort((a,b)=>a._box-b._box||(b.hard-a.hard)||a._seen-b._seen);
+  cards.forEach(c=>{const s=st[c.id]||{};c._box=s.box||0;c._seen=s.seen||0;c._due=isDue(c.id,st)?1:0;});
+  if(filter==='due'){const d=cards.filter(c=>c._due);if(d.length)cards=d;}
+  cards.sort((a,b)=>(b._due-a._due)||(a._box-b._box)||(b.hard-a.hard)||(a._seen-b._seen));
   return cards;
 }
+function dueCount(){const st=cardStore();return allCards().filter(c=>isDue(c.id,st)).length;}
 function renderCards(filter){
-  filter=filter||'all';deck={queue:buildDeck(filter),idx:0,filter:filter};
+  filter=filter||'due';deck={queue:buildDeck(filter),idx:0,filter:filter};
   const st=cardStore();const total=allCards().length;
   const mastered=Object.values(st).filter(s=>(s.box||0)>=4).length;
+  const nd=dueCount();
   const f=(k,label)=>'<button class="'+(filter===k?'on':'')+'" onclick="go(\'cards/'+k+'\')">'+label+'</button>';
-  let h='<div class="tag">Cards · memorization</div>';
-  h+='<h1 class="title" style="font-family:var(--ui);font-size:26px">Flashcards</h1>';
-  h+='<div class="subtitle">Tap the card to reveal. Rate honestly — non-cognates and words you miss come back sooner; freebie cognates sink. Progress saves locally.</div>';
-  h+='<div class="filters">'+f('all','All ('+total+')')+f('hard','Hard / non-cognate')+f('modern','Modern Greek')+'</div>';
+  let h='<div class="tag">Cards · spaced review</div>';
+  h+='<h1 class="title" style="font-family:var(--ui);font-size:26px">Review</h1>';
+  h+='<div class="subtitle">Hear the word (three voices — learn the word, not one recording), say it, then reveal. Rate honestly: misses return in minutes, wins in days. High-frequency words recycle first.</div>';
+  h+='<div class="filters">'+f('due','Due now ('+nd+')')+f('all','All ('+total+')')+f('function','Function words')+f('modern','Modern')+'</div>';
   h+='<div class="deckhead"><div class="prog" id="cardprog"></div><div class="prog">★ '+mastered+' mastered</div></div>';
   h+='<div class="card-stage" id="card-stage"></div><div id="card-controls"></div>';
   $('view').innerHTML=h;drawCard();
 }
 function drawCard(){
-  const c=deck.queue[deck.idx];
-  const prog=$('cardprog');
+  const c=deck.queue[deck.idx];const prog=$('cardprog');
   if(!c){
-    $('card-stage').innerHTML='<div class="deckdone"><div class="big">εὖγε!</div><b>Deck complete.</b><p>You worked through every card in this set.</p></div>';
-    $('card-controls').innerHTML='<button class="revealbtn" onclick="go(\'cards/'+deck.filter+'\')">Study again ↻</button>';
+    $('card-stage').innerHTML='<div class="deckdone"><div class="big">εὖγε!</div><b>Nothing left due.</b><p>You cleared this set. Come back later, or study All.</p></div>';
+    $('card-controls').innerHTML='<button class="revealbtn" onclick="go(\'cards/all\')">Study all ↻</button>';
     if(prog)prog.textContent='';return;
   }
   if(prog)prog.textContent='Card '+(deck.idx+1)+' of '+deck.queue.length;
   let s='<div class="fcard" onclick="revealCard()">';
   if(c.kind==='vocab'){
-    s+='<div class="kindtag">Vocabulary · '+esc(c.ref)+'</div><div class="front-gk">'+esc(c.gk)+'</div>';
+    s+='<div class="kindtag">'+esc((c.cat||'word').toUpperCase())+' · '+esc(c.lesson)+'</div>';
+    if(c.article)s+='<div class="arttag g-'+esc(c.article)+'">'+esc(c.article)+'</div>';
+    s+='<div class="front-gk">'+esc(c.gk)+'</div>'+voiceRow(c.wid);
     const g=state.lang==='es'?(c.gloss_es||c.gloss_en):c.gloss_en;
-    s+='<div id="cardback" style="display:none"><div class="rev"><div class="gloss-b">'+esc(g)+'</div>';
-    if(c.deriv&&c.deriv!=='—')s+='<div class="deriv-b">'+esc(c.deriv)+'</div>';
-    if(hasClip(verseClipId(c.ref)))s+='<div style="margin-top:12px">'+playBtn(verseClipId(c.ref))+'<span style="font-size:13px;color:var(--ink-soft)">hear it in context ('+esc(c.ref)+')</span></div>';
+    s+='<div id="cardback" style="display:none"><div class="rev"><div class="gloss-b" style="font-family:var(--ui);font-size:19px">'+esc(g)+'</div>';
+    if(c.cont)s+='<div class="note-b">'+esc(c.cont)+'</div>';
+    if(c.forms&&c.forms.length)s+='<div class="formsb">'+c.forms.map(x=>'<div>'+esc(x)+'</div>').join('')+'</div>';
+    if(c.phrases&&c.phrases.length){s+='<div class="phrasesb">';
+      c.phrases.forEach((ph,i)=>{const pi=i+1;const cid='v-'+c.wid+'-p'+pi+'--'+PV(pi);
+        const en=state.lang==='es'?(ph.es||ph.en):ph.en;
+        s+='<div class="phr" onclick="event.stopPropagation()">'+playBtn(cid)+'<span class="pg">'+esc(ph.gr)+'</span><span class="pe">'+esc(en)+'</span></div>';});
+      s+='</div>';}
     s+='</div></div>';
   }else{
     s+='<div class="kindtag">Modern Greek</div>';
-    c.forms.forEach(f=>{s+='<div class="front-gk" style="font-size:30px;display:flex;align-items:center;justify-content:center;gap:10px">'+playBtn(f.clip)+'<span>'+esc(f.t)+'</span>'+(f.gender?'<small style="font-size:13px;color:var(--gold)">'+(f.gender==='m'?'♂':'♀')+'</small>':'')+'</div>';});
+    c.forms.forEach(f=>{s+='<div class="front-gk" style="font-size:28px;display:flex;align-items:center;justify-content:center;gap:10px" onclick="event.stopPropagation()">'+playBtn(f.clip)+'<span>'+esc(f.t)+'</span>'+(f.gender?'<small style="font-size:13px;color:var(--gold)">'+(f.gender==='m'?'♂':'♀')+'</small>':'')+'</div>';});
     const g=state.lang==='es'?(c.es||c.en):c.en;
     s+='<div id="cardback" style="display:none"><div class="rev"><div class="gloss-b" style="font-family:var(--ui);font-size:18px">'+esc(g)+'</div>';
     if(c.note)s+='<div class="note-b">'+esc(c.note)+'</div>';
@@ -533,9 +575,42 @@ function revealCard(){
 function rateCard(good){
   const c=deck.queue[deck.idx];if(!c)return;
   const st=cardStore();const s=st[c.id]||{box:0,seen:0};
-  s.box=good?Math.min(5,(s.box||0)+1):0;s.seen=(s.seen||0)+1;st[c.id]=s;saveCards(st);
-  stopAudio();deck.idx++;drawCard();
+  s.box=good?Math.min(5,(s.box||0)+1):0;s.seen=(s.seen||0)+1;s.due=Date.now()+IV[s.box];
+  st[c.id]=s;saveCards(st);stopAudio();deck.idx++;drawCard();
 }
+
+/* ---------- audio gym (hands-free) ---------- */
+function gymUrl(gid){const g=state.gym;const v=state.manifest?('?v='+state.manifest.version):'';
+  return g.audio_base+g.prefix+'/'+gid+'.mp3'+v;}
+function renderGym(arg){
+  const g=state.gym;
+  if(!g||!g.lessons||!g.lessons.length){
+    $('view').innerHTML='<div class="tag">Audio Gym</div><div class="loading">No audio lessons yet.</div>';return;}
+  if(arg){
+    const L=g.lessons.find(x=>x.id===arg)||g.lessons[0];
+    const lesson=state.vocab?state.vocab.lessons.find(x=>x.id===L.id):null;
+    const m=Math.floor(L.seconds/60), s=L.seconds%60;
+    let h='<button class="back" onclick="go(\'gym\')">‹ Audio Gym</button>';
+    h+='<div class="detail"><div class="chline">'+esc(L.id)+' · '+m+'m'+(s<10?'0':'')+s+'s · '+L.words+' words</div>';
+    h+='<h2 style="font-family:var(--ui);font-size:23px">'+esc(L.title)+'</h2>';
+    h+='<p class="body" style="color:var(--ink-soft);font-size:15px">Put it in your pocket and listen. Hear a word, hear the meaning, then say it aloud in the pause. Three voices, sentences, and cumulative review — no tapping needed.</p>';
+    h+='<audio id="gymaudio" controls preload="metadata" style="width:100%;margin:14px 0" src="'+esc(gymUrl(L.gym_id))+'"></audio>';
+    if(lesson){h+='<div class="section-h">Words in this lesson — tap to preview</div><div class="chips">';
+      lesson.words.forEach(w=>{h+='<span class="chip" onclick="playClip(\''+wordClip(w.id,'charon')+'\')"><span class="g">'+esc(w.gr)+'</span>'+esc(clean(w.en))+'</span>';});
+      h+='</div>';}
+    h+='</div>';$('view').innerHTML=h;
+    return;
+  }
+  let h='<div class="tag">Audio Gym · hands-free</div>';
+  h+='<h1 class="title" style="font-family:var(--ui);font-size:26px">Audio Gym</h1>';
+  h+='<div class="subtitle">Pimsleur-style sessions you can do while driving or walking — introduce, drill, build sentences, review. Screen off is fine; it plays straight through.</div>';
+  g.lessons.forEach(L=>{const m=Math.floor(L.seconds/60),s=L.seconds%60;
+    h+='<button class="card" onclick="go(\'gym/'+esc(L.id)+'\')"><span class="gkbadge">▶</span>'+
+      '<span class="ct"><b>'+esc(L.title)+'</b><span>'+esc(L.id)+' · '+m+'m'+(s<10?'0':'')+s+'s · '+L.words+' words</span></span>'+
+      '<span class="chk">›</span></button>';});
+  $('view').innerHTML=h;
+}
+function clean(en){let g=en.split(';')[0];if(g.indexOf('(')>-1)g=g.slice(0,g.indexOf('('));return g.trim();}
 
 /* ---------- settings ---------- */
 function renderSettings(){

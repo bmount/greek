@@ -1,0 +1,13 @@
+{
+  "audio_base": "https://storage.googleapis.com/bmount-public-share/greek/",
+  "prefix": "gg",
+  "lessons": [
+    {
+      "id": "L01",
+      "gym_id": "gym-L01",
+      "title": "Being, wanting, seeing — and five things to talk about",
+      "seconds": 400,
+      "words": 15
+    }
+  ]
+}

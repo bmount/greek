@@ -1,29 +1,34 @@
 """Voice registry for Ἑλληνικά.
 
-Every voice carries a GENDER. Voice gender is structural, not cosmetic: a first-person
-self-description must be spoken by a voice whose grammatical gender agrees with the form
-(see gender_guard). Swap the two Chirp3-HD names to re-voice the whole course.
+Every voice carries a GENDER and a language. Voice gender is structural, not cosmetic:
+a first-person self-description must be spoken by a voice whose grammatical gender agrees
+with the form (see gender_guard).
 
-Modern Greek (el-GR) Chirp3-HD voices are used for ALL eras — one living sound-system
-across Koine, Classical, and Modern, consistent with 'Greek as one continuous culture'.
+We use THREE Greek speakers so the learner acquires the WORD, not one recording — people
+often understand one voice and stumble on another. (A true child voice does not exist in
+the el-GR catalogue, so the three are distinct adult timbres: a deeper man, a woman, and a
+brighter/younger woman.) Modern Greek (el-GR) pronunciation is used for ALL eras.
+
+An en-US voice supplies the English glosses for the shadowing / recall audio format.
 """
 
-# key -> registry entry
 VOICES = {
-    "aoede":  {"name": "el-GR-Chirp3-HD-Aoede",  "gender": "f", "label": "Aoede"},   # a Muse
-    "charon": {"name": "el-GR-Chirp3-HD-Charon", "gender": "m", "label": "Charon"},   # the ferryman
+    "charon": {"name": "el-GR-Chirp3-HD-Charon", "gender": "m", "lang": "el-GR", "label": "Charon", "role": "older man"},
+    "aoede":  {"name": "el-GR-Chirp3-HD-Aoede",  "gender": "f", "lang": "el-GR", "label": "Aoede",  "role": "woman"},
+    "kore":   {"name": "el-GR-Chirp3-HD-Kore",   "gender": "f", "lang": "el-GR", "label": "Kore",   "role": "younger woman"},
+    "en":     {"name": "en-US-Chirp3-HD-Charon", "gender": "m", "lang": "en-US", "label": "English", "role": "gloss"},
 }
 
-# default voice per grammatical gender — used for gendered self-description variants
+# the three Greek speakers rotated across vocabulary audio
+SPEAKERS = ["charon", "aoede", "kore"]
+
+# default voice per grammatical gender (for gendered self-description variants)
 BY_GENDER = {"f": "aoede", "m": "charon"}
 
 # default narrator for third-person text (scripture, epic, history)
 DEFAULT_NARRATOR = "charon"
 
-# for variety when a clip has no assigned voice, alternate by index
-ALTERNATE = ["charon", "aoede"]
-
-LANGUAGE_CODE = "el-GR"
+EN_VOICE = "en"
 
 
 def voice_gender(key):
@@ -32,3 +37,7 @@ def voice_gender(key):
 
 def voice_name(key):
     return VOICES[key]["name"]
+
+
+def voice_lang(key):
+    return VOICES[key]["lang"]

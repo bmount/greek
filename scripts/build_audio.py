@@ -19,7 +19,7 @@ import sys
 
 import google_tts
 from gender_guard import assert_gender_ok
-from voices import ALTERNATE, BY_GENDER, DEFAULT_NARRATOR, VOICES
+from voices import BY_GENDER, DEFAULT_NARRATOR, EN_VOICE, SPEAKERS, VOICES
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
@@ -40,6 +40,14 @@ def verse_text(tokens):
     return " ".join(out)
 
 
+def clean_gloss(en):
+    """A clean, speakable English gloss: first sense, no parentheses/pos hints."""
+    g = en.split(";")[0]
+    if "(" in g:
+        g = g[:g.index("(")]
+    return g.strip().rstrip("?") or en
+
+
 def collect():
     """Yield clip dicts: {id, text, voice, kind, ... , require_gender?}."""
     clips = []
@@ -55,6 +63,26 @@ def collect():
                 "id": cid, "text": verse_text(v["tokens"]), "voice": narrator,
                 "kind": "verse", "source": src, "ref": v["ref"],
             })
+
+    # --- vocabulary: word in every speaker, English gloss, escalating phrases ---
+    vpath = os.path.join(DATA, "vocab.json")
+    if os.path.exists(vpath):
+        vdoc = json.load(open(vpath, encoding="utf-8"))
+        for lesson in vdoc.get("lessons", []):
+            for w in lesson["words"]:
+                wid = w["id"]
+                # the bare word, in each of the three speakers
+                for vk in SPEAKERS:
+                    clips.append({"id": f"v-{wid}--{vk}", "text": w["gr"], "voice": vk,
+                                  "kind": "word", "word": wid, "lesson": lesson["id"]})
+                # English gloss
+                clips.append({"id": f"v-{wid}--en", "text": clean_gloss(w["en"]),
+                              "voice": EN_VOICE, "kind": "gloss", "word": wid})
+                # phrases, rotating the Greek speakers for variety
+                for pi, ph in enumerate(w.get("phrases", []), 1):
+                    vk = SPEAKERS[pi % len(SPEAKERS)]
+                    clips.append({"id": f"v-{wid}-p{pi}--{vk}", "text": ph["gr"], "voice": vk,
+                                  "kind": "phrase", "word": wid, "phrase_i": pi})
 
     # --- modern greek phrases & gendered self-descriptions ---
     mpath = os.path.join(DATA, "modern.json")
@@ -96,6 +124,7 @@ def main():
             "voice": c["voice"], "gender": VOICES[c["voice"]]["gender"],
             "kind": c["kind"], "text": c["text"],
             **({"ref": c["ref"], "source": c["source"]} if c["kind"] == "verse" else {}),
+            **({"word": c["word"]} if c.get("word") else {}),
             **({"require_gender": c["require_gender"]} if c.get("require_gender") else {}),
         }
         if dry:

@@ -1,0 +1,142 @@
+{
+  "plan": {
+    "goal": "The first 1,000 words — the core lexical network, audio-first, recycled relentlessly.",
+    "tiers": [
+      { "id": "function", "label": "Core function words", "target": 400,
+        "note": "and, but, if, because · this/that/here/there · be/have/go/come · who/what/when/where · prepositions, pronouns, common verbs. A huge proportion of ordinary speech." },
+      { "id": "nouns", "label": "High-frequency concrete nouns", "target": 400,
+        "note": "house, water, child, hand, bread, sea, mountain, road, money, friend …" },
+      { "id": "abstract", "label": "Adjectives & abstract words", "target": 200,
+        "note": "good, difficult, possible, beautiful, true, important, early, already …" }
+    ],
+    "method": "Morphology in context (never bare dictionary forms), deliberate recycling over breadth, Modern pronunciation with vocabulary chosen for Koine/Classical continuity."
+  },
+  "lessons": [
+    {
+      "id": "L01",
+      "title": "Being, wanting, seeing — and five things to talk about",
+      "blurb": "Fifteen of the highest-frequency words in Greek. Together they already make real sentences: 'The person is here.' 'Where is the water?' 'I want the book.' Almost every one is historically continuous — you are also learning Koine.",
+      "words": [
+        { "id": "eimai", "gr": "είμαι", "en": "to be (I am)", "es": "ser / estar (soy, estoy)",
+          "pos": "verb", "cat": "function", "rank": 1, "koine": "εἰμί",
+          "continuity": "Directly from ancient εἰμί. The 3rd-person είναι 'is' descends from ἐστί; the imperfect ἦν opens John 1:1.",
+          "forms": [ "είμαι — I am", "είσαι — you are", "είναι — he/she/it is" ],
+          "phrases": [
+            { "gr": "Είμαι εδώ.", "en": "I am here.", "es": "Estoy aquí." },
+            { "gr": "Πού είσαι;", "en": "Where are you?", "es": "¿Dónde estás?" }
+          ] },
+        { "id": "echo", "gr": "έχω", "en": "to have (I have)", "es": "tener (tengo)",
+          "pos": "verb", "cat": "function", "rank": 8, "koine": "ἔχω",
+          "continuity": "Same verb as ancient ἔχω 'I have, hold'. Gives English -ech in 'cachexia', and 'hectic' (ἑκτικός).",
+          "forms": [ "έχω — I have", "έχεις — you have", "έχει — he/she/it has" ],
+          "phrases": [
+            { "gr": "Έχω νερό.", "en": "I have water.", "es": "Tengo agua." },
+            { "gr": "Έχεις ένα βιβλίο;", "en": "Do you have a book?", "es": "¿Tienes un libro?" }
+          ] },
+        { "id": "thelo", "gr": "θέλω", "en": "to want (I want)", "es": "querer (quiero)",
+          "pos": "verb", "cat": "function", "rank": 20, "koine": "θέλω / ἐθέλω",
+          "continuity": "Ancient θέλω / ἐθέλω 'I wish, want'. The root of 'monothelitism' (one-will).",
+          "forms": [ "θέλω — I want", "θέλεις — you want", "θέλει — he/she/it wants" ],
+          "phrases": [
+            { "gr": "Θέλω νερό.", "en": "I want water.", "es": "Quiero agua." },
+            { "gr": "Τι θέλεις;", "en": "What do you want?", "es": "¿Qué quieres?" }
+          ] },
+        { "id": "vlepo", "gr": "βλέπω", "en": "to see (I see)", "es": "ver (veo)",
+          "pos": "verb", "cat": "function", "rank": 35, "koine": "βλέπω",
+          "continuity": "Ancient βλέπω 'I look, see'. Common throughout the Gospels ('βλέπε' — look!).",
+          "forms": [ "βλέπω — I see", "βλέπεις — you see", "βλέπει — he/she/it sees" ],
+          "phrases": [
+            { "gr": "Βλέπω τη θάλασσα.", "en": "I see the sea.", "es": "Veo el mar." },
+            { "gr": "Τι βλέπεις;", "en": "What do you see?", "es": "¿Qué ves?" }
+          ] },
+        { "id": "erchomai", "gr": "έρχομαι", "en": "to come (I come)", "es": "venir (vengo)",
+          "pos": "verb", "cat": "function", "rank": 30, "koine": "ἔρχομαι",
+          "continuity": "Ancient ἔρχομαι 'I come, go' — a deponent (middle form, active sense), exactly as in Modern Greek.",
+          "forms": [ "έρχομαι — I come", "έρχεσαι — you come", "έρχεται — he/she/it comes" ],
+          "phrases": [
+            { "gr": "Ο φίλος έρχεται.", "en": "The friend is coming.", "es": "El amigo viene." },
+            { "gr": "Έρχομαι!", "en": "I'm coming!", "es": "¡Ya voy!" }
+          ] },
+        { "id": "kai", "gr": "και", "en": "and; also, even", "es": "y; también, incluso",
+          "pos": "conj", "cat": "function", "rank": 2, "koine": "καί",
+          "continuity": "Ancient καί, unchanged for three thousand years. The connective tissue of every Greek sentence.",
+          "forms": [ "και — and" ],
+          "phrases": [
+            { "gr": "ο άνθρωπος και το παιδί", "en": "the person and the child", "es": "la persona y el niño" }
+          ] },
+        { "id": "den", "gr": "δεν", "en": "not (negates verbs)", "es": "no (niega verbos)",
+          "pos": "adv", "cat": "function", "rank": 6, "koine": "οὐ / οὐδέν",
+          "continuity": "Modern δεν comes from ancient οὐδέν 'nothing'. In Koine the plain negator was οὐ (John 1:5: οὐ κατέλαβεν). A clear window on how the language shifted.",
+          "forms": [ "δεν — not" ],
+          "phrases": [
+            { "gr": "Δεν είμαι εδώ.", "en": "I am not here.", "es": "No estoy aquí." },
+            { "gr": "Δεν θέλω νερό.", "en": "I don't want water.", "es": "No quiero agua." }
+          ] },
+        { "id": "pou", "gr": "πού", "en": "where?", "es": "¿dónde?",
+          "pos": "adv", "cat": "function", "rank": 40, "koine": "ποῦ",
+          "continuity": "Ancient ποῦ 'where?'. Note the question is closed with a Greek semicolon ( ; ), not a question mark.",
+          "forms": [ "πού; — where?" ],
+          "phrases": [
+            { "gr": "Πού είναι το νερό;", "en": "Where is the water?", "es": "¿Dónde está el agua?" }
+          ] },
+        { "id": "edo", "gr": "εδώ", "en": "here", "es": "aquí",
+          "pos": "adv", "cat": "function", "rank": 45, "koine": "ἐνθάδε / ὧδε",
+          "continuity": "Modern εδώ replaced the ancient ἐνθάδε / ὧδε 'here'. One of the words that genuinely changed.",
+          "forms": [ "εδώ — here" ],
+          "phrases": [
+            { "gr": "Ο άνθρωπος είναι εδώ.", "en": "The person is here.", "es": "La persona está aquí." }
+          ] },
+        { "id": "anthropos", "gr": "άνθρωπος", "article": "ο", "en": "person; human being", "es": "persona; ser humano",
+          "pos": "noun", "gender": "m", "cat": "noun", "rank": 15, "koine": "ἄνθρωπος",
+          "continuity": "Identical in Koine and Classical (ὁ ἄνθρωπος). Gives English anthropo- (anthropology, misanthrope, philanthropy).",
+          "forms": [ "ο άνθρωπος — the person", "ένας άνθρωπος — a person", "τον άνθρωπο — the person (object)" ],
+          "phrases": [
+            { "gr": "ο άνθρωπος", "en": "the person", "es": "la persona" },
+            { "gr": "Ο άνθρωπος έρχεται.", "en": "The person is coming.", "es": "La persona viene." },
+            { "gr": "Πού είναι ο άνθρωπος;", "en": "Where is the person?", "es": "¿Dónde está la persona?" }
+          ] },
+        { "id": "nero", "gr": "νερό", "article": "το", "en": "water", "es": "agua",
+          "pos": "noun", "gender": "n", "cat": "noun", "rank": 60, "koine": "ὕδωρ (ancient) → νηρόν",
+          "continuity": "A word that CHANGED: Classical 'water' was ὕδωρ (→ hydro-, hydrant). Modern νερό comes from νηρόν (ὕδωρ) 'fresh water'. Learn νερό now, recognise ὕδωρ in the old texts.",
+          "forms": [ "το νερό — the water", "νερό — (some) water" ],
+          "phrases": [
+            { "gr": "το νερό", "en": "the water", "es": "el agua" },
+            { "gr": "Θέλω νερό.", "en": "I want water.", "es": "Quiero agua." }
+          ] },
+        { "id": "vivlio", "gr": "βιβλίο", "article": "το", "en": "book", "es": "libro",
+          "pos": "noun", "gender": "n", "cat": "noun", "rank": 90, "koine": "βιβλίον",
+          "continuity": "Ancient βιβλίον 'book, scroll' — the very word behind Bible and bibliography. The final -ν simply dropped in Modern Greek (βιβλίον → βιβλίο).",
+          "forms": [ "το βιβλίο — the book", "ένα βιβλίο — a book" ],
+          "phrases": [
+            { "gr": "το βιβλίο", "en": "the book", "es": "el libro" },
+            { "gr": "Θέλω το βιβλίο.", "en": "I want the book.", "es": "Quiero el libro." },
+            { "gr": "Το βιβλίο είναι εδώ.", "en": "The book is here.", "es": "El libro está aquí." }
+          ] },
+        { "id": "filos", "gr": "φίλος", "article": "ο", "en": "friend", "es": "amigo",
+          "pos": "noun", "gender": "m", "cat": "noun", "rank": 75, "koine": "φίλος",
+          "continuity": "Ancient φίλος 'dear one, friend'. The philo- of philosophy (love of wisdom), philanthropy, Philadelphia.",
+          "forms": [ "ο φίλος — the friend", "ένας φίλος — a friend", "τον φίλο — the friend (object)" ],
+          "phrases": [
+            { "gr": "ο φίλος", "en": "the friend", "es": "el amigo" },
+            { "gr": "Πού είναι ο φίλος;", "en": "Where is the friend?", "es": "¿Dónde está el amigo?" }
+          ] },
+        { "id": "paidi", "gr": "παιδί", "article": "το", "en": "child", "es": "niño / niña",
+          "pos": "noun", "gender": "n", "cat": "noun", "rank": 55, "koine": "παιδίον",
+          "continuity": "From ancient παιδίον 'little child' (diminutive of παῖς, παιδ-). Gives ped- (pediatric, pedagogy, encyclopedia = ἐγκύκλιος παιδεία).",
+          "forms": [ "το παιδί — the child", "ένα παιδί — a child" ],
+          "phrases": [
+            { "gr": "το παιδί", "en": "the child", "es": "el niño" },
+            { "gr": "Το παιδί είναι εδώ.", "en": "The child is here.", "es": "El niño está aquí." }
+          ] },
+        { "id": "thalassa", "gr": "θάλασσα", "article": "η", "en": "sea", "es": "mar",
+          "pos": "noun", "gender": "f", "cat": "noun", "rank": 80, "koine": "θάλασσα (Attic θάλαττα)",
+          "continuity": "The word Xenophon's ten thousand shouted on sight of the sea: θάλασσα! (Attic dialect θάλαττα). Unchanged into Modern Greek.",
+          "forms": [ "η θάλασσα — the sea", "τη θάλασσα — the sea (object)" ],
+          "phrases": [
+            { "gr": "η θάλασσα", "en": "the sea", "es": "el mar" },
+            { "gr": "Βλέπω τη θάλασσα.", "en": "I see the sea.", "es": "Veo el mar." }
+          ] }
+      ]
+    }
+  ]
+}

@@ -10,7 +10,7 @@ import json
 import subprocess
 import urllib.request
 
-from voices import LANGUAGE_CODE, voice_name
+from voices import voice_lang, voice_name
 
 ENDPOINT = "https://texttospeech.googleapis.com/v1/text:synthesize"
 PROJECT = "bmount-public-share"
@@ -26,12 +26,18 @@ def _access_token():
     return _token_cache["tok"]
 
 
-def synthesize(text, voice_key):
-    """Return MP3 bytes for `text` spoken by the registry voice `voice_key`."""
+def synthesize(text, voice_key, rate=1.0):
+    """Return MP3 bytes for `text` spoken by the registry voice `voice_key`.
+
+    rate < 1.0 is slower (careful learner speech), > 1.0 faster (toward natural pace).
+    """
+    audio_cfg = {"audioEncoding": "MP3", "sampleRateHertz": 24000}
+    if rate and rate != 1.0:
+        audio_cfg["speakingRate"] = rate
     body = {
         "input": {"text": text},
-        "voice": {"languageCode": LANGUAGE_CODE, "name": voice_name(voice_key)},
-        "audioConfig": {"audioEncoding": "MP3", "sampleRateHertz": 24000},
+        "voice": {"languageCode": voice_lang(voice_key), "name": voice_name(voice_key)},
+        "audioConfig": audio_cfg,
     }
     req = urllib.request.Request(
         ENDPOINT,

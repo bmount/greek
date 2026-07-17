@@ -1,5 +1,5 @@
 // Ἑλληνικά service worker — bump VER whenever any cached file changes.
-const VER = 'grk-v02';
+const VER = 'grk-v03';
 const CORE = [
   './',
   './index.html',
@@ -9,7 +9,9 @@ const CORE = [
   './data/texts/john.json',
   './data/grammar.json',
   './data/audio_manifest.json',
-  './data/modern.json'
+  './data/modern.json',
+  './data/vocab.json',
+  './data/gym_manifest.json'
 ];
 
 self.addEventListener('install', e => {
