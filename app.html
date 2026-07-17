@@ -162,6 +162,53 @@ table.para thead th{font-family:var(--ui);font-size:13px;color:var(--ink-soft);b
 .settings{background:var(--panel);border:1px solid var(--line);border-radius:13px;
   padding:16px;margin:16px 0}
 .settings h3{margin:0 0 8px;font-size:16px}
+/* ---- audio ---- */
+.play{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;
+  border-radius:50%;border:1.5px solid var(--accent);background:var(--panel);color:var(--accent);
+  font-size:13px;cursor:pointer;vertical-align:middle;margin-right:9px;flex:none;padding:0;
+  transition:transform .1s}
+.play:active{transform:scale(.9)}
+.play.on{background:var(--accent);color:#fff}
+.play.big{width:44px;height:44px;font-size:17px}
+.hearbtn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);
+  background:var(--bg);color:var(--accent);border-radius:22px;padding:8px 16px;font-size:14px;
+  font-weight:600;cursor:pointer;font-family:var(--ui);margin-top:6px}
+.hearbtn:active{transform:scale(.98)}
+.verse{display:flex;align-items:flex-start;gap:2px}
+.verse .gk{flex:1}
+
+/* ---- flashcards ---- */
+.deckhead{display:flex;justify-content:space-between;align-items:center;margin:6px 0 2px}
+.deckhead .prog{font-size:13px;color:var(--ink-soft)}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 4px}
+.filters button{border:1px solid var(--line);background:var(--panel);color:var(--ink-soft);
+  border-radius:20px;padding:5px 13px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--ui)}
+.filters button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.card-stage{margin:20px 0;min-height:340px;display:flex;flex-direction:column;align-items:center}
+.fcard{width:100%;max-width:440px;background:var(--panel);border:1px solid var(--line);
+  border-radius:20px;box-shadow:var(--shadow);padding:30px 24px;text-align:center;min-height:260px;
+  display:flex;flex-direction:column;justify-content:center;gap:14px}
+.fcard .front-gk{font-family:var(--greek);font-size:46px;color:var(--accent);line-height:1.15}
+.fcard .kindtag{font-size:11px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;
+  color:var(--gold)}
+.fcard .rev{border-top:1px solid var(--line);padding-top:16px;margin-top:4px}
+.fcard .gloss-b{font-family:var(--greek);font-size:24px;color:var(--ink);margin-bottom:8px}
+.fcard .deriv-b{font-size:14px;color:var(--ink-soft);line-height:1.5}
+.fcard .ex-b{font-family:var(--greek);font-size:18px;color:var(--ink-soft);margin-top:12px;
+  font-style:italic;line-height:1.5}
+.fcard .note-b{font-size:13.5px;color:var(--ink-soft);line-height:1.5;margin-top:10px;text-align:left}
+.tapreveal{color:var(--ink-soft);font-size:13px;margin-top:8px;opacity:.75}
+.cardbtns{display:flex;gap:12px;width:100%;max-width:440px;margin-top:20px}
+.cardbtns button{flex:1;border:0;border-radius:14px;padding:15px 0;font-size:15px;font-weight:700;
+  cursor:pointer;font-family:var(--ui)}
+.cardbtns .again{background:var(--bg);border:1.5px solid var(--line);color:var(--ink-soft)}
+.cardbtns .got{background:var(--accent);color:#fff}
+.cardbtns button:active{transform:scale(.98)}
+.revealbtn{width:100%;max-width:440px;margin-top:20px;border:1.5px solid var(--accent);
+  background:var(--panel);color:var(--accent);border-radius:14px;padding:15px 0;font-size:15px;
+  font-weight:700;cursor:pointer;font-family:var(--ui)}
+.deckdone{text-align:center;padding:50px 20px;color:var(--ink-soft)}
+.deckdone .big{font-family:var(--greek);font-size:40px;color:var(--accent);margin-bottom:10px}
 .loading{text-align:center;color:var(--ink-soft);padding:60px 0;font-size:15px}
 .footer{text-align:center;color:var(--ink-soft);font-size:12px;opacity:.7;margin-top:40px}
 </style>
@@ -179,6 +226,7 @@ table.para thead th{font-family:var(--ui);font-size:13px;color:var(--ink-soft);b
   <div class="tabs">
     <button class="tab" id="tab-reading" onclick="go('reading')">Reading</button>
     <button class="tab" id="tab-textbook" onclick="go('textbook')">Textbook</button>
+    <button class="tab" id="tab-cards" onclick="go('cards')">Cards</button>
   </div>
 </header>
 
@@ -190,7 +238,7 @@ table.para thead th{font-family:var(--ui);font-size:13px;color:var(--ink-soft);b
 <div class="sheet" id="sheet"></div>
 
 <script>
-const state={lang:'en',john:null,grammar:null,concept:{},tokens:[]};
+const state={lang:'en',john:null,grammar:null,concept:{},tokens:[],manifest:null,modern:null};
 const $=id=>document.getElementById(id);
 const esc=s=>(s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
@@ -198,17 +246,44 @@ const esc=s=>(s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;
 function loadPrefs(){try{state.lang=localStorage.getItem('grk_lang')||'en';}catch(e){}}
 function readSet(){try{return new Set(JSON.parse(localStorage.getItem('grk_progress')||'[]'));}catch(e){return new Set();}}
 function markRead(id){try{const s=readSet();s.add(id);localStorage.setItem('grk_progress',JSON.stringify([...s]));}catch(e){}}
+function cardStore(){try{return JSON.parse(localStorage.getItem('grk_cards')||'{}');}catch(e){return {};}}
+function saveCards(o){try{localStorage.setItem('grk_cards',JSON.stringify(o));}catch(e){}}
+
+/* ---------- audio ---------- */
+let audioEl=null,audioCur=null;
+function clipUrl(id){const m=state.manifest;if(!m||!m.clips||!m.clips[id])return null;
+  const b=m.backends[m.default_backend];return m.audio_base+b.prefix+'/'+id+'.mp3?v='+m.version;}
+function hasClip(id){return !!(state.manifest&&state.manifest.clips&&state.manifest.clips[id]);}
+function setPlayIcons(playingId){
+  document.querySelectorAll('[data-clip]').forEach(b=>{
+    const on=b.dataset.clip===playingId;b.classList.toggle('on',on);
+    b.textContent=on?'⏸':'▶';});
+}
+function playClip(id){
+  const url=clipUrl(id);if(!url)return;
+  if(audioEl&&audioCur===id&&!audioEl.paused){audioEl.pause();setPlayIcons(null);return;}
+  if(audioEl){audioEl.pause();}
+  audioEl=new Audio(url);audioCur=id;
+  audioEl.addEventListener('ended',()=>setPlayIcons(null));
+  audioEl.play().then(()=>setPlayIcons(id)).catch(()=>setPlayIcons(null));
+  setPlayIcons(id);
+}
+function stopAudio(){if(audioEl){audioEl.pause();}audioCur=null;setPlayIcons(null);}
+function playBtn(id,cls){return hasClip(id)?'<button class="play'+(cls?' '+cls:'')+'" data-clip="'+esc(id)+'" onclick="event.stopPropagation();playClip(\''+esc(id)+'\')" aria-label="Play audio">▶</button>':'';}
+function verseClipId(ref){return 'john-'+ref.replace(/:/g,'-');}
 
 /* ---------- data ---------- */
 async function boot(){
   loadPrefs();
   document.querySelectorAll('#langtog button').forEach(b=>b.classList.toggle('on',b.dataset.l===state.lang));
   try{
-    const [j,g]=await Promise.all([
+    const [j,g,man,mod]=await Promise.all([
       fetch('data/texts/john.json').then(r=>r.json()),
-      fetch('data/grammar.json').then(r=>r.json())
+      fetch('data/grammar.json').then(r=>r.json()),
+      fetch('data/audio_manifest.json').then(r=>r.ok?r.json():null).catch(()=>null),
+      fetch('data/modern.json').then(r=>r.ok?r.json():null).catch(()=>null)
     ]);
-    state.john=j; state.grammar=g;
+    state.john=j; state.grammar=g; state.manifest=man; state.modern=mod;
     g.concepts.forEach(c=>state.concept[c.id]=c);
     // flatten tokens with stable positions
     j.verses.forEach(v=>v.tokens.forEach((t,i)=>{t._ref=v.ref;t._i=i;t._id=v.ref+'#'+i;state.tokens.push(t);}));
@@ -222,6 +297,7 @@ window.addEventListener('hashchange',route);
 /* ---------- routing ---------- */
 function go(v){location.hash=v;}
 function route(){
+  stopAudio();
   const h=location.hash.replace(/^#/,'')||'reading';
   const [base,arg]=h.split('/');
   setTabs(base);
@@ -229,14 +305,15 @@ function route(){
   else if(base==='textbook')renderTextbook();
   else if(base==='concept')renderConcept(arg);
   else if(base==='lex')renderLexicon(decodeURIComponent(arg||''));
+  else if(base==='cards')renderCards(arg);
   else if(base==='settings')renderSettings();
   else renderReading();
   window.scrollTo(0,0);
 }
 function setTabs(base){
-  const r=(base==='reading');const t=(base==='textbook'||base==='concept');
-  $('tab-reading').classList.toggle('on',r);
-  $('tab-textbook').classList.toggle('on',t);
+  $('tab-reading').classList.toggle('on',base==='reading');
+  $('tab-textbook').classList.toggle('on',base==='textbook'||base==='concept');
+  $('tab-cards').classList.toggle('on',base==='cards');
 }
 
 /* ---------- reading ---------- */
@@ -248,7 +325,7 @@ function renderReading(){
   html+='<div class="blurb">'+esc(j.blurb)+'</div>';
   html+='<div class="hint"><span class="dot"></span>Tap any word for its parse, gloss, and a link into the grammar.</div>';
   j.verses.forEach(v=>{
-    html+='<div class="verse" id="v-'+v.ref.replace(/[:]/g,'_')+'"><span class="gk"><span class="vnum">'+esc(v.ref)+'</span>';
+    html+='<div class="verse" id="v-'+v.ref.replace(/[:]/g,'_')+'">'+playBtn(verseClipId(v.ref))+'<span class="gk"><span class="vnum">'+esc(v.ref)+'</span>';
     v.tokens.forEach((t,i)=>{
       html+='<span class="tok" id="tok-'+esc(v.ref+'#'+i)+'" onclick="openSheet(\''+esc(v.ref)+'\','+i+')">'+esc(t.w)+'</span>';
       if(t.after)html+='<span class="punct">'+esc(t.after)+'</span>';
@@ -269,6 +346,7 @@ function openSheet(ref,i){
   let h='<div class="grip"></div>';
   h+='<div class="surf">'+esc(t.w)+'</div>';
   h+='<div class="lemrow">from <b onclick="openLex(\''+esc(t.lemma)+'\')">'+esc(t.lemma)+'</b> · '+esc(v.ref)+'</div>';
+  if(hasClip(verseClipId(v.ref)))h+='<button class="hearbtn" data-clip="'+esc(verseClipId(v.ref))+'" onclick="playClip(\''+esc(verseClipId(v.ref))+'\')">▶ Hear the whole line</button>';
   h+='<div class="plabel">Parse</div><div class="parse">'+esc(t.parse)+'</div>';
   h+='<div class="plabel">Meaning</div><div class="gloss">'+esc(g)+'</div>';
   if(t.deriv&&t.deriv!=='—')h+='<div class="plabel">English / Spanish it unlocks</div><div class="deriv">'+esc(t.deriv)+'</div>';
@@ -382,6 +460,83 @@ function renderLexicon(lemma){
   $('view').innerHTML=h;
 }
 
+/* ---------- flashcards ---------- */
+let deck={queue:[],idx:0,filter:'all'};
+function allCards(){
+  const out=[],seen=new Set();
+  state.tokens.forEach(t=>{if(seen.has(t.lemma))return;seen.add(t.lemma);
+    out.push({id:'lex:'+t.lemma,kind:'vocab',gk:t.lemma,gloss_en:t.gloss_en,
+      gloss_es:t.gloss_es,deriv:t.deriv,ref:t._ref,hard:!t.deriv||t.deriv==='—'});});
+  if(state.modern&&state.modern.phrases)state.modern.phrases.forEach(p=>{
+    const forms=p.variants?p.variants.map(v=>({t:v.t,clip:p.id+'-'+v.gender,gender:v.gender}))
+                          :[{t:p.t,clip:p.id}];
+    out.push({id:'mod:'+p.id,kind:'modern',forms:forms,en:p.en,es:p.es,note:p.note,hard:true});});
+  return out;
+}
+function buildDeck(filter){
+  let cards=allCards();
+  if(filter==='hard')cards=cards.filter(c=>c.hard);
+  else if(filter==='modern')cards=cards.filter(c=>c.kind==='modern');
+  const st=cardStore();
+  cards.forEach(c=>{const s=st[c.id]||{box:0,seen:0};c._box=s.box||0;c._seen=s.seen||0;});
+  // cognate-aware: lower box first, then harder (non-cognate) first, then least-seen.
+  cards.sort((a,b)=>a._box-b._box||(b.hard-a.hard)||a._seen-b._seen);
+  return cards;
+}
+function renderCards(filter){
+  filter=filter||'all';deck={queue:buildDeck(filter),idx:0,filter:filter};
+  const st=cardStore();const total=allCards().length;
+  const mastered=Object.values(st).filter(s=>(s.box||0)>=4).length;
+  const f=(k,label)=>'<button class="'+(filter===k?'on':'')+'" onclick="go(\'cards/'+k+'\')">'+label+'</button>';
+  let h='<div class="tag">Cards · memorization</div>';
+  h+='<h1 class="title" style="font-family:var(--ui);font-size:26px">Flashcards</h1>';
+  h+='<div class="subtitle">Tap the card to reveal. Rate honestly — non-cognates and words you miss come back sooner; freebie cognates sink. Progress saves locally.</div>';
+  h+='<div class="filters">'+f('all','All ('+total+')')+f('hard','Hard / non-cognate')+f('modern','Modern Greek')+'</div>';
+  h+='<div class="deckhead"><div class="prog" id="cardprog"></div><div class="prog">★ '+mastered+' mastered</div></div>';
+  h+='<div class="card-stage" id="card-stage"></div><div id="card-controls"></div>';
+  $('view').innerHTML=h;drawCard();
+}
+function drawCard(){
+  const c=deck.queue[deck.idx];
+  const prog=$('cardprog');
+  if(!c){
+    $('card-stage').innerHTML='<div class="deckdone"><div class="big">εὖγε!</div><b>Deck complete.</b><p>You worked through every card in this set.</p></div>';
+    $('card-controls').innerHTML='<button class="revealbtn" onclick="go(\'cards/'+deck.filter+'\')">Study again ↻</button>';
+    if(prog)prog.textContent='';return;
+  }
+  if(prog)prog.textContent='Card '+(deck.idx+1)+' of '+deck.queue.length;
+  let s='<div class="fcard" onclick="revealCard()">';
+  if(c.kind==='vocab'){
+    s+='<div class="kindtag">Vocabulary · '+esc(c.ref)+'</div><div class="front-gk">'+esc(c.gk)+'</div>';
+    const g=state.lang==='es'?(c.gloss_es||c.gloss_en):c.gloss_en;
+    s+='<div id="cardback" style="display:none"><div class="rev"><div class="gloss-b">'+esc(g)+'</div>';
+    if(c.deriv&&c.deriv!=='—')s+='<div class="deriv-b">'+esc(c.deriv)+'</div>';
+    if(hasClip(verseClipId(c.ref)))s+='<div style="margin-top:12px">'+playBtn(verseClipId(c.ref))+'<span style="font-size:13px;color:var(--ink-soft)">hear it in context ('+esc(c.ref)+')</span></div>';
+    s+='</div></div>';
+  }else{
+    s+='<div class="kindtag">Modern Greek</div>';
+    c.forms.forEach(f=>{s+='<div class="front-gk" style="font-size:30px;display:flex;align-items:center;justify-content:center;gap:10px">'+playBtn(f.clip)+'<span>'+esc(f.t)+'</span>'+(f.gender?'<small style="font-size:13px;color:var(--gold)">'+(f.gender==='m'?'♂':'♀')+'</small>':'')+'</div>';});
+    const g=state.lang==='es'?(c.es||c.en):c.en;
+    s+='<div id="cardback" style="display:none"><div class="rev"><div class="gloss-b" style="font-family:var(--ui);font-size:18px">'+esc(g)+'</div>';
+    if(c.note)s+='<div class="note-b">'+esc(c.note)+'</div>';
+    s+='</div></div>';
+  }
+  s+='<div class="tapreveal" id="tapreveal">tap to reveal</div></div>';
+  $('card-stage').innerHTML=s;
+  $('card-controls').innerHTML='<button class="revealbtn" onclick="revealCard()">Reveal</button>';
+}
+function revealCard(){
+  const b=$('cardback');if(!b||b.style.display!=='none')return;
+  b.style.display='block';const tr=$('tapreveal');if(tr)tr.style.display='none';
+  $('card-controls').innerHTML='<div class="cardbtns"><button class="again" onclick="rateCard(false)">Again</button><button class="got" onclick="rateCard(true)">Got it</button></div>';
+}
+function rateCard(good){
+  const c=deck.queue[deck.idx];if(!c)return;
+  const st=cardStore();const s=st[c.id]||{box:0,seen:0};
+  s.box=good?Math.min(5,(s.box||0)+1):0;s.seen=(s.seen||0)+1;st[c.id]=s;saveCards(st);
+  stopAudio();deck.idx++;drawCard();
+}
+
 /* ---------- settings ---------- */
 function renderSettings(){
   const done=readSet();const total=state.grammar?state.grammar.concepts.length:0;
@@ -392,7 +547,7 @@ function renderSettings(){
   h+='<div class="langtog"><button class="'+(state.lang==='en'?'on':'')+'" onclick="setLang(\'en\')">English</button><button class="'+(state.lang==='es'?'on':'')+'" onclick="setLang(\'es\')">Español</button></div></div>';
   h+='<div class="settings"><h3>Progress</h3><p style="color:var(--ink-soft);font-size:14px;margin:.2em 0 10px">'+read+' of '+total+' grammar lessons opened.</p>';
   h+='<button class="iconbtn" onclick="if(confirm(\'Clear all saved progress?\')){localStorage.removeItem(\'grk_progress\');go(\'settings\');}">Reset progress</button></div>';
-  h+='<div class="settings"><h3>About</h3><p style="color:var(--ink-soft);font-size:14px;margin:.2em 0 0">Ἑλληνικά treats Greek as one continuous culture — Koine, Classical, and Modern. This early build proves the core loop on the Prologue of John. Audio, more texts (Homer, Herodotus, Ecclesiastes, the pre-Socratics), quizzes and flashcards are coming.</p></div>';
+  h+='<div class="settings"><h3>About</h3><p style="color:var(--ink-soft);font-size:14px;margin:.2em 0 0">Ἑλληνικά treats Greek as one continuous culture — Koine, Classical, and Modern. Now live: the Prologue of John with tap-to-parse, a cross-linked grammar textbook, full-sentence Modern-Greek audio (voices Aoede ♀ / Charon ♂, with a gender-agreement safeguard), and flashcards. Coming: more texts (Homer, Herodotus, Ecclesiastes, the pre-Socratics), quizzes, and the full prologue.</p></div>';
   h+='</div>';
   $('view').innerHTML=h;
 }

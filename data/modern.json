@@ -1,0 +1,50 @@
+{
+  "title": "Νέα Ἑλληνικά — the living end of the continuum",
+  "blurb": "The same language, still spoken. These show how Greek sounds today — and where the modern tongue kept, dropped, or reshaped what the ancient texts do.",
+  "phrases": [
+    {
+      "id": "mod-kalimera",
+      "t": "Καλημέρα! Τι κάνεις;",
+      "en": "Good morning! How are you? (lit. 'what are you doing?')",
+      "es": "¡Buenos días! ¿Cómo estás?",
+      "voice": "aoede",
+      "note": "καλή + ἡμέρα 'good day' — the ancient ἡμέρα (→ 'ephemeral') survives intact. The question particle-free 'τι κάνεις;' shows the modern semicolon (;) used as a QUESTION mark."
+    },
+    {
+      "id": "mod-efharisto",
+      "t": "Ευχαριστώ πολύ.",
+      "en": "Thank you very much.",
+      "es": "Muchas gracias.",
+      "voice": "charon",
+      "note": "εὐχαριστῶ 'I give thanks' — the very verb behind Eucharist (εὐ 'well' + χάρις 'grace'). χάρις also appears in John 1:14, 16. Ancient meaning preserved, everyday register."
+    },
+    {
+      "id": "mod-tired",
+      "en": "I am tired.",
+      "es": "Estoy cansado / cansada.",
+      "note": "Voice-gender safeguard in action: the predicate adjective agrees with the SPEAKER'S gender, so the male and female voices each say their own form. A male voice may never utter κουρασμένη, nor a female κουρασμένος.",
+      "variants": [
+        { "t": "Είμαι κουρασμένος.", "gender": "m" },
+        { "t": "Είμαι κουρασμένη.", "gender": "f" }
+      ]
+    },
+    {
+      "id": "mod-ready",
+      "en": "I am ready.",
+      "es": "Estoy listo / lista.",
+      "note": "Modern εἶμαι 'I am' descends straight from ancient εἰμί (John 1:1 ἦν is its imperfect). Again the self-form is gendered: ἕτοιμος / ἑτοίμη.",
+      "variants": [
+        { "t": "Είμαι έτοιμος.", "gender": "m" },
+        { "t": "Είμαι έτοιμη.", "gender": "f" }
+      ]
+    },
+    {
+      "id": "mod-thalassa",
+      "t": "Πού είναι η θάλασσα;",
+      "en": "Where is the sea?",
+      "es": "¿Dónde está el mar?",
+      "voice": "aoede",
+      "note": "θάλασσα is the same word Xenophon's soldiers cried on sight of the sea (θάλαττα in Attic — note the Attic -ττ- vs. common -σσ-). The article ἡ → modern η, but note the DATIVE case has vanished in Modern Greek: where Koine says ἐν τῇ (dative), modern Greek uses σε + accusative."
+    }
+  ]
+}

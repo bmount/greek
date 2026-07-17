@@ -1,0 +1,101 @@
+{
+  "audio_base": "https://storage.googleapis.com/bmount-public-share/greek/",
+  "version": 1,
+  "default_backend": "gg",
+  "backends": {
+    "gg": {
+      "prefix": "gg",
+      "label": "Google HD",
+      "engine": "google"
+    }
+  },
+  "count": 12,
+  "clips": {
+    "john-1-1": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "verse",
+      "text": "Ἐν ἀρχῇ ἦν ὁ λόγος, καὶ ὁ λόγος ἦν πρὸς τὸν θεόν, καὶ θεὸς ἦν ὁ λόγος.",
+      "ref": "1:1",
+      "source": "john"
+    },
+    "john-1-2": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "verse",
+      "text": "οὗτος ἦν ἐν ἀρχῇ πρὸς τὸν θεόν.",
+      "ref": "1:2",
+      "source": "john"
+    },
+    "john-1-3": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "verse",
+      "text": "πάντα δι᾽ αὐτοῦ ἐγένετο, καὶ χωρὶς αὐτοῦ ἐγένετο οὐδὲ ἓν ὃ γέγονεν.",
+      "ref": "1:3",
+      "source": "john"
+    },
+    "john-1-4": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "verse",
+      "text": "ἐν αὐτῷ ζωὴ ἦν, καὶ ἡ ζωὴ ἦν τὸ φῶς τῶν ἀνθρώπων·",
+      "ref": "1:4",
+      "source": "john"
+    },
+    "john-1-5": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "verse",
+      "text": "καὶ τὸ φῶς ἐν τῇ σκοτίᾳ φαίνει, καὶ ἡ σκοτία αὐτὸ οὐ κατέλαβεν.",
+      "ref": "1:5",
+      "source": "john"
+    },
+    "mod-kalimera": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "modern",
+      "text": "Καλημέρα! Τι κάνεις;"
+    },
+    "mod-efharisto": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "modern",
+      "text": "Ευχαριστώ πολύ."
+    },
+    "mod-tired-m": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "modern",
+      "text": "Είμαι κουρασμένος.",
+      "require_gender": "m"
+    },
+    "mod-tired-f": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "modern",
+      "text": "Είμαι κουρασμένη.",
+      "require_gender": "f"
+    },
+    "mod-ready-m": {
+      "voice": "charon",
+      "gender": "m",
+      "kind": "modern",
+      "text": "Είμαι έτοιμος.",
+      "require_gender": "m"
+    },
+    "mod-ready-f": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "modern",
+      "text": "Είμαι έτοιμη.",
+      "require_gender": "f"
+    },
+    "mod-thalassa": {
+      "voice": "aoede",
+      "gender": "f",
+      "kind": "modern",
+      "text": "Πού είναι η θάλασσα;"
+    }
+  }
+}
